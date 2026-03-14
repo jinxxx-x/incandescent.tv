@@ -1,0 +1,18 @@
+{
+  "name": "incandescent-tv",
+  "version": "1.0.0",
+  "description": "incandescent.tv — premium television production company",
+  "private": true,
+  "scripts": {
+    "dev": "npx wrangler pages dev ./public",
+    "deploy": "npx wrangler deploy",
+    "cf:login": "npx wrangler login",
+    "cf:tail": "npx wrangler tail",
+    "cf:deployments": "npx wrangler deployments list"
+  },
+  "author": "Incandescent TV",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "wrangler": "^4.58.0"
+  }
+}
