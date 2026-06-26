@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickables = document.querySelectorAll('a, .project-card');
         clickables.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                glow.style.width = '600px';
-                glow.style.height = '600px';
-                glow.style.background = 'radial-gradient(circle, rgba(212, 160, 74, 0.06) 0%, transparent 70%)';
+                glow.style.width = '700px';
+                glow.style.height = '700px';
+                glow.style.background = 'radial-gradient(circle, rgba(212, 160, 74, 0.12) 0%, transparent 70%)';
             });
             el.addEventListener('mouseleave', () => {
-                glow.style.width = '400px';
-                glow.style.height = '400px';
-                glow.style.background = 'radial-gradient(circle, rgba(212, 160, 74, 0.03) 0%, transparent 70%)';
+                glow.style.width = '500px';
+                glow.style.height = '500px';
+                glow.style.background = 'radial-gradient(circle, rgba(212, 160, 74, 0.08) 0%, transparent 70%)';
             });
         });
     }

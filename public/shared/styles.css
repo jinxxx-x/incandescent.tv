@@ -99,9 +99,9 @@ h1, h2, h3, .serif {
 
 .cursor-glow {
     position: fixed;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(212, 160, 74, 0.03) 0%, transparent 70%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 160, 74, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -381,7 +381,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
     opacity: 0.6;
 }
 
@@ -444,7 +444,7 @@ nav {
 /* ─── Work Section ─── */
 
 .work-section {
-    padding: 4rem 4rem 10rem 4rem;
+    padding: 4rem 4rem 4rem 4rem;
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -477,13 +477,16 @@ nav {
     color: var(--accent-gold);
 }
 
-/* ─── Asymmetric Editorial Grid ─── */
+/* ─── Work Grid ─── */
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
+
+/* Feature card spans full width */
+.card-feature { grid-column: 1 / -1; }
 
 /* ─── Project Cards ─── */
 
@@ -510,6 +513,11 @@ nav {
     background: var(--bg-panel);
     border: 1px solid rgba(255,255,255,0.03);
     transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    aspect-ratio: 16/9;
+}
+
+.card-feature .card-image-wrapper {
+    aspect-ratio: 21/9;
 }
 
 .card-image-wrapper::after {
@@ -518,6 +526,7 @@ nav {
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to top, rgba(5,3,2,0.9) 0%, rgba(5,3,2,0.2) 50%, transparent 100%);
     transition: opacity 0.5s ease;
+    z-index: 1;
 }
 
 .card-image-wrapper img {
@@ -528,40 +537,6 @@ nav {
     filter: grayscale(80%) contrast(1.2) brightness(0.8);
     transition: filter 0.8s var(--ease-cinematic), transform 1.2s var(--ease-cinematic);
 }
-
-/* Gradient placeholder for cards without images */
-.card-gradient {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.card-gradient-1 { background: linear-gradient(135deg, #1a1008 0%, #2a1a0a 40%, #0a0604 100%); }
-.card-gradient-2 { background: linear-gradient(135deg, #0a0a14 0%, #0a1020 40%, #0a0604 100%); }
-.card-gradient-3 { background: linear-gradient(135deg, #140a0a 0%, #200a0a 40%, #0a0604 100%); }
-.card-gradient-4 { background: linear-gradient(135deg, #0a140a 0%, #0a200a 40%, #0a0604 100%); }
-.card-gradient-5 { background: linear-gradient(135deg, #14100a 0%, #1a140a 40%, #0a0604 100%); }
-.card-gradient-6 { background: linear-gradient(135deg, #0a0a14 0%, #0a0a20 40%, #0a0604 100%); }
-.card-gradient-7 { background: linear-gradient(135deg, #100a14 0%, #140a1a 40%, #0a0604 100%); }
-.card-gradient-8 { background: linear-gradient(135deg, #0a1410 0%, #0a1a14 40%, #0a0604 100%); }
-
-/* Aspect ratios for editorial variety */
-.ar-cinema { aspect-ratio: 16/9; }
-.ar-portrait { aspect-ratio: 3/4; }
-.ar-tall { aspect-ratio: 4/5; }
-.ar-ultra { aspect-ratio: 21/9; }
-.ar-square { aspect-ratio: 1/1; }
-.ar-wide { aspect-ratio: 2/1; }
-
-/* Asymmetric grid positions */
-.card-pos-1 { grid-column: 1 / 8; }
-.card-pos-2 { grid-column: 8 / 13; margin-top: 4rem; }
-.card-pos-3 { grid-column: 2 / 6; margin-top: -2rem; }
-.card-pos-4 { grid-column: 6 / 12; }
-.card-pos-5 { grid-column: 1 / 5; margin-top: 2rem; }
-.card-pos-6 { grid-column: 5 / 10; margin-top: -3rem; }
-.card-pos-7 { grid-column: 10 / 13; margin-top: 1rem; }
-.card-pos-8 { grid-column: 3 / 11; }
 
 .card-content {
     position: absolute;
@@ -610,8 +585,7 @@ nav {
     box-shadow: inset 0 0 40px rgba(156,62,16,0.2);
 }
 
-.project-card:hover .card-image-wrapper img,
-.project-card:hover .card-gradient {
+.project-card:hover .card-image-wrapper img {
     filter: grayscale(0%) contrast(1.1) brightness(1);
     transform: scale(1.03);
 }
@@ -831,17 +805,12 @@ footer {
 
 @media (max-width: 1024px) {
     .grid-container {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .project-card {
-        margin-top: 0 !important;
-    }
-
-    .card-image-wrapper {
-        aspect-ratio: 16/9 !important;
+    .card-feature .card-image-wrapper {
+        aspect-ratio: 16/9;
     }
 
     .editorial-intro {
@@ -876,10 +845,15 @@ footer {
         padding: 1.5rem 2rem;
     }
 
+    nav.menu-open {
+        mix-blend-mode: normal;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 100vh;
         background: var(--bg-base);
@@ -887,12 +861,14 @@ footer {
         align-items: center;
         justify-content: center;
         gap: 2.5rem;
-        transition: right 0.4s var(--ease-cinematic);
-        mix-blend-mode: normal;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s var(--ease-cinematic), visibility 0.4s;
     }
 
     .nav-links.open {
-        right: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links a {
