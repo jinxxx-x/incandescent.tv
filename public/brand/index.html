@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incandescent Studios — Brand Exploration</title>
+<meta name="description" content="Brand exploration for Incandescent Studios. Three directions: Ember, Archive, and Signal.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,900;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0807; --paper:#0d0b0a; --chrome-text:#ece6df; --chrome-dim:#8a8279;
+  --gold:#d4a04a; --ember:#9c3e10;
+  --oxblood:#6e2318; --signal:#ff5e3a;
+  --maxw:1160px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{background:var(--ink);color:var(--chrome-text);font-family:'Jost',sans-serif;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+::selection{background:var(--gold);color:#000}
+
+/* grain overlay */
+body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- top progress nav ---------- */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,56px);background:linear-gradient(180deg,rgba(8,7,6,.92),rgba(8,7,6,0));
+  backdrop-filter:blur(6px);transition:background .4s}
+.topnav .nm{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.06em}
+.topnav .nm span{color:var(--gold)}
+.topnav ul{display:flex;gap:26px;list-style:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.topnav a{color:var(--chrome-dim);text-decoration:none;transition:color .25s;position:relative;padding:4px 0}
+.topnav a:hover,.topnav a.active{color:var(--chrome-text)}
+.topnav a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:currentColor;transition:width .3s var(--ease)}
+.topnav a:hover::after,.topnav a.active::after{width:100%}
+@media(max-width:720px){.topnav ul{display:none}}
+
+/* ---------- shared layout ---------- */
+section{position:relative}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.kicker{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.cover .orb{animation:none}}
+
+/* ---------- COVER ---------- */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:120px 24px 80px;position:relative;overflow:hidden}
+.cover .rings{position:absolute;top:50%;left:50%;width:140vmin;height:140vmin;transform:translate(-50%,-50%);pointer-events:none;opacity:.5}
+.cover .rings span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(212,160,74,.10);border-radius:50%}
+.cover .rings span:nth-child(1){width:30%;height:30%}
+.cover .rings span:nth-child(2){width:52%;height:52%}
+.cover .rings span:nth-child(3){width:74%;height:74%}
+.cover .rings span:nth-child(4){width:100%;height:100%}
+.cover .orb{position:absolute;top:50%;left:50%;width:42vmin;height:42vmin;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(212,160,74,.22),rgba(212,160,74,0) 62%);filter:blur(8px);animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
+.cover-inner{position:relative;z-index:2}
+.cover .eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--chrome-dim);margin-bottom:34px}
+.cover h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(48px,9vw,118px);line-height:.98;letter-spacing:-.01em}
+.cover h1 em{font-style:italic;color:var(--gold)}
+.cover .sub{margin-top:26px;font-weight:300;font-size:clamp(15px,2vw,19px);color:var(--chrome-dim);max-width:560px;margin-left:auto;margin-right:auto}
+.cover .triplet{display:flex;gap:0;justify-content:center;margin-top:54px;flex-wrap:wrap}
+.cover .triplet a{text-decoration:none;color:var(--chrome-text);padding:10px 26px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  border-left:1px solid rgba(236,230,223,.14);transition:color .3s}
+.cover .triplet a:first-child{border-left:none}
+.cover .triplet a .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:9px;vertical-align:middle}
+.cover .triplet a:hover{color:#fff}
+.cover .meta{position:absolute;bottom:30px;left:0;right:0;display:flex;justify-content:space-between;
+  padding:0 clamp(20px,5vw,56px);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--chrome-dim)}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.3em;color:var(--chrome-dim);text-transform:uppercase}
+
+/* ---------- BRIEF ---------- */
+.brief{padding:clamp(80px,12vh,150px) 0;border-top:1px solid rgba(236,230,223,.07)}
+.brief h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,5vw,52px);line-height:1.05;margin:18px 0 0;max-width:18ch}
+.brief .lead{font-weight:300;font-size:clamp(16px,2vw,20px);color:#cfc7bd;max-width:60ch;margin-top:30px;line-height:1.7}
+.brief .lead em{color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:64px}
+@media(max-width:760px){.split{grid-template-columns:1fr;gap:40px}}
+.split h3{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--chrome-dim);padding-bottom:16px;border-bottom:1px solid rgba(236,230,223,.12);margin-bottom:22px}
+.split ul{list-style:none}
+.split li{display:flex;gap:14px;padding:13px 0;font-weight:300;font-size:16px;color:#d8d1c7;border-bottom:1px solid rgba(236,230,223,.05)}
+.split li b{color:var(--chrome-text);font-weight:500}
+.split .mk{color:var(--gold);font-size:15px;line-height:1.7}
+.constant .mk{color:#6f6a63}
+
+/* ---------- DIRECTION SECTIONS (themed) ---------- */
+.dir{padding:clamp(80px,12vh,140px) 0;position:relative}
+.dir .wrap>*{position:relative;z-index:2}
+.dir-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  padding-bottom:34px;margin-bottom:60px;border-bottom:1px solid var(--line)}
+.dir-num{font-family:var(--display);font-size:clamp(64px,12vw,150px);line-height:.8;color:var(--accent);font-weight:var(--num-wt,500)}
+.dir-head .ht{flex:1;min-width:260px}
+.dir-head h2{font-family:var(--display);font-weight:var(--h-wt,500);font-size:clamp(40px,7vw,84px);line-height:.98;color:var(--fg);letter-spacing:var(--h-ls,-.01em)}
+.dir-head .pos{font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(15px,2vw,19px);color:var(--fg-dim);margin-top:16px;max-width:50ch;line-height:1.6}
+.dir-head .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.dir-head .tags span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-line);padding:6px 12px;border-radius:40px}
+
+.board{display:grid;grid-template-columns:1fr;gap:clamp(48px,7vh,84px)}
+.blk-label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:26px;display:flex;align-items:center;gap:14px}
+.blk-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* logo system */
+.logo-stage{background:var(--stage);border:1px solid var(--line);border-radius:var(--radius,4px);padding:clamp(40px,7vw,90px) 30px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;text-align:center;min-height:380px;position:relative;overflow:hidden}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+@media(max-width:680px){.logo-grid{grid-template-columns:1fr}}
+.logo-cell{background:var(--stage);border:1px solid var(--line);border-radius:var(--radius,4px);padding:30px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:150px}
+.logo-cell.inv{background:var(--accent)}
+.logo-cell .clab{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-dim)}
+.logo-cell.inv .clab{color:var(--stage)}
+
+/* rationale */
+.rationale{font-family:var(--display-soft,var(--display));font-weight:var(--rat-wt,400);font-size:clamp(20px,3vw,30px);line-height:1.4;color:var(--fg);max-width:24ch;font-style:var(--rat-style,normal)}
+.rationale-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:start}
+@media(max-width:760px){.rationale-grid{grid-template-columns:1fr;gap:28px}}
+.rationale-grid p{font-weight:300;font-size:16px;line-height:1.75;color:var(--fg-dim)}
+
+/* color system */
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media(max-width:760px){.swatches{grid-template-columns:repeat(2,1fr)}}
+.sw{border-radius:var(--radius,4px);overflow:hidden;border:1px solid var(--line)}
+.sw .chip{height:120px}
+.sw .info{padding:14px 14px 16px;background:var(--stage)}
+.sw .nm{font-size:14px;color:var(--fg);font-weight:500}
+.sw .hx{font-size:12px;color:var(--fg-dim);letter-spacing:.06em;margin-top:3px;font-family:'Jost',sans-serif}
+.sw .use{font-size:11px;color:var(--fg-dim);margin-top:8px;opacity:.7;line-height:1.4}
+
+/* type system */
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+@media(max-width:760px){.type-grid{grid-template-columns:1fr;gap:40px}}
+.type-card .aa{font-size:clamp(90px,14vw,150px);line-height:.9;color:var(--fg)}
+.type-card .meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+.type-card .fam{font-size:18px;color:var(--fg);font-weight:500}
+.type-card .role{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim)}
+.type-card .scale{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.type-card .scale span{color:var(--fg);opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* voice */
+.voice{background:var(--stage);border:1px solid var(--line);border-radius:var(--radius,4px);padding:clamp(40px,6vw,72px)}
+.voice .big{font-family:var(--display);font-weight:var(--h-wt,500);font-size:clamp(34px,6vw,68px);line-height:1.02;color:var(--fg);font-style:var(--voice-style,normal);letter-spacing:var(--h-ls,-.01em)}
+.voice .big .ac{color:var(--accent)}
+.voice .lines{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;padding-top:34px;border-top:1px solid var(--line)}
+@media(max-width:680px){.voice .lines{grid-template-columns:1fr;gap:18px}}
+.voice .lines div{font-weight:300;font-size:15px;color:var(--fg-dim);line-height:1.6}
+.voice .lines b{color:var(--fg);font-weight:500;display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+
+/* applications */
+.apps{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+@media(max-width:760px){.apps{grid-template-columns:1fr}}
+.app{border:1px solid var(--line);border-radius:var(--radius,4px);overflow:hidden;background:var(--stage);position:relative}
+.app .cap{position:absolute;top:12px;left:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim);z-index:5;mix-blend-mode:difference;opacity:.8}
+/* title card */
+.titlecard{aspect-ratio:16/9;position:relative;display:flex;align-items:flex-end}
+.titlecard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(var(--tc-gray,0)) contrast(1.04)}
+.titlecard .scrim{position:absolute;inset:0;background:linear-gradient(0deg,var(--scrim) 4%,rgba(0,0,0,.1) 55%,transparent)}
+.titlecard .tc-body{position:relative;z-index:3;padding:clamp(22px,4vw,42px);width:100%}
+.titlecard .tc-meta{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.titlecard .tc-title{font-family:var(--display);font-weight:var(--h-wt,500);font-size:clamp(26px,4.4vw,52px);line-height:.98;color:#fff;letter-spacing:var(--h-ls,-.01em)}
+.titlecard .tc-rule{width:34px;height:2px;background:var(--accent);margin-bottom:18px}
+/* side column apps */
+.app-col{display:grid;grid-template-rows:1fr 1fr;gap:20px}
+.bizcard{padding:26px;display:flex;flex-direction:column;justify-content:space-between;min-height:170px;background:var(--stage)}
+.bizcard .top{display:flex;align-items:center;gap:12px}
+.bizcard .who{margin-top:auto}
+.bizcard .who .n{font-family:var(--display);font-size:22px;color:var(--fg);font-weight:var(--h-wt,500)}
+.bizcard .who .r{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);margin-top:4px}
+.bizcard .who .c{font-size:12px;color:var(--accent);margin-top:10px}
+.iconrow{display:flex;gap:14px;align-items:center;padding:26px;background:var(--stage);min-height:130px}
+.appicon{width:84px;height:84px;border-radius:var(--icon-radius,18px);background:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto;overflow:hidden}
+.appicon.alt{background:var(--ink2,#000)}
+.iconrow .ix{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);line-height:1.7}
+.iconrow .ix b{color:var(--fg);display:block;font-weight:500}
+/* lower third */
+.lowerthird{grid-column:1/-1;border:1px solid var(--line);border-radius:var(--radius,4px);background:var(--stage);padding:22px 26px;display:flex;align-items:center;gap:20px}
+.lowerthird .lt-mark{flex:0 0 auto}
+.lowerthird .bar{flex:1}
+.lowerthird .lt-name{font-family:var(--display);font-size:clamp(20px,3vw,30px);color:var(--fg);font-weight:var(--h-wt,500);line-height:1}
+.lowerthird .lt-sub{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-top:7px}
+.lowerthird .lt-tag{margin-left:auto;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim);text-align:right}
+
+/* wordmark renderings */
+.wm-ember{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:.04em;color:var(--fg);line-height:1}
+.wm-ember .s{display:block;font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.5em;color:var(--accent);margin-top:8px}
+.wm-archive{font-family:'Bodoni Moda',serif;font-weight:400;letter-spacing:.02em;color:var(--fg);line-height:.95;text-transform:uppercase}
+.wm-archive .s{display:block;font-family:'Archivo',sans-serif;font-weight:500;letter-spacing:.42em;font-size:.26em;color:var(--accent);margin-top:14px}
+.wm-signal{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.03em;color:var(--fg);line-height:.9;text-transform:lowercase}
+.wm-signal .s{display:block;font-weight:400;letter-spacing:.34em;font-size:.2em;color:var(--accent);margin-top:12px;text-transform:uppercase}
+
+/* THEME: EMBER */
+#ember{--display:'Cormorant Garamond',serif;--display-soft:'Cormorant Garamond',serif;
+  --fg:#f5f0eb;--fg-dim:#8c8279;--accent:#d4a04a;--accent-line:rgba(212,160,74,.4);
+  --line:rgba(245,240,235,.12);--stage:#0a0604;--scrim:#050302;--radius:4px;--rat-style:italic;--rat-wt:500;
+  background:#050302}
+#ember .dir-num{text-shadow:0 0 40px rgba(212,160,74,.5)}
+
+/* THEME: ARCHIVE */
+#archive{--display:'Bodoni Moda',serif;--display-soft:'Bodoni Moda',serif;
+  --fg:#1a1611;--fg-dim:#7d7466;--accent:#6e2318;--accent-line:rgba(110,35,24,.35);
+  --line:rgba(26,22,17,.14);--stage:#efe9dd;--scrim:#1a1611;--radius:2px;--h-wt:400;--num-wt:400;--h-ls:0;
+  background:#f4f1ea;color:#1a1611}
+#archive .kicker{color:var(--accent)}
+#archive .titlecard{--tc-gray:1}
+
+/* THEME: SIGNAL */
+#signal{--display:'Space Grotesk',sans-serif;--display-soft:'Space Grotesk',sans-serif;
+  --fg:#f2f2ef;--fg-dim:#7a7a82;--accent:#ff5e3a;--accent-line:rgba(255,94,58,.4);
+  --line:rgba(242,242,239,.12);--stage:#1c1b21;--scrim:#0e0e12;--radius:14px;--icon-radius:22px;--h-wt:700;--num-wt:700;--h-ls:-.03em;--rat-wt:500;--ink2:#0e0e12;
+  background:#161519}
+#signal .dir-head h2,#signal .voice .big{text-transform:lowercase}
+
+/* ---------- CLOSING / RECOMMENDATION ---------- */
+.closing{padding:clamp(90px,14vh,170px) 0;border-top:1px solid rgba(236,230,223,.07)}
+.closing h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,6vw,64px);line-height:1.02;max-width:16ch}
+.closing h2 em{font-style:italic;color:var(--gold)}
+.cmp{width:100%;border-collapse:collapse;margin-top:56px;font-size:14px}
+.cmp th,.cmp td{text-align:left;padding:18px 16px;border-bottom:1px solid rgba(236,230,223,.1);vertical-align:top}
+.cmp thead th{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--chrome-dim);font-weight:500}
+.cmp tbody th{font-weight:400;color:var(--chrome-dim);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.cmp .cn{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--chrome-text)}
+.cmp .cn .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px}
+.cmp td{color:#d2cbc1;font-weight:300}
+@media(max-width:760px){.cmp{font-size:12px}.cmp th,.cmp td{padding:12px 8px}}
+.rec{margin-top:70px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;background:#100d0b;border:1px solid rgba(212,160,74,.2);border-radius:6px;padding:clamp(34px,5vw,56px)}
+@media(max-width:680px){.rec{grid-template-columns:1fr;gap:22px}}
+.rec .badge{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);writing-mode:vertical-rl;transform:rotate(180deg)}
+@media(max-width:680px){.rec .badge{writing-mode:horizontal-tb;transform:none}}
+.rec h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(24px,3.5vw,38px);line-height:1.1;color:var(--chrome-text)}
+.rec h3 em{font-style:italic;color:var(--gold)}
+.rec p{font-weight:300;font-size:16px;line-height:1.75;color:#cabfb2;margin-top:18px;max-width:62ch}
+.next{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:680px){.next{grid-template-columns:1fr}}
+.next .step{border-top:1px solid rgba(236,230,223,.14);padding-top:18px}
+.next .step .n{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold)}
+.next .step p{font-weight:300;font-size:14px;color:#cabfb2;margin-top:8px;line-height:1.6}
+.foot{margin-top:80px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--chrome-dim);padding-top:30px;border-top:1px solid rgba(236,230,223,.1)}
+.foot a{color:var(--gold);text-decoration:none}
+
+/* section heading shared */
+.sec-eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--chrome-dim);margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="topnav" id="topnav" aria-label="Deck navigation">
+  <div class="nm">Incandescent <span>·</span> Brand</div>
+  <ul>
+    <li><a href="#brief">Brief</a></li>
+    <li><a href="#ember">01 Ember</a></li>
+    <li><a href="#archive">02 Archive</a></li>
+    <li><a href="#signal">03 Signal</a></li>
+    <li><a href="#recommendation">Recommendation</a></li>
+  </ul>
+</nav>
+
+<!-- ============ COVER ============ -->
+<section class="cover" id="top">
+  <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="orb" aria-hidden="true"></div>
+  <div class="cover-inner">
+    <div class="eyebrow">Incandescent Studios — Confidential</div>
+    <h1>Brand<br><em>Exploration</em></h1>
+    <p class="sub">One company. Three identities to react to. Same name, same stories that glow — three different ways of carrying them into the world.</p>
+    <div class="triplet">
+      <a href="#ember"><span class="dot" style="background:#d4a04a"></span>01 · Ember</a>
+      <a href="#archive"><span class="dot" style="background:#6e2318"></span>02 · Archive</a>
+      <a href="#signal"><span class="dot" style="background:#ff5e3a"></span>03 · Signal</a>
+    </div>
+  </div>
+  <div class="meta">
+    <span>New York, NY</span>
+    <span>Prepared for the Founders</span>
+    <span>Est. 2026</span>
+  </div>
+  <div class="scrollcue">Scroll ↓</div>
+</section>
+
+<!-- ============ BRIEF ============ -->
+<section class="brief" id="brief">
+  <div class="wrap">
+    <div class="kicker reveal">The Brief</div>
+    <h2 class="reveal d1">You already have equity. What you don't have yet is a system.</h2>
+    <p class="lead reveal d2">Incandescent has a name that does real work — light, warmth, the filament in the dark — plus a tagline worth keeping in <em>"Stories that glow,"</em> a documentary pedigree (Netflix, History, Discovery), and a website that already leans warm and cinematic. What's missing is a defined brand: a logo that isn't a stock bulb, a codified palette and type system, and a voice that travels from a pitch deck to a title card to a social avatar. These three directions each take a clear position on how to do that.</p>
+    <div class="split">
+      <div class="constant reveal d1">
+        <h3>What stays constant</h3>
+        <ul>
+          <li><span class="mk">→</span><span><b>The name & "Stories that glow."</b> The metaphor of incandescence is the strategic core. We don't touch it.</span></li>
+          <li><span class="mk">→</span><span><b>Documentary prestige.</b> Emmy-winning, premium, historical. Never cheap, never loud for its own sake.</span></li>
+          <li><span class="mk">→</span><span><b>The work leads.</b> Whatever the system, the films are the hero. Brand frames them, never competes.</span></li>
+        </ul>
+      </div>
+      <div class="inplay reveal d2">
+        <h3>What's in play</h3>
+        <ul>
+          <li><span class="mk">→</span><span><b>The logomark.</b> A real, ownable symbol — not a literal lightbulb.</span></li>
+          <li><span class="mk">→</span><span><b>Color & typography.</b> A defined palette with hex values and a paired type system.</span></li>
+          <li><span class="mk">→</span><span><b>Voice & register.</b> How formal, how warm, how modern.</span></li>
+          <li><span class="mk">→</span><span><b>Where it lives.</b> Title cards, lower-thirds, cards, decks, social.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 · EMBER ============ -->
+<section class="dir" id="ember">
+  <div class="wrap">
+    <div class="dir-head reveal">
+      <div class="dir-num">01</div>
+      <div class="ht">
+        <div class="kicker">Direction One</div>
+        <h2>Ember</h2>
+        <p class="pos">Their current world, brought to maturity. Cinematic prestige and the warm glow of a filament against the dark — refined into a real system.</p>
+        <div class="tags"><span>Warm</span><span>Cinematic</span><span>Heritage-luxury</span><span>Evolution, not reinvention</span></div>
+      </div>
+    </div>
+
+    <div class="board">
+      <!-- LOGO -->
+      <div class="reveal">
+        <div class="blk-label">Logo System</div>
+        <div class="logo-stage">
+          <svg width="150" height="150" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><radialGradient id="emGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/>
+            </radialGradient></defs>
+            <circle cx="60" cy="60" r="58" fill="url(#emGlow)"/>
+            <circle cx="60" cy="60" r="29" fill="none" stroke="#d4a04a" stroke-opacity=".55" stroke-width="1.2"/>
+            <path d="M44,62 L52,47 L57,64 L64,45 L72,62" fill="none" stroke="#f6e3b8" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="60" cy="60" r="11" fill="#f7e6bd"/>
+          </svg>
+          <div class="wm-ember" style="font-size:clamp(36px,6vw,64px)">INCANDESCENT<span class="s" style="font-size:.32em">STUDIOS</span></div>
+        </div>
+        <div class="logo-grid">
+          <div class="logo-cell">
+            <svg width="58" height="58" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG2)"/><circle cx="60" cy="60" r="29" fill="none" stroke="#d4a04a" stroke-opacity=".55" stroke-width="1.2"/><path d="M44,62 L52,47 L57,64 L64,45 L72,62" fill="none" stroke="#f6e3b8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
+            <div class="clab">The Mark · "Ember"</div>
+          </div>
+          <div class="logo-cell">
+            <div class="wm-ember" style="font-size:24px">INCANDESCENT<span class="s" style="font-size:.34em">STUDIOS</span></div>
+            <div class="clab">Stacked Wordmark</div>
+          </div>
+          <div class="logo-cell inv">
+            <div class="wm-ember" style="font-size:24px;--fg:#050302;--accent:#050302">INCANDESCENT<span class="s" style="font-size:.34em">STUDIOS</span></div>
+            <div class="clab">Reversed / Mono</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RATIONALE -->
+      <div class="reveal">
+        <div class="blk-label">Rationale</div>
+        <div class="rationale-grid">
+          <div class="rationale">The filament made abstract — a glow, not a gadget.</div>
+          <p>The mark reads as a point of light before it reads as anything literal: a glowing core, a faint ring, the suggestion of a filament. It survives at favicon size and on a 40-foot screen. Cormorant Garamond carries the prestige of an end-title; Jost keeps the interface quiet and modern. This is the direction that protects everything the founders have already built — it deepens the current site rather than replacing it.</p>
+        </div>
+      </div>
+
+      <!-- COLOR -->
+      <div class="reveal">
+        <div class="blk-label">Color System</div>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#050302"></div><div class="info"><div class="nm">Obsidian</div><div class="hx">#050302</div><div class="use">Primary ground</div></div></div>
+          <div class="sw"><div class="chip" style="background:#0a0604"></div><div class="info"><div class="nm">Panel</div><div class="hx">#0A0604</div><div class="use">Cards, surfaces</div></div></div>
+          <div class="sw"><div class="chip" style="background:#d4a04a"></div><div class="info"><div class="nm">Filament Gold</div><div class="hx">#D4A04A</div><div class="use">Primary accent</div></div></div>
+          <div class="sw"><div class="chip" style="background:#9c3e10"></div><div class="info"><div class="nm">Ember</div><div class="hx">#9C3E10</div><div class="use">Deep accent</div></div></div>
+          <div class="sw"><div class="chip" style="background:#f5f0eb"></div><div class="info"><div class="nm">Warm White</div><div class="hx">#F5F0EB</div><div class="use">Type on dark</div></div></div>
+        </div>
+      </div>
+
+      <!-- TYPE -->
+      <div class="reveal">
+        <div class="blk-label">Typography</div>
+        <div class="type-grid">
+          <div class="type-card">
+            <div class="aa" style="font-family:'Cormorant Garamond',serif;font-weight:600">Aa</div>
+            <div class="meta"><div class="fam">Cormorant Garamond</div><div class="role">Display · Serif</div></div>
+            <div class="scale" style="font-family:'Cormorant Garamond',serif">
+              <span style="font-size:30px;font-weight:600">The Titans That Built America</span>
+              <span style="font-size:22px;font-weight:400;font-style:italic">Stories that glow.</span>
+              <span style="font-size:16px;font-weight:400;opacity:.7">Concept through final master.</span>
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="aa" style="font-family:'Jost',sans-serif;font-weight:500">Aa</div>
+            <div class="meta"><div class="fam">Jost</div><div class="role">Interface · Sans</div></div>
+            <div class="scale" style="font-family:'Jost',sans-serif">
+              <span style="font-size:14px;font-weight:500;letter-spacing:.24em">DEVELOPMENT · PRODUCTION · DELIVERY</span>
+              <span style="font-size:16px;font-weight:300">A full-service production company.</span>
+              <span style="font-size:12px;font-weight:400;letter-spacing:.18em;opacity:.7">NEW YORK, NY — EST. 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOICE -->
+      <div class="reveal">
+        <div class="blk-label">Voice</div>
+        <div class="voice">
+          <div class="big" style="font-style:italic">"Stories that <span class="ac">glow</span>."</div>
+          <div class="lines">
+            <div><b>Register</b>Assured, literary, unhurried. Speaks the way a great end-title card reads.</div>
+            <div><b>Says</b>"We craft cinematic narratives that leave a lasting mark."</div>
+            <div><b>Never</b>Salesy, breathless, or trend-chasing. The prestige is in the restraint.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLICATIONS -->
+      <div class="reveal">
+        <div class="blk-label">Applications</div>
+        <div class="apps">
+          <div class="app">
+            <div class="cap">Title Card</div>
+            <div class="titlecard">
+              <img src="../images/sitting-bull.jpg" alt="">
+              <div class="scrim"></div>
+              <div class="tc-body">
+                <div class="tc-meta"><span>History</span>·<span>2025</span></div>
+                <div class="tc-rule"></div>
+                <div class="tc-title" style="font-family:'Cormorant Garamond',serif;font-weight:600">Sitting Bull</div>
+              </div>
+            </div>
+          </div>
+          <div class="app-col">
+            <div class="bizcard app">
+              <div class="cap">Card</div>
+              <div class="top">
+                <svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG3)"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
+                <div class="wm-ember" style="font-size:15px">INCANDESCENT</div>
+              </div>
+              <div class="who">
+                <div class="n">Lorenzo De Boni</div>
+                <div class="r">Founder</div>
+                <div class="c">hello@incandescent.tv</div>
+              </div>
+            </div>
+            <div class="iconrow app">
+              <div class="cap">Avatar</div>
+              <div class="appicon">
+                <svg width="54" height="54" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG4" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="34%" stop-color="#9c3e10" stop-opacity=".5"/><stop offset="100%" stop-color="#9c3e10" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG4)"/><path d="M44,62 L52,47 L57,64 L64,45 L72,62" fill="none" stroke="#050302" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="10" fill="#050302"/></svg>
+              </div>
+              <div class="ix"><b>App / Social</b>Glow on gold, 1:1</div>
+            </div>
+          </div>
+          <div class="lowerthird">
+            <div class="lt-mark">
+              <svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG5)"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
+            </div>
+            <div class="bar">
+              <div class="lt-name" style="font-family:'Cormorant Garamond',serif;font-weight:600">Lorenzo De Boni</div>
+              <div class="lt-sub">Founder · Incandescent Studios</div>
+            </div>
+            <div class="lt-tag">Broadcast<br>Lower-Third</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · ARCHIVE ============ -->
+<section class="dir" id="archive">
+  <div class="wrap">
+    <div class="dir-head reveal">
+      <div class="dir-num">02</div>
+      <div class="ht">
+        <div class="kicker">Direction Two</div>
+        <h2>Archive</h2>
+        <p class="pos">History, made cinematic. An editorial, letterpress sensibility — the authority of the printed record meeting the patience of the documentary frame.</p>
+        <div class="tags"><span>Editorial</span><span>Authoritative</span><span>Print-rooted</span><span>Light, not dark</span></div>
+      </div>
+    </div>
+
+    <div class="board">
+      <!-- LOGO -->
+      <div class="reveal">
+        <div class="blk-label">Logo System</div>
+        <div class="logo-stage">
+          <!-- registration-frame monogram -->
+          <svg width="132" height="132" viewBox="0 0 120 120" aria-hidden="true">
+            <g stroke="#6e2318" stroke-width="2" fill="none" stroke-linecap="square">
+              <path d="M10,28 V10 H28"/><path d="M92,10 H110 V28"/><path d="M110,92 V110 H92"/><path d="M28,110 H10 V92"/>
+            </g>
+            <text x="60" y="78" text-anchor="middle" font-family="'Bodoni Moda',serif" font-weight="900" font-size="62" fill="#1a1611">I</text>
+          </svg>
+          <div class="wm-archive" style="font-size:clamp(34px,6vw,58px)">Incandescent<span class="s">Studios · New York</span></div>
+        </div>
+        <div class="logo-grid">
+          <div class="logo-cell">
+            <svg width="60" height="60" viewBox="0 0 120 120" aria-hidden="true"><g stroke="#6e2318" stroke-width="2.4" fill="none" stroke-linecap="square"><path d="M10,28 V10 H28"/><path d="M92,10 H110 V28"/><path d="M110,92 V110 H92"/><path d="M28,110 H10 V92"/></g><text x="60" y="80" text-anchor="middle" font-family="'Bodoni Moda',serif" font-weight="900" font-size="64" fill="#1a1611">I</text></svg>
+            <div class="clab">The Mark · "Registration"</div>
+          </div>
+          <div class="logo-cell">
+            <div class="wm-archive" style="font-size:26px">IS</div>
+            <div class="clab">Monogram</div>
+          </div>
+          <div class="logo-cell inv">
+            <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true"><g stroke="#f4f1ea" stroke-width="2.6" fill="none" stroke-linecap="square"><path d="M10,28 V10 H28"/><path d="M92,10 H110 V28"/><path d="M110,92 V110 H92"/><path d="M28,110 H10 V92"/></g><text x="60" y="80" text-anchor="middle" font-family="'Bodoni Moda',serif" font-weight="900" font-size="64" fill="#f4f1ea">I</text></svg>
+            <div class="clab">Reversed / Mono</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RATIONALE -->
+      <div class="reveal">
+        <div class="blk-label">Rationale</div>
+        <div class="rationale-grid">
+          <div class="rationale">The cinematic frame, drawn as a colophon.</div>
+          <p>The mark borrows from two archives at once: the registration corners of a film frame and the crop marks of a printed page. A high-contrast Bodoni "I" sits inside them like a dropped capital in a first edition. On bone-white paper with oxblood and ink, the company reads less like a startup and more like an institution — exactly right for historical subjects (Sitting Bull, the Revolution, the Titans). Archivo keeps captions and credits clean and contemporary.</p>
+        </div>
+      </div>
+
+      <!-- COLOR -->
+      <div class="reveal">
+        <div class="blk-label">Color System</div>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#f4f1ea"></div><div class="info"><div class="nm">Bone</div><div class="hx">#F4F1EA</div><div class="use">Primary ground</div></div></div>
+          <div class="sw"><div class="chip" style="background:#e3dccd"></div><div class="info"><div class="nm">Manila</div><div class="hx">#E3DCCD</div><div class="use">Panels, rules</div></div></div>
+          <div class="sw"><div class="chip" style="background:#1a1611"></div><div class="info"><div class="nm">Ink</div><div class="hx">#1A1611</div><div class="use">Primary type</div></div></div>
+          <div class="sw"><div class="chip" style="background:#6e2318"></div><div class="info"><div class="nm">Oxblood</div><div class="hx">#6E2318</div><div class="use">Sole accent</div></div></div>
+          <div class="sw"><div class="chip" style="background:#8a6b3f"></div><div class="info"><div class="nm">Sepia</div><div class="hx">#8A6B3F</div><div class="use">Archival tint</div></div></div>
+        </div>
+      </div>
+
+      <!-- TYPE -->
+      <div class="reveal">
+        <div class="blk-label">Typography</div>
+        <div class="type-grid">
+          <div class="type-card">
+            <div class="aa" style="font-family:'Bodoni Moda',serif;font-weight:900">Aa</div>
+            <div class="meta"><div class="fam">Bodoni Moda</div><div class="role">Display · Didone</div></div>
+            <div class="scale" style="font-family:'Bodoni Moda',serif">
+              <span style="font-size:30px;font-weight:400">The Titans That Built America</span>
+              <span style="font-size:22px;font-weight:400;font-style:italic">A lasting mark.</span>
+              <span style="font-size:16px;font-weight:500;opacity:.75">Premium documentary, since the record began.</span>
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="aa" style="font-family:'Archivo',sans-serif;font-weight:700">Aa</div>
+            <div class="meta"><div class="fam">Archivo</div><div class="role">Text · Grotesque</div></div>
+            <div class="scale" style="font-family:'Archivo',sans-serif">
+              <span style="font-size:13px;font-weight:600;letter-spacing:.24em">DEVELOPMENT — PRODUCTION — DELIVERY</span>
+              <span style="font-size:16px;font-weight:400">Concept through final master.</span>
+              <span style="font-size:12px;font-weight:500;letter-spacing:.16em;opacity:.7">FILE — INC / 2026 / NY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOICE -->
+      <div class="reveal">
+        <div class="blk-label">Voice</div>
+        <div class="voice">
+          <div class="big">The past, in <span class="ac">full light</span>.</div>
+          <div class="lines">
+            <div><b>Register</b>Considered, exact, on the record. The confidence of a primary source.</div>
+            <div><b>Says</b>"The definitive account, produced for the screen."</div>
+            <div><b>Never</b>Sentimental or vague. History earns its drama through precision.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLICATIONS -->
+      <div class="reveal">
+        <div class="blk-label">Applications</div>
+        <div class="apps">
+          <div class="app">
+            <div class="cap">Title Card</div>
+            <div class="titlecard">
+              <img src="../images/titans-built-america.jpg" alt="">
+              <div class="scrim"></div>
+              <div class="tc-body">
+                <div class="tc-meta"><span>History</span>·<span>Mini-Series</span></div>
+                <div class="tc-rule"></div>
+                <div class="tc-title" style="font-family:'Bodoni Moda',serif;font-weight:400">The Titans That<br>Built America</div>
+              </div>
+            </div>
+          </div>
+          <div class="app-col">
+            <div class="bizcard app" style="background:#f4f1ea">
+              <div class="cap" style="color:#7d7466">Card</div>
+              <div class="top">
+                <svg width="32" height="32" viewBox="0 0 120 120" aria-hidden="true"><g stroke="#6e2318" stroke-width="3" fill="none" stroke-linecap="square"><path d="M10,28 V10 H28"/><path d="M92,10 H110 V28"/><path d="M110,92 V110 H92"/><path d="M28,110 H10 V92"/></g><text x="60" y="82" text-anchor="middle" font-family="'Bodoni Moda',serif" font-weight="900" font-size="66" fill="#1a1611">I</text></svg>
+                <div class="wm-archive" style="font-size:15px;--fg:#1a1611">Incandescent</div>
+              </div>
+              <div class="who">
+                <div class="n">Tim Kelly</div>
+                <div class="r">Founder</div>
+                <div class="c">hello@incandescent.tv</div>
+              </div>
+            </div>
+            <div class="iconrow app" style="background:#1a1611">
+              <div class="cap">Avatar</div>
+              <div class="appicon" style="background:#f4f1ea">
+                <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true"><g stroke="#6e2318" stroke-width="3" fill="none" stroke-linecap="square"><path d="M10,28 V10 H28"/><path d="M92,10 H110 V28"/><path d="M110,92 V110 H92"/><path d="M28,110 H10 V92"/></g><text x="60" y="82" text-anchor="middle" font-family="'Bodoni Moda',serif" font-weight="900" font-size="66" fill="#1a1611">I</text></svg>
+              </div>
+              <div class="ix" style="color:#a99f8e"><b style="color:#f4f1ea">App / Social</b>Ink on bone, 1:1</div>
+            </div>
+          </div>
+          <div class="lowerthird" style="background:#f4f1ea">
+            <div class="lt-mark">
+              <svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><g stroke="#6e2318" stroke-width="3" fill="none" stroke-linecap="square"><path d="M10,28 V10 H28"/><path d="M92,10 H110 V28"/><path d="M110,92 V110 H92"/><path d="M28,110 H10 V92"/></g><text x="60" y="82" text-anchor="middle" font-family="'Bodoni Moda',serif" font-weight="900" font-size="66" fill="#1a1611">I</text></svg>
+            </div>
+            <div class="bar">
+              <div class="lt-name" style="font-family:'Bodoni Moda',serif;font-weight:400">Jonathan Soule</div>
+              <div class="lt-sub">Founder · Incandescent Studios</div>
+            </div>
+            <div class="lt-tag" style="color:#7d7466">Broadcast<br>Lower-Third</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · SIGNAL ============ -->
+<section class="dir" id="signal">
+  <div class="wrap">
+    <div class="dir-head reveal">
+      <div class="dir-num">03</div>
+      <div class="ht">
+        <div class="kicker">Direction Three</div>
+        <h2>Signal</h2>
+        <p class="pos">Built for the streamer era. Bold, confident, broadcast-native — incandescence as a radiating signal rather than a quiet glow. Made to thrive at thumbnail scale.</p>
+        <div class="tags"><span>Modern</span><span>Bold</span><span>Digital-first</span><span>Thumbnail-proof</span></div>
+      </div>
+    </div>
+
+    <div class="board">
+      <!-- LOGO -->
+      <div class="reveal">
+        <div class="blk-label">Logo System</div>
+        <div class="logo-stage">
+          <svg width="140" height="140" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="#ff5e3a" stroke-width="3" stroke-opacity=".22"/>
+            <circle cx="60" cy="60" r="37" fill="none" stroke="#ff5e3a" stroke-width="3.4" stroke-opacity=".48"/>
+            <circle cx="60" cy="60" r="22" fill="none" stroke="#ff5e3a" stroke-width="3.8" stroke-opacity=".8"/>
+            <circle cx="60" cy="60" r="7" fill="#ff5e3a"/>
+          </svg>
+          <div class="wm-signal" style="font-size:clamp(38px,7vw,72px)">incandescent<span class="s">Studios</span></div>
+        </div>
+        <div class="logo-grid">
+          <div class="logo-cell">
+            <svg width="58" height="58" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="#ff5e3a" stroke-width="4" stroke-opacity=".22"/><circle cx="60" cy="60" r="37" fill="none" stroke="#ff5e3a" stroke-width="4.4" stroke-opacity=".48"/><circle cx="60" cy="60" r="22" fill="none" stroke="#ff5e3a" stroke-width="4.8" stroke-opacity=".8"/><circle cx="60" cy="60" r="8" fill="#ff5e3a"/></svg>
+            <div class="clab">The Mark · "Signal"</div>
+          </div>
+          <div class="logo-cell">
+            <div class="wm-signal" style="font-size:30px">i.</div>
+            <div class="clab">Monogram</div>
+          </div>
+          <div class="logo-cell inv">
+            <div class="wm-signal" style="font-size:22px;--fg:#161519;--accent:#161519">incandescent<span class="s">Studios</span></div>
+            <div class="clab">Reversed / Mono</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RATIONALE -->
+      <div class="reveal">
+        <div class="blk-label">Rationale</div>
+        <div class="rationale-grid">
+          <div class="rationale">Incandescence as a broadcast — light that travels.</div>
+          <p>Concentric rings radiating from a hot core read three ways at once: a glow, a broadcast signal, and a play-button's pulse. It's the most digitally durable of the three — unmistakable at 32px, animatable for stings and idents, and instantly legible as a thumbnail or app tile. Space Grotesk's tight, lowercase wordmark feels current next to Netflix and A24 without chasing either. This is the direction that wins on a phone.</p>
+        </div>
+      </div>
+
+      <!-- COLOR -->
+      <div class="reveal">
+        <div class="blk-label">Color System</div>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#161519"></div><div class="info"><div class="nm">Carbon</div><div class="hx">#161519</div><div class="use">Primary ground</div></div></div>
+          <div class="sw"><div class="chip" style="background:#1c1b21"></div><div class="info"><div class="nm">Slate</div><div class="hx">#1C1B21</div><div class="use">Cards, tiles</div></div></div>
+          <div class="sw"><div class="chip" style="background:#ff5e3a"></div><div class="info"><div class="nm">Signal</div><div class="hx">#FF5E3A</div><div class="use">Primary accent</div></div></div>
+          <div class="sw"><div class="chip" style="background:#ffb347"></div><div class="info"><div class="nm">Flare</div><div class="hx">#FFB347</div><div class="use">Secondary / hot</div></div></div>
+          <div class="sw"><div class="chip" style="background:#f2f2ef"></div><div class="info"><div class="nm">Off-White</div><div class="hx">#F2F2EF</div><div class="use">Type on dark</div></div></div>
+        </div>
+      </div>
+
+      <!-- TYPE -->
+      <div class="reveal">
+        <div class="blk-label">Typography</div>
+        <div class="type-grid">
+          <div class="type-card">
+            <div class="aa" style="font-family:'Space Grotesk',sans-serif;font-weight:700">Aa</div>
+            <div class="meta"><div class="fam">Space Grotesk</div><div class="role">Display + Text</div></div>
+            <div class="scale" style="font-family:'Space Grotesk',sans-serif">
+              <span style="font-size:30px;font-weight:700;letter-spacing:-.02em">Wyatt Earp &amp; the Cowboy War</span>
+              <span style="font-size:20px;font-weight:500">Press play on history.</span>
+              <span style="font-size:13px;font-weight:400;letter-spacing:.2em;opacity:.7">NETFLIX · 6 EPISODES · 2024</span>
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="aa" style="font-family:'Space Grotesk',sans-serif;font-weight:300">Aa</div>
+            <div class="meta"><div class="fam">Space Grotesk Light</div><div class="role">UI · Captions</div></div>
+            <div class="scale" style="font-family:'Space Grotesk',sans-serif">
+              <span style="font-size:15px;font-weight:400">A single, confident voice across weights.</span>
+              <span style="font-size:14px;font-weight:300">One typeface. Display, body, and interface.</span>
+              <span style="font-size:12px;font-weight:500;letter-spacing:.16em;opacity:.7">NEW YORK — STREAMING EVERYWHERE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOICE -->
+      <div class="reveal">
+        <div class="blk-label">Voice</div>
+        <div class="voice">
+          <div class="big">stories worth <span class="ac">the watch</span>.</div>
+          <div class="lines">
+            <div><b>Register</b>Direct, current, a little electric. Talks to audiences, not just buyers.</div>
+            <div><b>Says</b>"Premium nonfiction that plays like prestige drama."</div>
+            <div><b>Never</b>Stuffy or archival for its own sake. The history is alive.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLICATIONS -->
+      <div class="reveal">
+        <div class="blk-label">Applications</div>
+        <div class="apps">
+          <div class="app">
+            <div class="cap">Thumbnail / Title</div>
+            <div class="titlecard">
+              <img src="../images/wyatt-earp.jpg" alt="">
+              <div class="scrim"></div>
+              <div class="tc-body">
+                <div class="tc-meta"><span>Netflix</span>·<span>2024</span></div>
+                <div class="tc-rule"></div>
+                <div class="tc-title" style="font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em">Wyatt Earp &amp;<br>the Cowboy War</div>
+              </div>
+            </div>
+          </div>
+          <div class="app-col">
+            <div class="bizcard app">
+              <div class="cap">Card</div>
+              <div class="top">
+                <svg width="32" height="32" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#ff5e3a" stroke-width="6" stroke-opacity=".45"/><circle cx="60" cy="60" r="28" fill="none" stroke="#ff5e3a" stroke-width="7" stroke-opacity=".85"/><circle cx="60" cy="60" r="9" fill="#ff5e3a"/></svg>
+                <div class="wm-signal" style="font-size:15px">incandescent</div>
+              </div>
+              <div class="who">
+                <div class="n" style="text-transform:none">Lorenzo De Boni</div>
+                <div class="r">Founder</div>
+                <div class="c">hello@incandescent.tv</div>
+              </div>
+            </div>
+            <div class="iconrow app">
+              <div class="cap">App Tile</div>
+              <div class="appicon" style="background:#161519;border:1px solid rgba(255,94,58,.3)">
+                <svg width="52" height="52" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#ff5e3a" stroke-width="5" stroke-opacity=".3"/><circle cx="60" cy="60" r="33" fill="none" stroke="#ff5e3a" stroke-width="6" stroke-opacity=".6"/><circle cx="60" cy="60" r="16" fill="none" stroke="#ff5e3a" stroke-width="7"/><circle cx="60" cy="60" r="6" fill="#ff5e3a"/></svg>
+              </div>
+              <div class="ix"><b>App / Social</b>Signal on carbon</div>
+            </div>
+          </div>
+          <div class="lowerthird">
+            <div class="lt-mark">
+              <svg width="38" height="38" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#ff5e3a" stroke-width="6" stroke-opacity=".45"/><circle cx="60" cy="60" r="28" fill="none" stroke="#ff5e3a" stroke-width="7" stroke-opacity=".85"/><circle cx="60" cy="60" r="9" fill="#ff5e3a"/></svg>
+            </div>
+            <div class="bar">
+              <div class="lt-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;text-transform:none">Lorenzo De Boni</div>
+              <div class="lt-sub">Founder · Incandescent Studios</div>
+            </div>
+            <div class="lt-tag">Broadcast<br>Lower-Third</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECOMMENDATION ============ -->
+<section class="closing" id="recommendation">
+  <div class="wrap">
+    <div class="kicker reveal">Where we'd land</div>
+    <h2 class="reveal d1">Three honest options — and a <em>recommendation</em>.</h2>
+
+    <table class="cmp reveal d2">
+      <thead>
+        <tr><th>Direction</th><th>Feels like</th><th>Strongest for</th><th>Trade-off</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><span class="cn"><span class="dot" style="background:#d4a04a"></span>Ember</span></th>
+          <td>A prestige end-title</td>
+          <td>Buyers, networks, the deck. Protects existing equity.</td>
+          <td>Safe — it evolves rather than surprises.</td>
+        </tr>
+        <tr>
+          <th><span class="cn"><span class="dot" style="background:#6e2318"></span>Archive</span></th>
+          <td>A first-edition history</td>
+          <td>Authority on historical subjects; print &amp; credits.</td>
+          <td>Light/editorial can read quiet on screen.</td>
+        </tr>
+        <tr>
+          <th><span class="cn"><span class="dot" style="background:#ff5e3a"></span>Signal</span></th>
+          <td>A streamer ident</td>
+          <td>Social, thumbnails, audience-facing, motion.</td>
+          <td>Boldest — furthest from the current site.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rec reveal d2">
+      <div class="badge">Recommendation</div>
+      <div>
+        <h3>Lead with <em>Ember</em> as the house brand — and borrow <em>Signal's</em> ring for everything that lives on a screen.</h3>
+        <p>Ember is the lowest-risk path to a real system: it turns equity you already have into something documented and ownable, and the founders' buyers will read it instantly as premium. But Ember's quiet glow is built for the dark — it can disappear at thumbnail scale. So we'd pair it: Ember sets the master identity (wordmark, palette, decks, title cards), while Signal's radiating mark becomes the motion/social variant — the avatar, the app tile, the animated sting. One warm, literary house; one sharp, broadcast-ready signal flare for the feed. Archive then lives on as an optional sub-treatment for the most historical, print-heavy projects.</p>
+      </div>
+    </div>
+
+    <div class="next reveal d3">
+      <div class="step"><div class="n">01</div><p>Founders pick a lane (or bless the Ember + Signal pairing). Quick gut-check, not a committee.</p></div>
+      <div class="step"><div class="n">02</div><p>We tighten the chosen mark into real vector artwork, lock the type scale, and write the one-page usage rules.</p></div>
+      <div class="step"><div class="n">03</div><p>Roll it onto the live site, exports for title cards &amp; lower-thirds, and an avatar set — then a proper brand sheet.</p></div>
+    </div>
+
+    <div class="foot">
+      <span>Incandescent Studios · Brand Exploration</span>
+      <span>Built with the banana CLI &amp; a little taste</span>
+      <span><a href="../">← Back to incandescent.tv</a></span>
+    </div>
+  </div>
+</section>
+
+<script>
+// scroll reveal
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+if(location.search.indexOf('allin')>-1){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));document.querySelector('.cover').style.minHeight='820px';}
+
+// nav active state + chrome theming on scroll
+const navLinks=[...document.querySelectorAll('.topnav a')];
+const ids=['brief','ember','archive','signal','recommendation'];
+const secs=ids.map(i=>document.getElementById(i));
+const onScroll=()=>{
+  let cur=ids[0];
+  for(const s of secs){if(s&&s.getBoundingClientRect().top<=140)cur=s.id;}
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+};
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
+</body>
+</html>
