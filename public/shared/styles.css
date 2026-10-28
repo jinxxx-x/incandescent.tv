@@ -661,7 +661,7 @@ nav.nav-links-only {
 }
 
 .team-member {
-    text-align: center;
+    text-align: left;
 }
 
 .team-member h3 {
@@ -688,7 +688,7 @@ nav.nav-links-only {
 /* ─── Contact Section ─── */
 
 .contact-section {
-    padding: 8rem 4rem;
+    padding: 6rem 4rem;
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
