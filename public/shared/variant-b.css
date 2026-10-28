@@ -203,3 +203,126 @@
     html[data-brand-variant='b'] .contact-email { color: #bd3f24; font: 600 clamp(2rem, 4.2vw, 5rem)/1 'Space Grotesk', sans-serif; letter-spacing: -.05em; }
     html[data-brand-variant='b'] footer { background: #e9e5dc; color: #625e56; }
 }
+
+@media (max-width: 768px) {
+    html[data-brand-variant='b'] {
+        --bg-base: #080807;
+        --bg-panel: #11110f;
+        --text-main: #f1eee7;
+        --text-dim: #9c978d;
+        --accent-gold: #e14d2a;
+        --line-faint: rgba(241, 238, 231, 0.12);
+        --font-display: 'Archivo', sans-serif;
+        --font-ui: 'Space Grotesk', sans-serif;
+    }
+    html[data-brand-variant='b'] body { background: #080807; }
+    html[data-brand-variant='b'] .frame,
+    html[data-brand-variant='b'] .perimeter-text,
+    html[data-brand-variant='b'] .hero-bg-lines,
+    html[data-brand-variant='b'] .divider,
+    html[data-brand-variant='b'] .cursor-glow { display: none; }
+    html[data-brand-variant='b'] nav.nav-links-only { mix-blend-mode: normal; }
+    html[data-brand-variant='b'] .nav-toggle span { background: #f1eee7; }
+    html[data-brand-variant='b'] .nav-links { background: #080807; }
+
+    html[data-brand-variant='b'] .hero {
+        min-height: calc(100svh - 42px);
+        height: auto;
+        padding: 6.5rem 1.1rem 4.5rem;
+        background: #080807;
+    }
+    html[data-brand-variant='b'] .hero-content { width: 100%; max-width: none; }
+    html[data-brand-variant='b'] .hero-kicker {
+        margin-bottom: 1.5rem;
+        color: #e14d2a;
+        font: 600 0.56rem/1 'Space Grotesk', sans-serif;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+    html[data-brand-variant='b'] .hero .hero-logo-heading {
+        display: flex;
+        width: 100%;
+        margin: 0 0 1.75rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background: none;
+        color: #f1eee7;
+        filter: none;
+        font: 800 clamp(2.75rem, 12vw, 3.65rem)/0.78 'Archivo', sans-serif;
+        letter-spacing: -0.075em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    html[data-brand-variant='b'] .hero-brand-secondary {
+        margin: 0;
+        color: #7f7a70;
+        font: 800 clamp(2.45rem, 10.8vw, 3.35rem)/0.78 'Archivo', sans-serif;
+        letter-spacing: -0.07em;
+    }
+    html[data-brand-variant='b'] .hero p.tagline {
+        max-width: 31ch;
+        color: #aaa399;
+        font: 400 0.82rem/1.55 'Space Grotesk', sans-serif;
+    }
+    html[data-brand-variant='b'] .ambient-glow { display: none; }
+
+    html[data-brand-variant='b'] .editorial-intro {
+        display: block;
+        margin: 0;
+        padding: 4.5rem 1.25rem 5.5rem;
+        border: 0;
+        background: #e9e5dc;
+        color: #0a0908;
+    }
+    html[data-brand-variant='b'] .editorial-intro::before,
+    html[data-brand-variant='b'] .team-section::before,
+    html[data-brand-variant='b'] .contact-section::before { display: none; }
+    html[data-brand-variant='b'] .intro-left { margin-bottom: 2.5rem; }
+    html[data-brand-variant='b'] .meta-text { color: #625e56; font-family: 'Space Grotesk', sans-serif; }
+    html[data-brand-variant='b'] .intro-right p {
+        color: #0a0908;
+        font: 600 clamp(1.8rem, 8vw, 2.6rem)/1.06 'Space Grotesk', sans-serif;
+        letter-spacing: -0.045em;
+    }
+    html[data-brand-variant='b'] .intro-right p em,
+    html[data-brand-variant='b'] .intro-right p span { color: #bd3f24; font-style: normal; }
+
+    html[data-brand-variant='b'] .work-section {
+        margin: 0;
+        padding: 5rem 1.25rem 6rem;
+        background: #080807;
+    }
+    html[data-brand-variant='b'] .section-header { margin-bottom: 2.5rem; padding: 0; border: 0; }
+    html[data-brand-variant='b'] .section-eyebrow { color: #e14d2a; font: 600 0.56rem/1 'Space Grotesk', sans-serif; }
+    html[data-brand-variant='b'] .section-header h2 {
+        color: #f1eee7;
+        font: 700 clamp(2.65rem, 12vw, 4rem)/0.92 'Archivo', sans-serif;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+    }
+    html[data-brand-variant='b'] .grid-container { display: grid; grid-template-columns: 1fr; gap: 1px; background: #36332f; }
+    html[data-brand-variant='b'] .project-card { min-height: 390px; background: #080807; }
+    html[data-brand-variant='b'] .card-image-wrapper,
+    html[data-brand-variant='b'] .card-feature .card-image-wrapper { height: 100%; min-height: 390px; aspect-ratio: 4 / 5; border: 0; }
+    html[data-brand-variant='b'] .card-image-wrapper img { height: 100%; filter: grayscale(1) contrast(1.08) brightness(.8); }
+    html[data-brand-variant='b'] .card-content { padding: 1.4rem; background: linear-gradient(transparent, rgba(0,0,0,.9)); }
+    html[data-brand-variant='b'] .card-title { color: #fff; font: 600 2rem/.95 'Archivo', sans-serif; letter-spacing: -.04em; text-transform: uppercase; transform: none; }
+    html[data-brand-variant='b'] .card-meta,
+    html[data-brand-variant='b'] .card-role { color: #e14d2a; font-family: 'Space Grotesk', sans-serif; }
+
+    html[data-brand-variant='b'] .team-section { margin: 0; padding: 5.5rem 1.25rem; border: 0; background: #d94b2b; color: #0a0908; }
+    html[data-brand-variant='b'] .team-section .section-header { border-bottom: 2px solid #0a0908; }
+    html[data-brand-variant='b'] .team-section h2 { color: #0a0908; font: 800 3.5rem/.9 'Archivo', sans-serif; text-transform: uppercase; }
+    html[data-brand-variant='b'] .team-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+    html[data-brand-variant='b'] .team-member { padding: 2rem 0; border-top: 1px solid rgba(10,9,8,.4); background: transparent; }
+    html[data-brand-variant='b'] .team-member h3 { color: #0a0908; font: 700 2.25rem/.95 'Archivo', sans-serif; letter-spacing: -.05em; text-transform: uppercase; }
+    html[data-brand-variant='b'] .team-member .role,
+    html[data-brand-variant='b'] .team-member p { color: #2a1711; font-family: 'Space Grotesk', sans-serif; }
+
+    html[data-brand-variant='b'] .contact-section { display: grid; margin: 0; padding: 6rem 1.25rem; justify-items: center; border: 0; background: #e9e5dc; text-align: center; }
+    html[data-brand-variant='b'] .contact-section h2 { margin: 0; padding: .1em 0; color: #0a0908; font: 800 clamp(3.2rem, 15vw, 5rem)/.92 'Archivo', sans-serif; letter-spacing: -.055em; text-transform: uppercase; }
+    html[data-brand-variant='b'] .contact-section p { margin: 2rem auto; color: #5b5750; }
+    html[data-brand-variant='b'] .contact-email { color: #bd3f24; font: 600 clamp(1.35rem, 6vw, 2rem)/1 'Space Grotesk', sans-serif; letter-spacing: -.04em; overflow-wrap: anywhere; }
+    html[data-brand-variant='b'] footer { background: #e9e5dc; color: #625e56; }
+}

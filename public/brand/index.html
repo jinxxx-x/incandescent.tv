@@ -29,7 +29,6 @@
 
     html { scroll-behavior: smooth; }
     body {
-      min-width: 1040px;
       overflow-x: hidden;
       background: var(--paper);
       color: var(--ink);
@@ -73,8 +72,6 @@
     }
     .brief {
       max-width: 560px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
     }
     .brief .eyebrow { margin-bottom: 20px; }
     .brief p { color: #514c47; font-size: 17px; line-height: 1.72; }
@@ -342,6 +339,62 @@
       text-transform: uppercase;
     }
     footer a { color: var(--ink); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      :root { --page: calc(100% - 40px); }
+      .cover {
+        min-height: auto;
+        padding: 88px 0 72px;
+      }
+      .cover-grid {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        align-items: start;
+      }
+      .cover h1 { font-size: clamp(56px, 18vw, 76px); }
+      .brief p { font-size: 15px; line-height: 1.65; }
+      .route { padding: 72px 0 80px; }
+      .route-header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+      .route-id { padding-top: 0; }
+      .route-intro h2 { font-size: clamp(43px, 13vw, 58px); }
+      .route-intro { min-width: 0; }
+      .route-intro h2,
+      .route-intro p,
+      .brief p { max-width: 100%; overflow-wrap: anywhere; }
+      .route-intro p { margin-top: 14px; font-size: 14px; }
+      .view-site { margin-top: 0; justify-content: flex-start; }
+      .logo-contexts,
+      .support { grid-template-columns: 1fr; }
+      .logo-contexts { min-height: 0; }
+      .logo-panel { min-height: 275px; padding: 45px 24px 28px; }
+      .logo-panel.light { min-height: 210px; }
+      .application,
+      .system-card { min-height: 330px; }
+      .system-card { padding: 28px 24px; }
+      .current-mark { font-size: clamp(24px, 8vw, 34px); white-space: normal; }
+      .logo-panel.light .current-mark { font-size: 22px; }
+      .maximal-mark .name span { font-size: clamp(48px, 16vw, 68px); }
+      .logo-panel.light .maximal-mark .name span { font-size: 42px; }
+      .signature-mark .name { font-size: clamp(54px, 17vw, 72px); }
+      .logo-panel.light .signature-mark .name { font-size: 43px; }
+      .slate-mark .name { font-size: clamp(45px, 14vw, 62px); }
+      .logo-panel.light .slate-mark .name { font-size: 39px; }
+      .application-wordmark { padding: 28px 24px; }
+      .comparison-app .current-mark { font-size: 20px; }
+      .comparison-app .maximal-mark { width: 100%; }
+      .comparison-app .maximal-mark .name span { font-size: 43px; }
+      .comparison-app .signature-mark .name { font-size: 52px; }
+      .comparison-app .slate-mark .name { font-size: 42px; }
+      footer {
+        padding: 26px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
   <link rel="stylesheet" href="../shared/review-bar.css">
 </head>
@@ -504,6 +557,7 @@
               <div class="system-notes">
                 <div><strong>Wordmark</strong><p>An expressive italic serif paired with a quiet, widely tracked sans serif.</p></div>
                 <div><strong>Character</strong><p>Editorial, cinematic, personal, and deliberately understated.</p></div>
+                <div><strong>Interaction</strong><p>A horizontal, scroll-snapping film rail lets viewers move through the slate one carefully framed story at a time.</p></div>
               </div>
             </div>
             <div>

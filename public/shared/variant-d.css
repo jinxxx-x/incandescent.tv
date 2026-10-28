@@ -425,3 +425,88 @@
     html[data-brand-variant='d'] footer { padding: 2.5rem 4rem; border: 0; background: #080807; }
     html[data-brand-variant='d'] .footer-copy { color: #666159; font-size: 0.5rem; letter-spacing: 0.2em; }
 }
+
+@media (max-width: 768px) {
+    html[data-brand-variant='d'] {
+        --bg-base: #080807;
+        --bg-panel: #11110f;
+        --text-main: #f0eee7;
+        --text-dim: #88847c;
+        --accent-gold: #b99863;
+        --line-faint: rgba(240,238,231,.08);
+        --font-display: 'Cormorant Garamond', serif;
+        --font-ui: 'Jost', sans-serif;
+    }
+    html[data-brand-variant='d'] body { background: #080807; }
+    html[data-brand-variant='d'] .frame,
+    html[data-brand-variant='d'] .perimeter-text,
+    html[data-brand-variant='d'] .hero-bg-lines,
+    html[data-brand-variant='d'] .divider,
+    html[data-brand-variant='d'] .cursor-glow,
+    html[data-brand-variant='d'] .card-system-code { display: none; }
+    html[data-brand-variant='d'] nav.nav-links-only { mix-blend-mode: normal; }
+    html[data-brand-variant='d'] .nav-toggle span { background: #f0eee7; }
+    html[data-brand-variant='d'] .nav-links { background: #080807; }
+
+    html[data-brand-variant='d'] .hero { min-height: calc(100svh - 42px); height: auto; padding: 0; justify-content: stretch; background: #080807; }
+    html[data-brand-variant='d'] .hero::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        inset: 6.5rem 1.25rem 5.5rem 3.5rem;
+        background: linear-gradient(90deg, rgba(8,8,7,.52), transparent 42%), linear-gradient(0deg, rgba(8,8,7,.5), transparent 45%), url('../images/wyatt-earp.jpg') center 42% / cover no-repeat;
+        filter: grayscale(1) contrast(1.12) brightness(.62);
+    }
+    html[data-brand-variant='d'] .hero::after { content: ''; position: absolute; z-index: 2; inset: 6.5rem 1.25rem 5.5rem 3.5rem; box-shadow: inset 0 0 0 1px rgba(240,238,231,.1); }
+    html[data-brand-variant='d'] .hero-content { position: relative; z-index: 3; width: 100%; max-width: none; height: 100%; min-height: calc(100svh - 42px); padding: 0 1.25rem; align-items: stretch; text-align: left; }
+    html[data-brand-variant='d'] .hero-kicker { position: absolute; top: 5rem; left: 1.25rem; width: 9rem; margin: 0; color: #918c83; font: 500 .5rem/1.5 'Jost', sans-serif; font-style: normal; letter-spacing: .22em; text-transform: uppercase; }
+    html[data-brand-variant='d'] .hero .hero-logo-heading { position: absolute; z-index: 4; inset: 0; display: block; width: auto; margin: 0; background: none; color: #f3f0e9; filter: none; font: 500 1rem/1 'Cormorant Garamond', serif; text-transform: uppercase; }
+    html[data-brand-variant='d'] .hero-brand-primary { position: absolute; top: 46%; left: .75rem; display: block; font-size: clamp(3.15rem, 13vw, 4.1rem); letter-spacing: -.068em; line-height: .76; white-space: nowrap; transform: translateY(-50%); }
+    html[data-brand-variant='d'] .hero-brand-secondary { position: absolute; right: 1.25rem; bottom: 4rem; display: block; margin: 0; color: #e9e5dd; font: 500 .55rem/1 'Jost', sans-serif; letter-spacing: .52em; text-transform: uppercase; }
+    html[data-brand-variant='d'] .hero p.tagline { position: absolute; z-index: 5; bottom: 3.75rem; left: 1.25rem; max-width: 18ch; color: #8c877e; font: 300 .72rem/1.55 'Jost', sans-serif; }
+    html[data-brand-variant='d'] .ambient-glow { display: none; }
+
+    html[data-brand-variant='d'] .editorial-intro { display: block; min-height: 0; margin: 0; padding: 1.25rem 1.25rem 5.5rem; border: 0; background: #e5dfd5; color: #11110f; }
+    html[data-brand-variant='d'] .editorial-intro::before,
+    html[data-brand-variant='d'] .team-section::before,
+    html[data-brand-variant='d'] .contact-section::before { display: none; }
+    html[data-brand-variant='d'] .intro-left { min-height: 390px; margin-bottom: 3.5rem; padding: 1.25rem; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(0deg, rgba(8,8,7,.8), transparent 48%), url('../images/sitting-bull.jpg') center 32% / cover no-repeat; }
+    html[data-brand-variant='d'] .intro-left .meta-text { color: rgba(242,239,231,.72); }
+    html[data-brand-variant='d'] .intro-right p { color: #171613; font: 500 2.25rem/1.02 'Cormorant Garamond', serif; letter-spacing: -.038em; }
+    html[data-brand-variant='d'] .intro-right p em { color: #171613; }
+    html[data-brand-variant='d'] .intro-right p span { color: #8f632d; }
+
+    html[data-brand-variant='d'] .work-section { margin: 0; padding: 6rem 1.25rem 7rem; border: 0; background: #080807; }
+    html[data-brand-variant='d'] .section-header { margin-bottom: 3rem; padding: 0; border: 0; }
+    html[data-brand-variant='d'] .section-eyebrow,
+    html[data-brand-variant='d'] .section-meta { color: #817c74; font-size: .5rem; letter-spacing: .22em; }
+    html[data-brand-variant='d'] .section-header h2 { color: #eeeae2; font: 500 3.7rem/.86 'Cormorant Garamond', serif; letter-spacing: -.05em; }
+    html[data-brand-variant='d'] .grid-container { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    html[data-brand-variant='d'] .project-card { padding: 0; border: 0; background: #11110f; }
+    html[data-brand-variant='d'] .card-image-wrapper,
+    html[data-brand-variant='d'] .card-feature .card-image-wrapper { aspect-ratio: 4 / 5; border: 0; }
+    html[data-brand-variant='d'] .card-image-wrapper img { filter: grayscale(1) contrast(1.08) brightness(.65); }
+    html[data-brand-variant='d'] .card-content { padding: 1.35rem; }
+    html[data-brand-variant='d'] .card-title { color: #f1eee7; font: 500 2.1rem/.95 'Cormorant Garamond', serif; letter-spacing: -.035em; transform: none; }
+    html[data-brand-variant='d'] .card-meta,
+    html[data-brand-variant='d'] .card-role { color: #9e978c; font-size: .5rem; }
+
+    html[data-brand-variant='d'] .team-section { display: block; margin: 0; padding: 6rem 1.25rem 7rem; border: 0; background: #41362d; }
+    html[data-brand-variant='d'] .team-section .section-header { margin-bottom: 2.5rem; }
+    html[data-brand-variant='d'] .team-section .section-header h2 { color: #fff5e5; }
+    html[data-brand-variant='d'] .team-grid { display: block; }
+    html[data-brand-variant='d'] .team-member { padding: 2.25rem 0; border-top: 1px solid rgba(255,245,229,.16); }
+    html[data-brand-variant='d'] .team-member h3 { color: #fff5e5; font: 500 2.8rem/.9 'Cormorant Garamond', serif; letter-spacing: -.04em; }
+    html[data-brand-variant='d'] .team-member .role { margin: .75rem 0 1.25rem; color: rgba(255,245,229,.6); }
+    html[data-brand-variant='d'] .team-member p { color: rgba(255,245,229,.72); font-size: .78rem; line-height: 1.7; }
+
+    html[data-brand-variant='d'] .contact-section { min-height: 680px; margin: 0; padding: 5rem 1.25rem; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; overflow: hidden; border: 0; background: #080807; text-align: left; }
+    html[data-brand-variant='d'] .contact-section::after { content: ''; position: absolute; z-index: 0; inset: 0; background: linear-gradient(0deg, rgba(8,8,7,.9), transparent 70%), url('../images/george.jpg') center 32% / cover no-repeat; filter: grayscale(1) contrast(1.05) brightness(.58); }
+    html[data-brand-variant='d'] .contact-section h2,
+    html[data-brand-variant='d'] .contact-section p,
+    html[data-brand-variant='d'] .contact-email { position: relative; z-index: 1; }
+    html[data-brand-variant='d'] .contact-section h2 { max-width: 7ch; margin: 0 0 1.5rem; color: #f2efe8; font: 500 clamp(4.6rem, 22vw, 6.5rem)/.84 'Cormorant Garamond', serif; letter-spacing: -.06em; }
+    html[data-brand-variant='d'] .contact-section p { margin: 0 0 1.75rem; color: #b2ada5; font-size: .8rem; line-height: 1.65; }
+    html[data-brand-variant='d'] .contact-email { color: #dfc08d; font: 500 clamp(1.65rem, 7vw, 2.4rem)/1 'Cormorant Garamond', serif; overflow-wrap: anywhere; }
+    html[data-brand-variant='d'] footer { padding: 2.5rem 1.25rem; border: 0; background: #080807; }
+}

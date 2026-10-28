@@ -75,13 +75,26 @@ body.has-brand-review-bar > .frame-top { top: 44px; }
 body.has-brand-review-bar > .pt-top-left { top: 56px; }
 
 @media (max-width: 768px) {
-    .brand-review-bar { min-height: 42px; padding: 0 12px; }
-    .brand-review-bar nav { gap: 1px; }
+    .brand-review-bar {
+        width: 100vw;
+        max-width: 100vw;
+        min-height: 42px;
+        padding: 0 10px;
+        overflow: hidden;
+    }
+    .brand-review-actions { flex: 1 1 auto; min-width: 0; }
+    .brand-review-bar nav { flex: 0 0 auto; margin-left: auto; gap: 1px; }
     .brand-review-bar nav a { width: 27px; height: 27px; }
     .brand-review-label { display: none; }
     .brand-review-actions { gap: 11px; }
     body.has-brand-review-bar { padding-top: 42px; }
     body.has-brand-review-bar > nav.nav-links-only { top: 42px; }
+    body.has-brand-review-bar > nav.nav-links-only {
+        right: 0;
+        left: 0;
+        width: 100vw;
+        padding: 1.35rem 1.25rem;
+    }
     body.has-brand-review-bar > .frame-top { top: 42px; }
     body.has-brand-review-bar > .pt-top-left { top: 54px; }
     body.has-brand-review-bar > nav.nav-links-only .nav-links {
