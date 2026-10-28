@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseenter', () => {
                 glow.style.width = '700px';
                 glow.style.height = '700px';
-                glow.style.background = 'radial-gradient(circle, rgba(212, 160, 74, 0.12) 0%, transparent 70%)';
+                glow.style.background = 'radial-gradient(circle, rgba(229, 156, 91, 0.24) 0%, transparent 70%)';
             });
             el.addEventListener('mouseleave', () => {
                 glow.style.width = '500px';
                 glow.style.height = '500px';
-                glow.style.background = 'radial-gradient(circle, rgba(212, 160, 74, 0.08) 0%, transparent 70%)';
+                glow.style.background = 'radial-gradient(circle, rgba(229, 156, 91, 0.16) 0%, transparent 70%)';
             });
         });
     }

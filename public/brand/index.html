@@ -14,7 +14,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0a0807; --paper:#0d0b0a; --chrome-text:#ece6df; --chrome-dim:#8a8279;
-  --gold:#d4a04a; --ember:#9c3e10;
+  --gold:#e59c5b; --ember:#9c3e10;
   --oxblood:#6e2318; --signal:#ff5e3a;
   --maxw:1160px;
   --ease:cubic-bezier(.22,1,.36,1);
@@ -54,13 +54,13 @@ section{position:relative}
 .cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
   padding:120px 24px 80px;position:relative;overflow:hidden}
 .cover .rings{position:absolute;top:50%;left:50%;width:140vmin;height:140vmin;transform:translate(-50%,-50%);pointer-events:none;opacity:.5}
-.cover .rings span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(212,160,74,.10);border-radius:50%}
+.cover .rings span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(229, 156, 91,.10);border-radius:50%}
 .cover .rings span:nth-child(1){width:30%;height:30%}
 .cover .rings span:nth-child(2){width:52%;height:52%}
 .cover .rings span:nth-child(3){width:74%;height:74%}
 .cover .rings span:nth-child(4){width:100%;height:100%}
 .cover .orb{position:absolute;top:50%;left:50%;width:42vmin;height:42vmin;transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(circle,rgba(212,160,74,.22),rgba(212,160,74,0) 62%);filter:blur(8px);animation:breathe 7s ease-in-out infinite}
+  background:radial-gradient(circle,rgba(229, 156, 91,.22),rgba(229, 156, 91,0) 62%);filter:blur(8px);animation:breathe 7s ease-in-out infinite}
 @keyframes breathe{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
 .cover-inner{position:relative;z-index:2}
 .cover .eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--chrome-dim);margin-bottom:34px}
@@ -196,10 +196,10 @@ section{position:relative}
 
 /* THEME: EMBER */
 #ember{--display:'Cormorant Garamond',serif;--display-soft:'Cormorant Garamond',serif;
-  --fg:#f5f0eb;--fg-dim:#8c8279;--accent:#d4a04a;--accent-line:rgba(212,160,74,.4);
+  --fg:#f5f0eb;--fg-dim:#8c8279;--accent:#e59c5b;--accent-line:rgba(229, 156, 91,.4);
   --line:rgba(245,240,235,.12);--stage:#0a0604;--scrim:#050302;--radius:4px;--rat-style:italic;--rat-wt:500;
   background:#050302}
-#ember .dir-num{text-shadow:0 0 40px rgba(212,160,74,.5)}
+#ember .dir-num{text-shadow:0 0 40px rgba(229, 156, 91,.5)}
 
 /* THEME: ARCHIVE */
 #archive{--display:'Bodoni Moda',serif;--display-soft:'Bodoni Moda',serif;
@@ -228,7 +228,7 @@ section{position:relative}
 .cmp .cn .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px}
 .cmp td{color:#d2cbc1;font-weight:300}
 @media(max-width:760px){.cmp{font-size:12px}.cmp th,.cmp td{padding:12px 8px}}
-.rec{margin-top:70px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;background:#100d0b;border:1px solid rgba(212,160,74,.2);border-radius:6px;padding:clamp(34px,5vw,56px)}
+.rec{margin-top:70px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;background:#100d0b;border:1px solid rgba(229, 156, 91,.2);border-radius:6px;padding:clamp(34px,5vw,56px)}
 @media(max-width:680px){.rec{grid-template-columns:1fr;gap:22px}}
 .rec .badge{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);writing-mode:vertical-rl;transform:rotate(180deg)}
 @media(max-width:680px){.rec .badge{writing-mode:horizontal-tb;transform:none}}
@@ -270,7 +270,7 @@ section{position:relative}
     <h1>Brand<br><em>Exploration</em></h1>
     <p class="sub">One company. Three identities to react to. Same name, same stories that glow — three different ways of carrying them into the world.</p>
     <div class="triplet">
-      <a href="#ember"><span class="dot" style="background:#d4a04a"></span>01 · Ember</a>
+      <a href="#ember"><span class="dot" style="background:#e59c5b"></span>01 · Ember</a>
       <a href="#archive"><span class="dot" style="background:#6e2318"></span>02 · Archive</a>
       <a href="#signal"><span class="dot" style="background:#ff5e3a"></span>03 · Signal</a>
     </div>
@@ -331,10 +331,10 @@ section{position:relative}
         <div class="logo-stage">
           <svg width="150" height="150" viewBox="0 0 120 120" aria-hidden="true">
             <defs><radialGradient id="emGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#e59c5b" stop-opacity=".85"/><stop offset="100%" stop-color="#e59c5b" stop-opacity="0"/>
             </radialGradient></defs>
             <circle cx="60" cy="60" r="58" fill="url(#emGlow)"/>
-            <circle cx="60" cy="60" r="29" fill="none" stroke="#d4a04a" stroke-opacity=".55" stroke-width="1.2"/>
+            <circle cx="60" cy="60" r="29" fill="none" stroke="#e59c5b" stroke-opacity=".55" stroke-width="1.2"/>
             <path d="M44,62 L52,47 L57,64 L64,45 L72,62" fill="none" stroke="#f6e3b8" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
             <circle cx="60" cy="60" r="11" fill="#f7e6bd"/>
           </svg>
@@ -342,7 +342,7 @@ section{position:relative}
         </div>
         <div class="logo-grid">
           <div class="logo-cell">
-            <svg width="58" height="58" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG2)"/><circle cx="60" cy="60" r="29" fill="none" stroke="#d4a04a" stroke-opacity=".55" stroke-width="1.2"/><path d="M44,62 L52,47 L57,64 L64,45 L72,62" fill="none" stroke="#f6e3b8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
+            <svg width="58" height="58" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#e59c5b" stop-opacity=".85"/><stop offset="100%" stop-color="#e59c5b" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG2)"/><circle cx="60" cy="60" r="29" fill="none" stroke="#e59c5b" stroke-opacity=".55" stroke-width="1.2"/><path d="M44,62 L52,47 L57,64 L64,45 L72,62" fill="none" stroke="#f6e3b8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
             <div class="clab">The Mark · "Ember"</div>
           </div>
           <div class="logo-cell">
@@ -371,7 +371,7 @@ section{position:relative}
         <div class="swatches">
           <div class="sw"><div class="chip" style="background:#050302"></div><div class="info"><div class="nm">Obsidian</div><div class="hx">#050302</div><div class="use">Primary ground</div></div></div>
           <div class="sw"><div class="chip" style="background:#0a0604"></div><div class="info"><div class="nm">Panel</div><div class="hx">#0A0604</div><div class="use">Cards, surfaces</div></div></div>
-          <div class="sw"><div class="chip" style="background:#d4a04a"></div><div class="info"><div class="nm">Filament Gold</div><div class="hx">#D4A04A</div><div class="use">Primary accent</div></div></div>
+          <div class="sw"><div class="chip" style="background:#e59c5b"></div><div class="info"><div class="nm">Filament Gold</div><div class="hx">#e59c5b</div><div class="use">Primary accent</div></div></div>
           <div class="sw"><div class="chip" style="background:#9c3e10"></div><div class="info"><div class="nm">Ember</div><div class="hx">#9C3E10</div><div class="use">Deep accent</div></div></div>
           <div class="sw"><div class="chip" style="background:#f5f0eb"></div><div class="info"><div class="nm">Warm White</div><div class="hx">#F5F0EB</div><div class="use">Type on dark</div></div></div>
         </div>
@@ -435,7 +435,7 @@ section{position:relative}
             <div class="bizcard app">
               <div class="cap">Card</div>
               <div class="top">
-                <svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG3)"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
+                <svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#e59c5b" stop-opacity=".85"/><stop offset="100%" stop-color="#e59c5b" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG3)"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
                 <div class="wm-ember" style="font-size:15px">INCANDESCENT</div>
               </div>
               <div class="who">
@@ -454,7 +454,7 @@ section{position:relative}
           </div>
           <div class="lowerthird">
             <div class="lt-mark">
-              <svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#d4a04a" stop-opacity=".85"/><stop offset="100%" stop-color="#d4a04a" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG5)"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
+              <svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="emG5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f6e3b8"/><stop offset="32%" stop-color="#e59c5b" stop-opacity=".85"/><stop offset="100%" stop-color="#e59c5b" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="60" r="58" fill="url(#emG5)"/><circle cx="60" cy="60" r="11" fill="#f7e6bd"/></svg>
             </div>
             <div class="bar">
               <div class="lt-name" style="font-family:'Cormorant Garamond',serif;font-weight:600">Lorenzo De Boni</div>
@@ -789,7 +789,7 @@ section{position:relative}
       </thead>
       <tbody>
         <tr>
-          <th><span class="cn"><span class="dot" style="background:#d4a04a"></span>Ember</span></th>
+          <th><span class="cn"><span class="dot" style="background:#e59c5b"></span>Ember</span></th>
           <td>A prestige end-title</td>
           <td>Buyers, networks, the deck. Protects existing equity.</td>
           <td>Safe — it evolves rather than surprises.</td>
