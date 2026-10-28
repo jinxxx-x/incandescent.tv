@@ -417,8 +417,8 @@ nav.nav-links-only {
 
 .intro-right p {
     font-family: var(--font-display);
-    font-size: clamp(1.25rem, 1.8vw, 1.75rem);
-    line-height: 1.45;
+    font-size: clamp(1.75rem, 2.7vw, 2.25rem);
+    line-height: 1.35;
     color: var(--text-main);
     max-width: 42ch;
 }
@@ -875,7 +875,7 @@ footer {
     }
 
     .intro-right p {
-        font-size: 1.35rem;
+        font-size: 1.5rem;
     }
 
     .card-title {
