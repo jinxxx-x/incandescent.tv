@@ -3,506 +3,573 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Incandescent Studios — Brand Decisions</title>
-  <meta name="description" content="Two decisions required to finalize the Incandescent Studios identity.">
+  <title>Incandescent Studios | Brand Directions</title>
+  <meta name="description" content="Four identity directions for Incandescent Studios.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,600&amp;family=Jost:wght@300;400;500&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     * { margin: 0; }
 
     :root {
-      --ink: #050302;
-      --panel: #0d0907;
-      --panel-soft: #130d09;
-      --ember: #e59c5b;
-      --ivory: #f5f0eb;
-      --paper: #eee9e2;
-      --muted: #9e958d;
+      --ink: #171411;
+      --muted: #706a64;
+      --line: #ddd8d1;
+      --paper: #fffefa;
+      --soft: #f5f2ed;
+      --warm: #e59c5b;
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Jost", Arial, sans-serif;
       --brand: "Montserrat", Arial, sans-serif;
-      --max: 1180px;
+      --page: min(1180px, calc(100% - 112px));
     }
 
     html { scroll-behavior: smooth; }
     body {
-      min-width: 320px;
+      min-width: 1040px;
       overflow-x: hidden;
-      background:
-        radial-gradient(circle at 12% 4%, rgba(229, 156, 91, 0.08), transparent 24rem),
-        var(--ink);
-      color: var(--ivory);
+      background: var(--paper);
+      color: var(--ink);
       font-family: var(--sans);
       font-weight: 300;
-      line-height: 1.55;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-
     a { color: inherit; }
-    ::selection { background: var(--ember); color: var(--ink); }
-    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 70px;
-      padding: 0 clamp(22px, 4.5vw, 68px);
-      background: rgba(5, 3, 2, 0.86);
-      backdrop-filter: blur(14px);
-    }
-    .topbar div, .topbar a {
+    img { display: block; }
+    ::selection { background: var(--warm); color: var(--ink); }
+    .page { width: var(--page); margin: 0 auto; }
+    .eyebrow {
       font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.2em;
+      font-weight: 500;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
-    .topbar div { color: var(--muted); }
-    .topbar div span { color: var(--ember); }
-    .topbar a { color: var(--ivory); text-decoration: none; }
 
     .cover {
       display: grid;
-      min-height: 74vh;
-      place-items: center;
-      padding: 92px 0 110px;
-      text-align: center;
+      min-height: 650px;
+      padding: 108px 0 112px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
     }
-    .cover-inner { max-width: 900px; }
-    .kicker {
-      color: var(--ember);
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
+    .cover-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 110px;
+      align-items: end;
     }
+    .cover-title .eyebrow { margin-bottom: 25px; color: #9a5c31; }
     .cover h1 {
-      max-width: 10ch;
-      margin: 24px auto 0;
+      max-width: 8ch;
       font-family: var(--serif);
-      font-size: clamp(58px, 9.5vw, 122px);
+      font-size: 94px;
       font-weight: 400;
-      letter-spacing: -0.045em;
-      line-height: 0.84;
+      letter-spacing: -.045em;
+      line-height: .86;
     }
-    .cover h1 em { color: var(--ember); font-weight: 400; }
-    .cover p {
-      max-width: 640px;
-      margin: 36px auto 0;
-      color: #b3aaa2;
-      font-size: clamp(16px, 1.8vw, 20px);
-      line-height: 1.7;
+    .brief {
+      max-width: 560px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
     }
-    .decision-jump {
-      display: flex;
-      justify-content: center;
+    .brief .eyebrow { margin-bottom: 20px; }
+    .brief p { color: #514c47; font-size: 17px; line-height: 1.72; }
+
+    .route {
+      --accent: var(--warm);
+      padding: 108px 0 118px;
+      border-bottom: 1px solid var(--line);
+    }
+    .route-header {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr) 190px;
+      gap: 40px;
+      margin-bottom: 52px;
+      align-items: start;
+    }
+    .route-id { padding-top: 10px; color: var(--accent); }
+    .route-intro h2 {
+      font-family: var(--serif);
+      font-size: 62px;
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: .92;
+    }
+    .route-intro p {
+      max-width: 650px;
+      margin-top: 18px;
+      color: #5d5751;
+      font-size: 15px;
+      line-height: 1.68;
+    }
+    .view-site {
+      display: inline-flex;
+      margin-top: 12px;
+      align-items: center;
+      justify-content: flex-end;
       gap: 12px;
-      margin-top: 46px;
-      flex-wrap: wrap;
-    }
-    .decision-jump a {
-      padding: 12px 16px;
-      background: rgba(245, 240, 235, 0.05);
-      color: #c8c0b8;
+      color: #4b4641;
       font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
+      font-weight: 500;
+      letter-spacing: .16em;
       text-decoration: none;
       text-transform: uppercase;
     }
+    .view-site::after { content: "\2197"; color: var(--accent); font-size: 15px; line-height: 1; }
+    .view-site:hover, .view-site:focus-visible { color: var(--accent); }
 
-    .decision {
-      padding: clamp(86px, 11vw, 150px) 0;
-    }
-    .decision:nth-of-type(even) { background: rgba(245, 240, 235, 0.018); }
-    .decision-header {
+    .logo-contexts {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 48px;
-      margin-bottom: 64px;
+      grid-template-columns: 1.55fr .75fr;
+      min-height: 455px;
+      background: #161412;
     }
-    .decision-label {
-      color: var(--ember);
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-    .decision-header h2 {
-      max-width: 14ch;
-      font-family: var(--serif);
-      font-size: clamp(44px, 6vw, 76px);
-      font-weight: 400;
-      letter-spacing: -0.035em;
-      line-height: 0.92;
-    }
-    .decision-header p {
-      max-width: 680px;
-      margin-top: 22px;
-      color: #aaa199;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-    .decision-question {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 9px 12px;
-      background: rgba(229, 156, 91, 0.1);
-      color: var(--ember);
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .wordmark-options {
+    .logo-panel {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .option {
       overflow: hidden;
-      background: var(--panel);
+      place-items: center;
+      padding: 54px;
+      color: #f7f3ed;
     }
-    .option-head { padding: 22px 22px 18px; }
-    .option-index {
-      color: var(--ember);
-      font-size: 10px;
+    .logo-panel.light { background: var(--soft); color: #171411; }
+    .context-label {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+      color: currentColor;
+      font-size: 9px;
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: .15em;
+      opacity: .52;
       text-transform: uppercase;
     }
-    .option-head h3 {
-      margin-top: 9px;
+
+    .support {
+      display: grid;
+      grid-template-columns: 1.55fr .75fr;
+      margin-top: 18px;
+      gap: 18px;
+    }
+    .application {
+      position: relative;
+      min-height: 385px;
+      overflow: hidden;
+      background: #171411;
+    }
+    .application img { width: 100%; height: 100%; object-fit: cover; }
+    .system-card {
+      display: flex;
+      min-height: 385px;
+      padding: 34px;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--soft);
+    }
+    .system-card h3 {
       font-family: var(--serif);
-      font-size: 31px;
+      font-size: 34px;
       font-weight: 400;
+      letter-spacing: -.025em;
       line-height: 1;
     }
-    .logo-view {
-      display: grid;
-      min-height: 230px;
-      place-items: center;
-      padding: 34px 22px;
-      text-align: center;
-    }
-    .logo-view.dark { background: #070403; }
-    .logo-view.light { min-height: 126px; background: var(--paper); color: var(--ink); }
-    .option, .logo-view, .current-lockup, .split-lockup { transition: none; }
-
-    .original-lockup .name {
+    .system-notes { display: grid; margin-top: 24px; gap: 18px; }
+    .system-notes strong {
       display: block;
-      font-family: var(--serif);
-      font-size: clamp(35px, 4vw, 57px);
-      line-height: 0.88;
-    }
-    .original-lockup .studio {
-      display: block;
-      margin-top: 14px;
-      color: var(--ember);
-      font-size: 7px;
-      font-weight: 400;
-      letter-spacing: 0.48em;
+      margin-bottom: 6px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .15em;
       text-transform: uppercase;
     }
-    .current-lockup {
+    .system-notes p { color: #5d5751; font-size: 12px; line-height: 1.55; }
+    .palette { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 30px; gap: 6px; }
+    .color { aspect-ratio: 1; border-radius: 50%; }
+    .palette-caption { margin-top: 10px; color: #7a746e; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* A: current identity */
+    .route-a { --accent: #d97838; }
+    .current-mark {
       font-family: var(--brand);
-      font-size: clamp(16px, 2.2vw, 28px);
-      font-weight: 500;
-      letter-spacing: -0.025em;
+      font-size: 49px;
+      font-weight: 400;
+      letter-spacing: -.05em;
+      text-align: center;
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .current-lockup .warm { color: var(--ember); }
-    .split-lockup {
-      display: inline-grid;
-      justify-items: start;
-      font-family: var(--brand);
-      font-size: clamp(31px, 4.5vw, 58px);
-      font-weight: 600;
-      letter-spacing: -0.055em;
-      line-height: 0.75;
+    .logo-panel.light .current-mark { font-size: 25px; white-space: normal; }
+    .current-mark .warm {
+      background: linear-gradient(90deg, #ef9147, #f1b46f 48%, #f5f0eb);
+      background-clip: text;
+      color: transparent;
+    }
+    .logo-panel.light .current-mark .warm {
+      background: linear-gradient(90deg, #c86b30, #d69050 54%, #7a7068);
+      background-clip: text;
+      color: transparent;
+    }
+    .current-app img { filter: saturate(.72) brightness(.72); }
+    .current-app::after { position: absolute; inset: 0; background: rgba(8, 6, 4, .24); content: ""; }
+    .current-app .current-mark { position: absolute; z-index: 1; right: 38px; bottom: 34px; left: 38px; color: #fff; font-size: 27px; }
+
+    /* B: maximal broadcast */
+    .route-b { --accent: #ef5f43; }
+    .route-b .logo-contexts { background: #0d0d0c; }
+    .route-b .logo-panel.light { background: #efede6; }
+    .maximal-mark {
+      position: relative;
+      width: 100%;
+      font-family: "Archivo", Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -.075em;
+      line-height: .72;
       text-transform: uppercase;
     }
-    .split-lockup span:first-child { color: var(--ember); letter-spacing: 0.035em; }
-
-    .option-notes { padding: 24px 22px 27px; }
-    .note { margin-top: 14px; color: #a79e96; font-size: 13px; line-height: 1.6; }
-    .note:first-child { margin-top: 0; }
-    .note b {
+    .maximal-mark .name span { display: block; font-size: 118px; }
+    .maximal-mark .name span:last-child { margin-left: 14%; color: #918c7d; }
+    .maximal-mark .studio {
       display: block;
-      margin-bottom: 4px;
-      color: var(--ivory);
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .mark-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .mark-option {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 390px;
-      background: var(--panel);
-    }
-    .mark-demo {
-      display: grid;
-      place-items: center;
-      padding: 34px;
-    }
-    .mark-demo.light { background: var(--paper); color: var(--ink); }
-    .mark-demo.dark { background: #070403; }
-    .wordmark-only-demo {
-      font-family: var(--brand);
-      font-size: clamp(16px, 2.2vw, 28px);
+      margin-top: 25px;
+      margin-left: 14%;
+      color: var(--accent);
+      font-family: var(--sans);
+      font-size: 10px;
       font-weight: 500;
-      letter-spacing: -0.025em;
-      text-align: center;
+      letter-spacing: .38em;
+    }
+    .logo-panel.light .maximal-mark .name span { font-size: 52px; }
+    .logo-panel.light .maximal-mark .name span:last-child { margin-left: 7%; color: #7f7a6d; }
+    .logo-panel.light .maximal-mark .studio { margin-top: 22px; margin-left: 7%; }
+    .maximal-app { padding: 34px; background: #10100f; color: #f1eee6; }
+    .maximal-app .app-rule { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+    .maximal-app h4 { max-width: 8ch; margin-top: 118px; font-family: "Archivo"; font-size: 63px; letter-spacing: -.06em; line-height: .8; text-transform: uppercase; }
+    .maximal-app .app-foot { position: absolute; right: 34px; bottom: 30px; color: var(--accent); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+
+    /* C: editorial signature */
+    .route-c { --accent: #d7894c; }
+    .route-c .logo-contexts { background: #0a0a09; }
+    .signature-mark { display: grid; justify-items: start; }
+    .signature-mark .name {
+      font-family: var(--serif);
+      font-size: 118px;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -.07em;
+      line-height: .78;
+    }
+    .signature-mark .studio { margin-top: 27px; color: #aaa49c; font-size: 10px; font-weight: 500; letter-spacing: .6em; text-transform: uppercase; }
+    .logo-panel.light .signature-mark .name { font-size: 54px; }
+    .logo-panel.light .signature-mark .studio { color: #7a746d; font-size: 8px; letter-spacing: .42em; }
+    .signature-app { background: #ece7df; }
+    .signature-app img { width: 60%; margin-left: auto; filter: grayscale(1) contrast(1.04); }
+    .signature-app .app-copy { position: absolute; top: 44px; left: 38px; }
+    .signature-app .app-copy span { color: #8b8178; font-size: 9px; letter-spacing: .17em; text-transform: uppercase; }
+    .signature-app .app-copy h4 { max-width: 6ch; margin-top: 24px; font-family: var(--serif); font-size: 58px; font-style: italic; font-weight: 600; letter-spacing: -.045em; line-height: .82; }
+
+    /* D: cinematic slate */
+    .route-d { --accent: #cf9f25; }
+    .route-d .logo-contexts { background: #090908; }
+    .slate-mark { display: grid; width: 100%; justify-items: start; }
+    .slate-mark .name {
+      font-family: var(--serif);
+      font-size: 100px;
+      font-weight: 600;
+      letter-spacing: -.055em;
+      line-height: .74;
       text-transform: uppercase;
     }
-    .bulb-sizes {
-      display: flex;
+    .slate-mark .studio { margin-top: 30px; color: #9a958d; font-size: 10px; font-weight: 500; letter-spacing: .62em; text-transform: uppercase; }
+    .logo-panel.light .slate-mark .name { font-size: 47px; }
+    .logo-panel.light .slate-mark .studio { color: #777168; font-size: 8px; letter-spacing: .42em; }
+    .slate-app img { filter: grayscale(1) contrast(1.06) brightness(.68); }
+    .slate-app::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,7,.7), transparent 72%); content: ""; }
+    .slate-app .app-copy { position: absolute; z-index: 1; top: 42px; left: 38px; color: #f4f0e9; }
+    .slate-app .app-copy span { color: var(--accent); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+    .slate-app .app-copy h4 { max-width: 7ch; margin-top: 92px; font-family: var(--serif); font-size: 61px; font-weight: 600; letter-spacing: -.04em; line-height: .83; }
+
+    /* One consistent image test across every direction. */
+    .application.comparison-app { background: #171411; }
+    .application.comparison-app img {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      object-position: center 43%;
+      filter: saturate(.72) brightness(.7);
+    }
+    .application.comparison-app::after {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(7,5,3,.68), rgba(7,5,3,.04) 65%);
+      content: "";
+    }
+    .application-wordmark {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      display: grid;
+      padding: 34px 42px;
       align-items: end;
-      justify-content: center;
-      gap: 24px;
+      color: #fff;
     }
-    .bulb-sizes span { display: grid; gap: 9px; justify-items: center; }
-    .bulb-sizes small { color: var(--muted); font-size: 9px; letter-spacing: 0.1em; }
-    .bulb-sizes svg { overflow: visible; }
-    .bulb-sizes .s16 svg { width: 16px; height: 16px; }
-    .bulb-sizes .s32 svg { width: 32px; height: 32px; }
-    .bulb-sizes .s64 svg { width: 64px; height: 64px; }
-    .mark-copy { padding: 30px; }
-    .mark-copy .option-index { margin-bottom: 10px; }
-    .mark-copy h3 { font-family: var(--serif); font-size: 35px; font-weight: 400; line-height: 1; }
-    .mark-copy p { margin-top: 18px; color: #a79e96; font-size: 14px; line-height: 1.65; }
-    .mark-copy strong { color: var(--ivory); font-weight: 400; }
-
-    .recommendation {
-      padding: clamp(90px, 12vw, 160px) 0;
-      text-align: center;
-    }
-    .recommendation h2 {
-      max-width: 12ch;
-      margin: 20px auto 0;
-      font-family: var(--serif);
-      font-size: clamp(48px, 7vw, 88px);
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      line-height: 0.88;
-    }
-    .recommendation h2 em { color: var(--ember); font-weight: 400; }
-    .recommendation > .wrap > p {
-      max-width: 660px;
-      margin: 30px auto 0;
-      color: #aaa199;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-    .recommended-system {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      max-width: 900px;
-      margin: 54px auto 0;
-      background: var(--panel);
-    }
-    .recommended-lockup {
-      display: grid;
-      min-height: 300px;
-      place-items: center;
-      padding: 36px;
-    }
-    .recommended-lockup.light { background: var(--paper); color: var(--ink); }
-    .recommendation-line {
-      max-width: 900px;
-      margin: 18px auto 0;
-      padding: 20px 22px;
-      background: rgba(229, 156, 91, 0.09);
-      color: #cbc2ba;
-      font-size: 14px;
-    }
-    .recommendation-line strong { color: var(--ember); font-weight: 400; }
-
-    .after {
-      max-width: 900px;
-      margin: 72px auto 0;
-      text-align: left;
-    }
-    .after h3 { font-size: 10px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; }
-    .after-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
-    .after-item { min-height: 130px; padding: 22px; background: rgba(245, 240, 235, 0.035); color: #aaa199; font-size: 13px; }
-    .after-item b { display: block; margin-bottom: 22px; color: var(--ember); font-size: 10px; font-weight: 400; letter-spacing: 0.15em; }
+    .comparison-app .current-mark { position: static; font-size: 27px; }
+    .comparison-app .maximal-mark { width: 72%; color: #f3efe8; }
+    .comparison-app .maximal-mark .name span { font-size: 54px; }
+    .comparison-app .maximal-mark .name span:last-child { margin-left: 10%; color: #aaa398; }
+    .comparison-app .maximal-mark .studio { margin: 17px 0 0 10%; color: #ef5f43; }
+    .comparison-app .signature-mark { color: #f7f2eb; }
+    .comparison-app .signature-mark .name { font-size: 74px; }
+    .comparison-app .signature-mark .studio { margin-top: 17px; color: #d8d0c8; }
+    .comparison-app .slate-mark { color: #f7f2eb; }
+    .comparison-app .slate-mark .name { font-size: 60px; }
+    .comparison-app .slate-mark .studio { margin-top: 18px; color: #cf9f25; }
 
     footer {
       display: flex;
+      padding: 30px 56px;
       justify-content: space-between;
-      gap: 24px;
-      padding: 30px clamp(22px, 4.5vw, 68px);
-      color: var(--muted);
+      background: var(--paper);
+      color: #817a73;
       font-size: 9px;
-      letter-spacing: 0.18em;
+      letter-spacing: .15em;
       text-transform: uppercase;
     }
-    footer a { color: var(--ember); text-decoration: none; }
-
-    @media (max-width: 900px) {
-      .wordmark-options { grid-template-columns: 1fr; }
-      .logo-view { min-height: 280px; }
-      .mark-options { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 700px) {
-      .topbar div { display: none; }
-      .topbar { justify-content: flex-end; }
-      .decision-header { grid-template-columns: 1fr; gap: 20px; }
-      .mark-option { grid-template-columns: 1fr; }
-      .mark-demo { min-height: 230px; }
-      .recommended-system { grid-template-columns: 1fr; }
-      .after-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; }
-    }
+    footer a { color: var(--ink); text-decoration: none; }
   </style>
+  <link rel="stylesheet" href="../shared/review-bar.css">
 </head>
-<body>
-  <header class="topbar">
-    <div>Incandescent Studios <span>/</span> Brand Decisions</div>
-    <a href="../">Back to studio</a>
-  </header>
+<body class="brand-deck has-brand-review-bar">
+  <div class="brand-review-bar" aria-label="Brand variant navigation">
+    <div class="brand-review-actions">
+      <a class="brand-review-home" href="./" aria-current="page">Brand deck</a>
+    </div>
+    <span class="brand-review-label">Full website concepts</span>
+    <nav aria-label="Choose a full website variant">
+      <a href="../" data-variant-link="a" aria-label="Variant A, current site">A</a>
+      <a href="../?brand=B" data-variant-link="b" aria-label="Variant B">B</a>
+      <a href="../?brand=C" data-variant-link="c" aria-label="Variant C">C</a>
+      <a href="../?brand=D" data-variant-link="d" aria-label="Variant D">D</a>
+    </nav>
+  </div>
 
   <main>
     <section class="cover">
-      <div class="cover-inner wrap">
-        <div class="kicker">Identity Review · 2026</div>
-        <h1>Two decisions.<br><em>One final identity.</em></h1>
-        <p>This review is designed to answer two questions only: which wordmark should represent Incandescent, and what role—if any—the bulb should play beyond the browser tab.</p>
-        <nav class="decision-jump" aria-label="Brand decisions">
-          <a href="#decision-one">Decision 01 · Wordmark</a>
-          <a href="#decision-two">Decision 02 · Bulb</a>
-          <a href="#recommendation">Recommendation</a>
-        </nav>
-      </div>
-    </section>
-
-    <section class="decision" id="decision-one">
-      <div class="wrap">
-        <header class="decision-header">
-          <div class="decision-label">Decision 01</div>
-          <div>
-            <h2>Choose the primary wordmark.</h2>
-            <p>This is the company signature used on the website, decks, end cards, and business materials. The decision is between editorial heritage, modern clarity, and a more ownable expressive composition.</p>
-            <div class="decision-question">We need: one direction to develop into final artwork</div>
-          </div>
-        </header>
-
-        <div class="wordmark-options">
-          <article class="option">
-            <div class="option-head"><div class="option-index">Option A</div><h3>Original</h3></div>
-            <div class="logo-view dark"><div class="original-lockup"><span class="name">Incandescent</span><span class="studio">Studios</span></div></div>
-            <div class="logo-view light"><div class="original-lockup"><span class="name">Incandescent</span><span class="studio">Studios</span></div></div>
-            <div class="option-notes">
-              <div class="note"><b>Strength</b>Distinctive, elegant, and already connected to the site’s editorial voice.</div>
-              <div class="note"><b>Tradeoff</b>Feels less contemporary and loses authority at smaller sizes.</div>
-              <div class="note"><b>Choose this if</b>The company should lead with prestige and heritage.</div>
-            </div>
-          </article>
-
-          <article class="option">
-            <div class="option-head"><div class="option-index">Option B</div><h3>Current</h3></div>
-            <div class="logo-view dark"><div class="current-lockup"><span class="warm">Incandescent</span> Studios</div></div>
-            <div class="logo-view light"><div class="current-lockup"><span class="warm">Incandescent</span> Studios</div></div>
-            <div class="option-notes">
-              <div class="note"><b>Strength</b>Clear, modern, highly legible, and closest to the supplied logo.</div>
-              <div class="note"><b>Tradeoff</b>Needs a strong supporting system to feel fully ownable.</div>
-              <div class="note"><b>Choose this if</b>The company should feel confident, current, and easy to scale.</div>
-            </div>
-          </article>
-
-          <article class="option">
-            <div class="option-head"><div class="option-index">Option C</div><h3>Splitframe</h3></div>
-            <div class="logo-view dark"><div class="split-lockup"><span>Incan</span><span>Descent</span></div></div>
-            <div class="logo-view light"><div class="split-lockup"><span>Incan</span><span>Descent</span></div></div>
-            <div class="option-notes">
-              <div class="note"><b>Strength</b>Ownable, compact, and visually distinctive in title cards and motion.</div>
-              <div class="note"><b>Tradeoff</b>The name break is unconventional and may require more audience familiarity.</div>
-              <div class="note"><b>Choose this if</b>The company wants a bolder identity it can build a world around.</div>
-            </div>
-          </article>
+      <div class="page cover-grid">
+        <div class="cover-title">
+          <div class="eyebrow">Incandescent Studios</div>
+          <h1>Brand directions.</h1>
+        </div>
+        <div class="brief">
+          <div class="eyebrow">The base brief</div>
+          <p>Incandescent Studios is a New York television production company founded by veteran producers behind premium documentary and scripted series for Netflix, History, Discovery, and Fox Nation. The identity should feel cinematic, intelligent, modern, and established without becoming nostalgic, corporate, or overly literal. It must give the work room to lead, hold up across film stills, decks, title cards, social, and production materials, and make Incandescent feel like a point of view rather than a light bulb motif.</p>
         </div>
       </div>
     </section>
 
-    <section class="decision" id="decision-two">
-      <div class="wrap">
-        <header class="decision-header">
-          <div class="decision-label">Decision 02</div>
-          <div>
-            <h2>Decide what the bulb is allowed to do.</h2>
-            <p>The outline bulb already works as a transparent favicon. The remaining question is whether it stays a quiet utility mark or becomes a visible part of the broader identity.</p>
-            <div class="decision-question">We need: utility mark only, or supporting brand symbol</div>
+    <section class="route route-a" id="route-a">
+      <div class="page">
+        <header class="route-header">
+          <div class="route-id eyebrow">A · Current</div>
+          <div class="route-intro">
+            <h2>The current direction.</h2>
+            <p>The supplied wordmark shown as a complete identity. This is the most familiar route: clean, legible, and easy to carry across production materials with minimal change.</p>
           </div>
+          <a class="view-site" href="../">View full website</a>
         </header>
 
-        <div class="mark-options">
-          <article class="mark-option">
-            <div class="mark-demo dark"><div class="wordmark-only-demo">Incandescent Studios</div></div>
-            <div class="mark-copy">
-              <div class="option-index">Option A</div>
-              <h3>Utility mark only</h3>
-              <p>The bulb appears in the browser tab, social avatar, and other spaces where the full wordmark cannot fit. <strong>The wordmark remains the only public-facing logo.</strong></p>
-              <p><strong>Benefit:</strong> quieter and more premium. <strong>Risk:</strong> the bulb never develops recognition beyond a functional icon.</p>
-            </div>
-          </article>
+        <div class="logo-contexts">
+          <div class="logo-panel">
+            <span class="context-label">Primary · Dark</span>
+            <div class="current-mark"><span class="warm">Incandescent</span> Studios</div>
+          </div>
+          <div class="logo-panel light">
+            <span class="context-label">Reverse · Light</span>
+            <div class="current-mark"><span class="warm">Incandescent</span> Studios</div>
+          </div>
+        </div>
 
-          <article class="mark-option">
-            <div class="mark-demo light">
-              <div class="bulb-sizes" aria-label="Outline bulb shown at 16, 32, and 64 pixels">
-                <span class="s16"><svg viewBox="0 0 32 32"><path d="M16 4.5a8.5 8.5 0 0 0-5.2 15.2c1.4 1.1 2.2 2.2 2.2 3.8h6c0-1.6.8-2.7 2.2-3.8A8.5 8.5 0 0 0 16 4.5Z" fill="none" stroke="#e59c5b" stroke-width="2.35" stroke-linejoin="round"/><path d="M13 27h6" fill="none" stroke="#e59c5b" stroke-width="2.35" stroke-linecap="round"/></svg><small>16</small></span>
-                <span class="s32"><svg viewBox="0 0 32 32"><path d="M16 4.5a8.5 8.5 0 0 0-5.2 15.2c1.4 1.1 2.2 2.2 2.2 3.8h6c0-1.6.8-2.7 2.2-3.8A8.5 8.5 0 0 0 16 4.5Z" fill="none" stroke="#e59c5b" stroke-width="2.35" stroke-linejoin="round"/><path d="M13 27h6" fill="none" stroke="#e59c5b" stroke-width="2.35" stroke-linecap="round"/></svg><small>32</small></span>
-                <span class="s64"><svg viewBox="0 0 32 32"><path d="M16 4.5a8.5 8.5 0 0 0-5.2 15.2c1.4 1.1 2.2 2.2 2.2 3.8h6c0-1.6.8-2.7 2.2-3.8A8.5 8.5 0 0 0 16 4.5Z" fill="none" stroke="#e59c5b" stroke-width="2.35" stroke-linejoin="round"/><path d="M13 27h6" fill="none" stroke="#e59c5b" stroke-width="2.35" stroke-linecap="round"/></svg><small>64</small></span>
+        <div class="support">
+          <div class="application current-app comparison-app">
+            <img src="../images/george.jpg" alt="George production still with the current identity">
+            <div class="application-wordmark"><div class="current-mark"><span class="warm">Incandescent</span> Studios</div></div>
+          </div>
+          <aside class="system-card">
+            <div>
+              <h3>Current system</h3>
+              <div class="system-notes">
+                <div><strong>Wordmark</strong><p>A straightforward modern sans serif with a warm fade across the name.</p></div>
+                <div><strong>Character</strong><p>Familiar, accessible, and closest to what already exists.</p></div>
               </div>
             </div>
-            <div class="mark-copy">
-              <div class="option-index">Option B</div>
-              <h3>Supporting symbol</h3>
-              <p>The bulb may also appear on deck covers, end cards, profile images, and branded transitions. <strong>It becomes a recognizable shorthand for Incandescent.</strong></p>
-              <p><strong>Benefit:</strong> builds an ownable visual asset. <strong>Risk:</strong> needs disciplined use so it does not feel literal or cute.</p>
+            <div>
+              <div class="palette" aria-label="Current identity color palette">
+                <span class="color" style="background:#050302"></span>
+                <span class="color" style="background:#e59c5b"></span>
+                <span class="color" style="background:#f1b46f"></span>
+                <span class="color" style="background:#f5f0eb"></span>
+              </div>
+              <div class="palette-caption">Black · Ember · Apricot · Ivory</div>
             </div>
-          </article>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="recommendation" id="recommendation">
-      <div class="wrap">
-        <div class="kicker">Recommendation</div>
-        <h2>Current wordmark.<br><em>Utility bulb.</em></h2>
-        <p>This combination is the clearest and most professional starting point. It respects the supplied logo, performs reliably in light and dark environments, and keeps the bulb useful without asking it to carry the whole brand.</p>
-        <div class="recommended-system">
-          <div class="recommended-lockup dark"><div class="current-lockup"><span class="warm">Incandescent</span> Studios</div></div>
-          <div class="recommended-lockup light"><div class="current-lockup"><span class="warm">Incandescent</span> Studios</div></div>
-        </div>
-        <div class="recommendation-line"><strong>Decision requested:</strong> approve this combination, or select a different option from Decision 01 and Decision 02.</div>
-
-        <div class="after">
-          <h3>After approval, we build</h3>
-          <div class="after-grid">
-            <div class="after-item"><b>01 / ARTWORK</b>Production SVG, PNG, reverse, monochrome, horizontal, and stacked lockups.</div>
-            <div class="after-item"><b>02 / RULES</b>Clear space, minimum sizes, color use, photography placement, and misuse examples.</div>
-            <div class="after-item"><b>03 / APPLICATIONS</b>Website, deck cover, end card, lower third, social avatar, and title sting.</div>
+    <section class="route route-b" id="route-b">
+      <div class="page">
+        <header class="route-header">
+          <div class="route-id eyebrow">B · Maximal Broadcast</div>
+          <div class="route-intro">
+            <h2>Big, graphic, and cinematic.</h2>
+            <p>An oversized stacked wordmark gives the studio a tougher production-world presence. Hard crops, dense typography, and a signal red accent make the identity direct and unmistakable.</p>
           </div>
+          <a class="view-site" href="../?brand=B">View full website</a>
+        </header>
+
+        <div class="logo-contexts">
+          <div class="logo-panel">
+            <span class="context-label">Primary · Dark</span>
+            <div class="maximal-mark"><span class="name"><span>Incan</span><span>descent</span></span><span class="studio">Studios</span></div>
+          </div>
+          <div class="logo-panel light">
+            <span class="context-label">Reverse · Light</span>
+            <div class="maximal-mark"><span class="name"><span>Incan</span><span>descent</span></span><span class="studio">Studios</span></div>
+          </div>
+        </div>
+
+        <div class="support">
+          <div class="application maximal-app comparison-app">
+            <img src="../images/george.jpg" alt="George production still with the Maximal Broadcast identity">
+            <div class="application-wordmark"><div class="maximal-mark"><span class="name"><span>Incan</span><span>descent</span></span><span class="studio">Studios</span></div></div>
+          </div>
+          <aside class="system-card">
+            <div>
+              <h3>Maximal system</h3>
+              <div class="system-notes">
+                <div><strong>Wordmark</strong><p>Heavy Archivo at oversized scale with compressed spacing and deliberate crops.</p></div>
+                <div><strong>Character</strong><p>Bold, confident, contemporary, and built for broadcast.</p></div>
+              </div>
+            </div>
+            <div>
+              <div class="palette" aria-label="Maximal Broadcast color palette">
+                <span class="color" style="background:#0d0d0c"></span>
+                <span class="color" style="background:#f0ede4"></span>
+                <span class="color" style="background:#908b7b"></span>
+                <span class="color" style="background:#ef5f43"></span>
+              </div>
+              <div class="palette-caption">Black · Bone · Olive · Signal</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="route route-c" id="route-c">
+      <div class="page">
+        <header class="route-header">
+          <div class="route-id eyebrow">C · Editorial Signature</div>
+          <div class="route-intro">
+            <h2>Quiet auteur prestige.</h2>
+            <p>A high-character signature wordmark brings a more personal point of view. Restrained typography, generous space, and carefully framed stills make the studio feel established without feeling institutional.</p>
+          </div>
+          <a class="view-site" href="../?brand=C">View full website</a>
+        </header>
+
+        <div class="logo-contexts">
+          <div class="logo-panel">
+            <span class="context-label">Primary · Dark</span>
+            <div class="signature-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
+          </div>
+          <div class="logo-panel light">
+            <span class="context-label">Reverse · Light</span>
+            <div class="signature-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
+          </div>
+        </div>
+
+        <div class="support">
+          <div class="application signature-app comparison-app">
+            <img src="../images/george.jpg" alt="George production still with the Editorial Signature identity">
+            <div class="application-wordmark"><div class="signature-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div></div>
+          </div>
+          <aside class="system-card">
+            <div>
+              <h3>Signature system</h3>
+              <div class="system-notes">
+                <div><strong>Wordmark</strong><p>An expressive italic serif paired with a quiet, widely tracked sans serif.</p></div>
+                <div><strong>Character</strong><p>Editorial, cinematic, personal, and deliberately understated.</p></div>
+              </div>
+            </div>
+            <div>
+              <div class="palette" aria-label="Editorial Signature color palette">
+                <span class="color" style="background:#0a0a09"></span>
+                <span class="color" style="background:#f3f1ed"></span>
+                <span class="color" style="background:#96938e"></span>
+                <span class="color" style="background:#d7894c"></span>
+              </div>
+              <div class="palette-caption">Black · Ivory · Stone · Ember</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="route route-d" id="route-d">
+      <div class="page">
+        <header class="route-header">
+          <div class="route-id eyebrow">D · Cinematic Slate</div>
+          <div class="route-intro">
+            <h2>The name becomes architecture.</h2>
+            <p>A monumental serif wordmark structures the frame and holds its own beside large cinematic imagery. Supporting layouts behave like a production slate, with a clear hierarchy and a controlled sense of scale.</p>
+          </div>
+          <a class="view-site" href="../?brand=D">View full website</a>
+        </header>
+
+        <div class="logo-contexts">
+          <div class="logo-panel">
+            <span class="context-label">Primary · Dark</span>
+            <div class="slate-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
+          </div>
+          <div class="logo-panel light">
+            <span class="context-label">Reverse · Light</span>
+            <div class="slate-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
+          </div>
+        </div>
+
+        <div class="support">
+          <div class="application slate-app comparison-app">
+            <img src="../images/george.jpg" alt="George production still with the Cinematic Slate identity">
+            <div class="application-wordmark"><div class="slate-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div></div>
+          </div>
+          <aside class="system-card">
+            <div>
+              <h3>Slate system</h3>
+              <div class="system-notes">
+                <div><strong>Wordmark</strong><p>A broad uppercase serif designed to carry weight above large-scale imagery.</p></div>
+                <div><strong>Character</strong><p>Prestigious, direct, cinematic, and grounded in the work.</p></div>
+              </div>
+            </div>
+            <div>
+              <div class="palette" aria-label="Cinematic Slate color palette">
+                <span class="color" style="background:#090908"></span>
+                <span class="color" style="background:#f1efea"></span>
+                <span class="color" style="background:#8f8a82"></span>
+                <span class="color" style="background:#cf9f25"></span>
+              </div>
+              <div class="palette-caption">Black · Ivory · Stone · Gold</div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><span>Incandescent Studios · Brand Decisions</span><a href="../">Return to incandescent.tv</a></footer>
+  <footer><span>Incandescent Studios · Identity exploration</span><a href="../">Return to incandescent.tv</a></footer>
 </body>
 </html>

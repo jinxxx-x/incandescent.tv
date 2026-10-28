@@ -1,0 +1,441 @@
+/* Variant C: quiet auteur prestige.
+   Desktop-only. Universal review and site navigation remain untouched. */
+
+@media (min-width: 769px) {
+    html[data-brand-variant='c'] {
+        --bg-base: #0a0908;
+        --bg-panel: #12100e;
+        --text-main: #f1eee8;
+        --text-dim: #938d85;
+        --text-muted: rgba(241, 238, 232, 0.58);
+        --accent-gold: #c69b72;
+        --accent-ember: #c69b72;
+        --line-faint: transparent;
+        --line-gold: transparent;
+        --font-display: 'Cormorant Garamond', serif;
+        --font-ui: 'Jost', sans-serif;
+    }
+
+    html[data-brand-variant='c'] body { background: #0a0908; }
+
+    html[data-brand-variant='c'] body::before {
+        opacity: 0.018;
+        mix-blend-mode: screen;
+    }
+
+    html[data-brand-variant='c'] .frame,
+    html[data-brand-variant='c'] .perimeter-text,
+    html[data-brand-variant='c'] .hero-bg-lines,
+    html[data-brand-variant='c'] .divider { display: none; }
+
+    /* Hero: editorial signature moving across a cropped cinematic frame. */
+    html[data-brand-variant='c'] .hero {
+        position: relative;
+        min-height: 760px;
+        height: calc(100vh - 44px);
+        align-items: stretch;
+        justify-content: center;
+        isolation: isolate;
+        background: #0a0908;
+    }
+
+    html[data-brand-variant='c'] .hero::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 11vh;
+        right: 8vw;
+        bottom: 9vh;
+        width: min(48vw, 780px);
+        background:
+            linear-gradient(90deg, rgba(10, 9, 8, 0.2), rgba(10, 9, 8, 0.06)),
+            url('../images/wyatt-earp.jpg') center 38% / cover no-repeat;
+        filter: grayscale(100%) contrast(1.08) brightness(0.52);
+    }
+
+    html[data-brand-variant='c'] .hero::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        background:
+            linear-gradient(90deg, #0a0908 0%, rgba(10, 9, 8, 0.96) 18%, rgba(10, 9, 8, 0.18) 56%, rgba(10, 9, 8, 0.34) 100%),
+            linear-gradient(180deg, #0a0908 0%, transparent 20%, transparent 78%, #0a0908 100%);
+        pointer-events: none;
+    }
+
+    html[data-brand-variant='c'] .hero-content {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 6vw 6vh;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+    }
+
+    html[data-brand-variant='c'] .hero-kicker {
+        position: absolute;
+        left: 6vw;
+        bottom: 6.5vh;
+        margin: 0;
+        color: #8f8981;
+        font-family: 'Jost', sans-serif;
+        font-size: 0.58rem;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+    }
+
+    html[data-brand-variant='c'] .hero .hero-logo-heading {
+        display: flex;
+        width: min(88vw, 1500px);
+        margin: -1vh 0 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.6rem;
+        color: #f3f0ea;
+        background: none;
+        filter: none;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(8rem, 14.2vw, 14.5rem);
+        font-style: italic;
+        font-weight: 600;
+        letter-spacing: -0.085em;
+        line-height: 0.72;
+        text-align: left;
+        text-transform: none;
+        white-space: nowrap;
+    }
+
+    html[data-brand-variant='c'] .hero-brand-primary,
+    html[data-brand-variant='c'] .hero-brand-secondary { display: block; }
+
+    html[data-brand-variant='c'] .hero-brand-primary {
+        position: relative;
+        z-index: 2;
+        transform: translateX(-0.04em);
+        text-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+    }
+
+    html[data-brand-variant='c'] .hero-brand-secondary {
+        margin: 0 0 0 42vw;
+        color: #bbb5ad;
+        font-family: 'Jost', sans-serif;
+        font-size: clamp(0.66rem, 0.72vw, 0.82rem);
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.72em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    html[data-brand-variant='c'] .hero p.tagline {
+        position: absolute;
+        right: 6vw;
+        bottom: 6vh;
+        max-width: 330px;
+        margin: 0;
+        color: #a09a91;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.15rem;
+        font-style: italic;
+        line-height: 1.35;
+        text-align: right;
+    }
+
+    html[data-brand-variant='c'] .ambient-glow { display: none; }
+
+    html[data-brand-variant='c'] .editorial-intro,
+    html[data-brand-variant='c'] .work-section,
+    html[data-brand-variant='c'] .team-section,
+    html[data-brand-variant='c'] .contact-section {
+        border: 0;
+        background: transparent;
+    }
+
+    html[data-brand-variant='c'] .editorial-intro::before,
+    html[data-brand-variant='c'] .team-section::before,
+    html[data-brand-variant='c'] .contact-section::before { display: none; }
+
+    /* About: readable editorial copy rather than a second display headline. */
+    html[data-brand-variant='c'] .editorial-intro {
+        max-width: 1480px;
+        margin: 0 auto;
+        padding: 10rem 6vw 11rem;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    html[data-brand-variant='c'] .intro-left {
+        grid-column: 1 / 4;
+        padding-top: 1rem;
+    }
+
+    html[data-brand-variant='c'] .meta-text {
+        color: #77716a;
+        font-size: 0.56rem;
+        letter-spacing: 0.26em;
+    }
+
+    html[data-brand-variant='c'] .intro-right { grid-column: 4 / 11; }
+
+    html[data-brand-variant='c'] .intro-right p {
+        max-width: 42ch;
+        color: #e5e0d9;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.75rem, 2.4vw, 2.9rem);
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 1.25;
+    }
+
+    html[data-brand-variant='c'] .intro-right p span,
+    html[data-brand-variant='c'] .intro-right p em { color: #b4aea5; }
+
+    /* Work: a clear lead film followed by a calm two-column sequence. */
+    html[data-brand-variant='c'] .work-section {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 4rem 6vw 12rem;
+        color: #f1eee8;
+    }
+
+    html[data-brand-variant='c'] .section-header {
+        margin-bottom: 5rem;
+        padding: 0;
+        align-items: flex-end;
+        border: 0;
+    }
+
+    html[data-brand-variant='c'] .section-title-block { display: block; }
+
+    html[data-brand-variant='c'] .section-eyebrow,
+    html[data-brand-variant='c'] .section-meta {
+        color: #77716a;
+        font-size: 0.56rem;
+        letter-spacing: 0.26em;
+    }
+
+    html[data-brand-variant='c'] .section-eyebrow {
+        display: block;
+        margin-bottom: 1.15rem;
+    }
+
+    html[data-brand-variant='c'] .section-header h2,
+    html[data-brand-variant='c'] .team-member h3,
+    html[data-brand-variant='c'] .contact-section h2,
+    html[data-brand-variant='c'] .card-title {
+        color: #f1eee8;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: -0.035em;
+    }
+
+    html[data-brand-variant='c'] .section-header h2 {
+        max-width: 15ch;
+        font-size: clamp(3.5rem, 5.5vw, 6.8rem);
+        line-height: 0.92;
+    }
+
+    html[data-brand-variant='c'] .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8rem 2rem;
+        background: transparent;
+    }
+
+    html[data-brand-variant='c'] .project-card,
+    html[data-brand-variant='c'] .project-card.card-feature {
+        grid-column: auto;
+        padding: 0;
+        background: transparent;
+    }
+
+    html[data-brand-variant='c'] .project-card:nth-child(1) { grid-column: 1 / -1; }
+
+    html[data-brand-variant='c'] .card-system-code { display: none; }
+
+    html[data-brand-variant='c'] .card-image-wrapper,
+    html[data-brand-variant='c'] .card-feature .card-image-wrapper {
+        aspect-ratio: 16 / 10;
+        overflow: visible;
+        margin-bottom: 5.5rem;
+        border: 0;
+        background: #12100e;
+        box-shadow: none;
+    }
+
+    html[data-brand-variant='c'] .project-card:nth-child(1) .card-image-wrapper { aspect-ratio: 16 / 8; }
+
+    html[data-brand-variant='c'] .card-image-wrapper::after {
+        display: none;
+    }
+
+    html[data-brand-variant='c'] .card-image-wrapper img {
+        filter: grayscale(100%) contrast(1.04) brightness(0.64);
+        transform: none;
+    }
+
+    html[data-brand-variant='c'] .project-card:hover .card-image-wrapper {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    html[data-brand-variant='c'] .project-card:hover .card-image-wrapper img {
+        filter: grayscale(20%) contrast(1.02) brightness(0.78);
+        transform: scale(1.012);
+    }
+
+    html[data-brand-variant='c'] .project-card:hover .card-image-wrapper::after {
+        background: linear-gradient(to top, rgba(5, 4, 3, 0.86), transparent 62%);
+    }
+
+    html[data-brand-variant='c'] .card-content {
+        top: 100%;
+        bottom: auto;
+        padding: 1.2rem 0 0;
+        gap: 0.35rem;
+        background: none;
+    }
+
+    html[data-brand-variant='c'] .card-meta {
+        color: #c1bab0;
+        font-size: 0.54rem;
+        letter-spacing: 0.2em;
+    }
+
+    html[data-brand-variant='c'] .card-title {
+        font-size: clamp(1.8rem, 2.4vw, 3rem);
+        line-height: 0.95;
+        transform: none;
+    }
+
+    html[data-brand-variant='c'] .card-role {
+        color: #999189;
+        font-size: 0.56rem;
+        letter-spacing: 0.18em;
+    }
+
+    /* Team: a numbered credits roster with stronger hierarchy. */
+    html[data-brand-variant='c'] .team-section {
+        max-width: 1460px;
+        margin: 0 auto;
+        padding: 9rem 6vw 12rem;
+    }
+
+    html[data-brand-variant='c'] .team-grid {
+        display: block;
+        margin-top: 5rem;
+        border: 0;
+        background: transparent;
+    }
+
+    html[data-brand-variant='c'] .team-member {
+        position: relative;
+        display: grid;
+        grid-template-columns: 4rem minmax(280px, .8fr) minmax(0, 1.2fr);
+        gap: 2rem;
+        padding: 2.8rem 0 3.2rem;
+        border-top: 1px solid rgba(241, 238, 232, .18);
+        background: transparent;
+    }
+
+    html[data-brand-variant='c'] .team-member::before {
+        grid-column: 1;
+        color: #a19a91;
+        font: 500 .58rem/1 'Jost', sans-serif;
+        letter-spacing: .2em;
+    }
+    html[data-brand-variant='c'] .team-member:nth-child(1)::before { content: '01'; }
+    html[data-brand-variant='c'] .team-member:nth-child(2)::before { content: '02'; }
+    html[data-brand-variant='c'] .team-member:nth-child(3)::before { content: '03'; }
+
+    html[data-brand-variant='c'] .team-member h3 {
+        grid-column: 2;
+        margin: 0;
+        font-size: clamp(2.8rem, 4vw, 4.8rem);
+        line-height: 0.9;
+    }
+
+    html[data-brand-variant='c'] .team-member .role {
+        grid-column: 2;
+        margin: 1rem 0 0;
+        color: #a19a91;
+        font-size: 0.55rem;
+        letter-spacing: 0.23em;
+    }
+
+    html[data-brand-variant='c'] .team-member p {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        max-width: 54ch;
+        color: #8e8881;
+        font-size: 0.8rem;
+        line-height: 1.75;
+    }
+
+    /* Contact: a large, direct closing gesture. */
+    html[data-brand-variant='c'] .contact-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+        column-gap: clamp(4rem, 9vw, 10rem);
+        align-items: end;
+        max-width: 1460px;
+        margin: 0 auto;
+        padding: 12rem 6vw 13rem;
+        text-align: left;
+    }
+
+    html[data-brand-variant='c'] .contact-section h2 {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        max-width: 7ch;
+        margin: 0;
+        padding: 0.08em 0 0.12em;
+        overflow: visible;
+        font-size: clamp(5.5rem, 8.8vw, 10rem);
+        line-height: 0.9;
+        text-wrap: balance;
+    }
+
+    html[data-brand-variant='c'] .contact-section p {
+        grid-column: 2;
+        grid-row: 1;
+        max-width: 420px;
+        margin: 0 0 2.25rem;
+        color: #8e8881;
+        font-size: 0.88rem;
+        line-height: 1.75;
+    }
+
+    html[data-brand-variant='c'] .contact-email {
+        grid-column: 2;
+        grid-row: 2;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: #f1eee8;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(2rem, 3vw, 3.7rem);
+        font-style: italic;
+        letter-spacing: -0.03em;
+    }
+
+    html[data-brand-variant='c'] footer {
+        justify-content: flex-start;
+        padding: 3rem 6vw 4rem;
+        border: 0;
+        background: #0a0908;
+    }
+
+    html[data-brand-variant='c'] .footer-copy {
+        color: #66615b;
+        font-size: 0.54rem;
+        letter-spacing: 0.25em;
+    }
+}

@@ -1,0 +1,31 @@
+/* The review routes may change the page design, but never the site navigation. */
+@media (min-width: 769px) {
+    html[data-brand-variant] nav.nav-links-only {
+        top: 44px;
+        width: 100%;
+        padding: 2.5rem 4rem;
+        justify-content: flex-end;
+        background: none;
+        mix-blend-mode: normal;
+    }
+
+    html[data-brand-variant] .nav-links { gap: 2rem; }
+
+    html[data-brand-variant] .nav-links a {
+        color: var(--text-main);
+        font-size: .75rem;
+        font-weight: 400;
+        letter-spacing: .15em;
+        padding-bottom: 4px;
+    }
+
+    html[data-brand-variant] .nav-links a:hover {
+        color: var(--accent-gold);
+        text-shadow: 0 0 10px color-mix(in srgb, var(--accent-gold) 40%, transparent);
+    }
+
+    html[data-brand-variant] .nav-links a::after {
+        display: block;
+        background: var(--accent-gold);
+    }
+}

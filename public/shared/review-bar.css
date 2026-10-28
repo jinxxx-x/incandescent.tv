@@ -1,0 +1,96 @@
+/* Universal identity-review navigation shared by the deck and every site concept. */
+.brand-review-bar {
+    position: fixed;
+    z-index: 20000;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex !important;
+    min-height: 44px;
+    padding: 0 22px;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 253, 249, 0.96);
+    border-bottom: 1px solid #d8d1c9;
+    color: #151210;
+    font-family: 'Jost', sans-serif;
+    backdrop-filter: blur(14px);
+}
+
+.brand-review-bar a {
+    color: inherit;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.brand-review-bar .brand-review-home { letter-spacing: 0.12em; }
+.brand-review-actions { display: flex; align-items: center; gap: 18px; }
+.brand-review-actions a:hover,
+.brand-review-actions a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+.brand-review-label {
+    color: #8a8179;
+    font-size: 0.56rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.brand-review-bar nav {
+    position: static;
+    display: flex;
+    width: auto;
+    padding: 0;
+    align-items: center;
+    gap: 7px;
+    mix-blend-mode: normal;
+}
+
+.brand-review-bar nav a {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    padding: 0;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.brand-review-bar nav a:hover,
+.brand-review-bar nav a:focus-visible { background: #eee8e1; }
+
+html:not([data-brand-variant]) body:not(.brand-deck) [data-variant-link='a'],
+html[data-brand-variant='a'] [data-variant-link='a'],
+html[data-brand-variant='b'] [data-variant-link='b'],
+html[data-brand-variant='c'] [data-variant-link='c'],
+html[data-review-variant='d'] [data-variant-link='d'] {
+    background: #151210;
+    color: #fffdf9;
+}
+
+body.has-brand-review-bar { padding-top: 44px; }
+body.has-brand-review-bar > nav.nav-links-only { top: 44px; }
+body.has-brand-review-bar > .frame-top { top: 44px; }
+body.has-brand-review-bar > .pt-top-left { top: 56px; }
+
+@media (max-width: 768px) {
+    .brand-review-bar { min-height: 42px; padding: 0 12px; }
+    .brand-review-bar nav { gap: 1px; }
+    .brand-review-bar nav a { width: 27px; height: 27px; }
+    .brand-review-label { display: none; }
+    .brand-review-actions { gap: 11px; }
+    body.has-brand-review-bar { padding-top: 42px; }
+    body.has-brand-review-bar > nav.nav-links-only { top: 42px; }
+    body.has-brand-review-bar > .frame-top { top: 42px; }
+    body.has-brand-review-bar > .pt-top-left { top: 54px; }
+    body.has-brand-review-bar > nav.nav-links-only .nav-links {
+        top: 42px;
+        height: calc(100vh - 42px);
+    }
+}
+
+@media (max-width: 380px) {
+    .brand-review-bar a { font-size: 0.56rem; }
+    .brand-review-bar nav a { width: 25px; }
+}

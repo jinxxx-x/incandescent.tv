@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incandescent Studios — Premium Television Production</title>
+    <title>Incandescent Studios | Premium Television Production</title>
     <meta name="description" content="Incandescent Studios is a premium television production company founded by veteran producers behind Wyatt Earp and the Cowboy War, Sitting Bull, George: Rise of a Revolutionary, and more. Stories that glow.">
     <meta name="keywords" content="television production, production company, documentary series, incandescent studios, Netflix, History Channel, Discovery">
     <meta name="robots" content="noindex, nofollow">
@@ -11,7 +11,7 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Incandescent Studios — Premium Television Production">
+    <meta property="og:title" content="Incandescent Studios | Premium Television Production">
     <meta property="og:description" content="Premium television production company. Veteran producers behind Wyatt Earp and the Cowboy War, Sitting Bull, and George: Rise of a Revolutionary.">
     <meta property="og:url" content="https://incandescent.tv/">
     <meta property="og:site_name" content="Incandescent Studios">
@@ -19,7 +19,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Incandescent Studios — Premium Television Production">
+    <meta name="twitter:title" content="Incandescent Studios | Premium Television Production">
     <meta name="twitter:description" content="Premium television production company. Stories that glow.">
 
     <!-- Favicon -->
@@ -28,10 +28,25 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="shared/styles.css">
+    <link rel="stylesheet" href="shared/brand-variants.css">
+    <link rel="stylesheet" href="shared/variant-b.css">
+    <link rel="stylesheet" href="shared/variant-c.css">
+    <link rel="stylesheet" href="shared/variant-d.css">
+    <link rel="stylesheet" href="shared/variant-nav.css">
+    <link rel="stylesheet" href="shared/review-bar.css">
+    <script>
+        (() => {
+            const variant = new URLSearchParams(window.location.search).get('brand')?.toLowerCase();
+            if (/^[abcd]$/.test(variant || '')) {
+                document.documentElement.dataset.brandVariant = variant;
+                document.documentElement.dataset.reviewVariant = variant;
+            }
+        })();
+    </script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -99,7 +114,20 @@
     ]
     </script>
 </head>
-<body>
+<body class="has-brand-review-bar">
+
+    <div class="brand-review-bar" aria-label="Brand variant navigation">
+        <div class="brand-review-actions">
+            <a class="brand-review-home" href="./brand/">Brand deck</a>
+        </div>
+        <span class="brand-review-label">Full website concepts</span>
+        <nav aria-label="Choose a full website variant">
+            <a href="./" data-variant-link="a" aria-label="Variant A, current site">A</a>
+            <a href="?brand=B" data-variant-link="b" aria-label="Variant B">B</a>
+            <a href="?brand=C" data-variant-link="c" aria-label="Variant C">C</a>
+            <a href="?brand=D" data-variant-link="d" aria-label="Variant D">D</a>
+        </nav>
+    </div>
 
     <!-- Frame Borders -->
     <div class="frame frame-top" aria-hidden="true"></div>
@@ -121,7 +149,6 @@
             <li role="none"><a href="#about" role="menuitem">About</a></li>
             <li role="none"><a href="#team" role="menuitem">Team</a></li>
             <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-            <li role="none"><a href="./brand/" role="menuitem">Brand</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
@@ -157,7 +184,7 @@
             <span class="meta-text">Founded by Veteran Producers</span>
         </div>
         <div class="intro-right">
-            <p>Incandescent is a full-service production company specializing in premium documentary and scripted content. We handle development, production, and delivery — concept through final master. Our founding team brings experience from Netflix, History, and Discovery, with credits including <em>Wyatt Earp and the Cowboy War</em>, <em>Sitting Bull</em>, <em>George: Rise of a Revolutionary</em>, and <em>The Titans That Built America</em>. Based in <span>New York</span>, we partner with streamers, networks, and brands to produce work that reaches global audiences.</p>
+            <p>Incandescent is a full-service production company specializing in premium documentary and scripted content. We handle development, production, and delivery, from concept through final master. Our founding team brings experience from Netflix, History, and Discovery, with credits including <em>Wyatt Earp and the Cowboy War</em>, <em>Sitting Bull</em>, <em>George: Rise of a Revolutionary</em>, and <em>The Titans That Built America</em>. Based in <span>New York</span>, we partner with streamers, networks, and brands to produce work that reaches global audiences.</p>
         </div>
     </section>
 
@@ -172,7 +199,7 @@
 
         <div class="grid-container">
 
-            <!-- Sitting Bull — featured -->
+            <!-- Sitting Bull, featured -->
             <article class="project-card card-feature">
                 <div class="card-system-code">ID: INC-001</div>
                 <div class="card-image-wrapper">
@@ -304,7 +331,7 @@
             <div class="team-member">
                 <h3>Lorenzo De Boni</h3>
                 <div class="role">Founder</div>
-                <p>A rare blend of creative instinct and business acumen. Lorenzo has developed and produced series across Netflix, History, and Discovery — including Wyatt Earp and the Cowboy War, Sitting Bull, and George: Rise of a Revolutionary. Trained at HBO and the University of St Andrews, he's a native New Yorker with an eye for stories that resonate globally.</p>
+                <p>A rare blend of creative instinct and business acumen. Lorenzo has developed and produced series across Netflix, History, and Discovery, including Wyatt Earp and the Cowboy War, Sitting Bull, and George: Rise of a Revolutionary. Trained at HBO and the University of St Andrews, he's a native New Yorker with an eye for stories that resonate globally.</p>
             </div>
             <div class="team-member">
                 <h3>Tim Kelly</h3>
@@ -332,6 +359,32 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+        (() => {
+            const variant = document.documentElement.dataset.brandVariant;
+            const copy = {
+                b: {
+                    kicker: 'Independent production / New York',
+                    tagline: 'Television built with scale, precision, and a point of view.',
+                    work: 'A slate built to move'
+                },
+                c: {
+                    kicker: 'An independent production studio',
+                    tagline: 'Films and series shaped with patience, instinct, and a sharp editorial eye.',
+                    work: 'Stories, closely observed'
+                },
+                d: {
+                    kicker: 'Premium documentary and scripted television',
+                    tagline: 'A production company built to give ambitious stories scale, structure, and impact.',
+                    work: 'The production slate'
+                },
+            }[variant];
+            if (!copy) return;
+            document.querySelector('.hero-kicker').textContent = copy.kicker;
+            document.querySelector('.hero .tagline').textContent = copy.tagline;
+            document.querySelector('.work-header h2').textContent = copy.work;
+        })();
+    </script>
     <script src="shared/nav.js"></script>
     <script src="shared/main.js"></script>
 

@@ -1,0 +1,205 @@
+/* Variant B: bold modern broadcast. Desktop only. */
+@media (min-width: 769px) {
+    html[data-brand-variant='b'] {
+        --bg-base: #080807;
+        --bg-panel: #e9e5dc;
+        --text-main: #f1eee7;
+        --text-dim: #9c978d;
+        --accent-gold: #e59c5b;
+        --accent-ember: #e14d2a;
+        --line-faint: rgba(241, 238, 231, 0.14);
+        --line-gold: rgba(229, 156, 91, 0.32);
+        --font-display: 'Archivo', sans-serif;
+        --font-ui: 'Space Grotesk', sans-serif;
+    }
+
+    html[data-brand-variant='b'] body { background: #080807; }
+    html[data-brand-variant='b'] body::before { opacity: 0.035; }
+    html[data-brand-variant='b'] .frame,
+    html[data-brand-variant='b'] .perimeter-text,
+    html[data-brand-variant='b'] .hero-bg-lines,
+    html[data-brand-variant='b'] .divider { display: none; }
+
+    html[data-brand-variant='b'] .hero {
+        position: relative;
+        min-height: 760px;
+        height: calc(100vh - 44px);
+        padding: 8rem 4rem 3rem;
+        align-items: stretch;
+        justify-content: flex-start;
+        overflow: hidden;
+        background: #080807;
+    }
+
+    html[data-brand-variant='b'] .hero::before,
+    html[data-brand-variant='b'] .hero::after { display: none; }
+
+    html[data-brand-variant='b'] .hero-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+        gap: clamp(1.25rem, 2.5vh, 2rem);
+        text-align: center;
+    }
+
+    html[data-brand-variant='b'] .hero-kicker {
+        align-self: center;
+        grid-column: 1;
+        justify-self: center;
+        color: var(--accent-ember);
+        font: 600 0.62rem/1 'Space Grotesk', sans-serif;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+    }
+
+    html[data-brand-variant='b'] .hero .hero-logo-heading {
+        align-self: center;
+        display: flex;
+        width: min(1000px, 76vw);
+        margin: 0;
+        grid-column: 1 / -1;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background: none;
+        color: #f1eee7;
+        filter: none;
+        font-family: 'Archivo', sans-serif;
+        font-size: clamp(6rem, 11.5vw, 12.4rem);
+        font-weight: 800;
+        letter-spacing: -0.075em;
+        line-height: 0.72;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    html[data-brand-variant='b'] .hero-brand-secondary {
+        margin-left: 0;
+        color: #7f7a70;
+        font: 800 clamp(5rem, 10.2vw, 11rem)/0.72 'Archivo', sans-serif;
+        letter-spacing: -0.07em;
+        text-transform: uppercase;
+    }
+
+    html[data-brand-variant='b'] .hero p.tagline {
+        max-width: 36ch;
+        margin: 0;
+        grid-column: 1;
+        justify-self: center;
+        color: #aaa399;
+        font: 400 0.94rem/1.55 'Space Grotesk', sans-serif;
+    }
+
+    html[data-brand-variant='b'] .ambient-glow { display: none; }
+
+    html[data-brand-variant='b'] .editorial-intro {
+        max-width: none;
+        margin: 0;
+        padding: 8rem 4rem 9rem;
+        grid-template-columns: 15rem 1fr;
+        gap: 8vw;
+        border: 0;
+        background: #e9e5dc;
+        color: #0a0908;
+    }
+
+    html[data-brand-variant='b'] .editorial-intro::before,
+    html[data-brand-variant='b'] .team-section::before,
+    html[data-brand-variant='b'] .contact-section::before { display: none; }
+    html[data-brand-variant='b'] .meta-text { color: #625e56; font-family: 'Space Grotesk', sans-serif; }
+    html[data-brand-variant='b'] .intro-right p {
+        max-width: 30ch;
+        color: #0a0908;
+        font: 600 clamp(2.4rem, 4vw, 4.8rem)/1.02 'Space Grotesk', sans-serif;
+        letter-spacing: -0.045em;
+    }
+    html[data-brand-variant='b'] .intro-right p em,
+    html[data-brand-variant='b'] .intro-right p span { color: #bd3f24; font-style: normal; }
+
+    html[data-brand-variant='b'] .work-section {
+        max-width: none;
+        margin: 0;
+        padding: 8rem 4rem 10rem;
+        border: 0;
+        background: #080807;
+    }
+    html[data-brand-variant='b'] .work-header { margin-bottom: 4rem; padding: 0; border: 0; }
+    html[data-brand-variant='b'] .section-title-block { display: grid; grid-template-columns: 13rem 1fr; align-items: end; }
+    html[data-brand-variant='b'] .section-eyebrow { color: var(--accent-ember); font: 600 0.6rem/1 'Space Grotesk', sans-serif; letter-spacing: .2em; }
+    html[data-brand-variant='b'] .section-header h2 {
+        max-width: 10ch;
+        color: #f1eee7;
+        font: 700 clamp(3.5rem, 6vw, 7rem)/0.9 'Archivo', sans-serif;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+    }
+
+    html[data-brand-variant='b'] .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1px;
+        background: #3a3732;
+    }
+    html[data-brand-variant='b'] .project-card { grid-column: span 4; min-height: 420px; background: #080807; }
+    html[data-brand-variant='b'] .project-card:nth-child(1) { grid-column: span 8; min-height: 650px; }
+    html[data-brand-variant='b'] .project-card:nth-child(2) { grid-column: span 4; min-height: 650px; }
+    html[data-brand-variant='b'] .project-card:nth-child(4),
+    html[data-brand-variant='b'] .project-card:nth-child(7) { grid-column: span 8; }
+    html[data-brand-variant='b'] .card-system-code { display: none; }
+    html[data-brand-variant='b'] .card-image-wrapper { height: 100%; min-height: inherit; border: 0; background: #111; }
+    html[data-brand-variant='b'] .card-image-wrapper img { height: 100%; filter: grayscale(1) contrast(1.08) brightness(.8); }
+    html[data-brand-variant='b'] .card-content { padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,.88)); }
+    html[data-brand-variant='b'] .card-meta,
+    html[data-brand-variant='b'] .card-role { color: #d04b2e; font-family: 'Space Grotesk', sans-serif; }
+    html[data-brand-variant='b'] .card-title { max-width: 14ch; color: #fff; font: 600 clamp(1.6rem, 2.6vw, 3.2rem)/.96 'Archivo', sans-serif; letter-spacing: -.04em; text-transform: uppercase; }
+
+    html[data-brand-variant='b'] .team-section {
+        max-width: none;
+        margin: 0;
+        padding: 9rem 4rem;
+        border: 0;
+        background: #d94b2b;
+        color: #0a0908;
+    }
+    html[data-brand-variant='b'] .team-section .section-header { margin-bottom: 5rem; padding: 0 0 1.5rem; border-bottom: 2px solid #0a0908; }
+    html[data-brand-variant='b'] .team-section h2 { color: #0a0908; font: 800 clamp(4rem, 7vw, 8rem)/.8 'Archivo', sans-serif; text-transform: uppercase; }
+    html[data-brand-variant='b'] .section-meta { color: #0a0908; }
+    html[data-brand-variant='b'] .team-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 1px; background: rgba(10,9,8,.35); }
+    html[data-brand-variant='b'] .team-member { min-height: 400px; padding: 2.5rem; background: #d94b2b; }
+    html[data-brand-variant='b'] .team-member h3 { color: #0a0908; font: 700 clamp(2rem, 3vw, 4rem)/.9 'Archivo', sans-serif; letter-spacing: -.05em; text-transform: uppercase; }
+    html[data-brand-variant='b'] .team-member .role,
+    html[data-brand-variant='b'] .team-member p { color: #2a1711; font-family: 'Space Grotesk', sans-serif; }
+
+    html[data-brand-variant='b'] .contact-section {
+        display: grid;
+        max-width: none;
+        margin: 0;
+        padding: 10rem 4rem 8rem;
+        justify-items: center;
+        border: 0;
+        background: #e9e5dc;
+        text-align: center;
+    }
+    html[data-brand-variant='b'] .contact-section h2 {
+        width: 100%;
+        margin: 0;
+        padding: 0.08em 0 0.12em;
+        overflow: visible;
+        color: #0a0908;
+        font: 800 clamp(4.5rem, 8.8vw, 9.5rem)/0.9 'Archivo', sans-serif;
+        letter-spacing: -0.055em;
+        text-wrap: balance;
+        text-transform: uppercase;
+    }
+    html[data-brand-variant='b'] .contact-section p { max-width: 42ch; margin: 2.25rem auto 2rem; color: #5b5750; }
+    html[data-brand-variant='b'] .contact-email { color: #bd3f24; font: 600 clamp(2rem, 4.2vw, 5rem)/1 'Space Grotesk', sans-serif; letter-spacing: -.05em; }
+    html[data-brand-variant='b'] footer { background: #e9e5dc; color: #625e56; }
+}
