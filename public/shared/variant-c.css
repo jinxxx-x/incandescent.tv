@@ -1,4 +1,4 @@
-/* Direction 3A: image-first, centered emblem masthead. Every rule is hero-scoped. */
+/* Direction 3A: full-image masthead with no bulb graphic. Every rule is hero-scoped. */
 html[data-brand-variant='3a'] .hero-bg-lines,
 html[data-brand-variant='3a'] .ambient-glow {
     display: none;
@@ -41,12 +41,7 @@ html[data-brand-variant='3a'] .hero-content {
 }
 
 html[data-brand-variant='3a'] .hero-bulb-mark {
-    display: block;
-    width: clamp(72px, 8vw, 118px);
-    height: auto;
-    margin-bottom: clamp(1rem, 2.2vh, 1.8rem);
-    opacity: .72;
-    mix-blend-mode: screen;
+    display: none;
 }
 
 html[data-brand-variant='3a'] .hero .hero-logo-heading {
@@ -77,11 +72,6 @@ html[data-brand-variant='3a'] .hero p.tagline {
     html[data-brand-variant='3a'] .hero-content {
         padding: 7rem 1.25rem 3.5rem;
         justify-content: flex-end;
-    }
-
-    html[data-brand-variant='3a'] .hero-bulb-mark {
-        width: 64px;
-        margin-bottom: 1rem;
     }
 
     html[data-brand-variant='3a'] .hero .hero-logo-heading {

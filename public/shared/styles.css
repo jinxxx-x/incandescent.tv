@@ -433,13 +433,8 @@ nav.nav-links-only {
     font-style: italic;
 }
 
-.about-section {
-    grid-template-columns: 1fr;
-}
-
 .about-copy {
-    grid-column: 1 / -1;
-    max-width: 76rem;
+    grid-column: 2;
 }
 
 .about-copy p {
@@ -832,6 +827,10 @@ footer {
     .editorial-intro {
         grid-template-columns: 1fr;
         padding: 4rem 2rem;
+    }
+
+    .about-copy {
+        grid-column: 1;
     }
 
     .work-section {

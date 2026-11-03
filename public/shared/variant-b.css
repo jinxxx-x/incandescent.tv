@@ -1,9 +1,4 @@
-/* Direction 2A: image-first, lower-third masthead. Every rule is hero-scoped. */
-html[data-brand-variant='2a'] .hero-bg-lines,
-html[data-brand-variant='2a'] .ambient-glow {
-    display: none;
-}
-
+/* Direction 2A: dark optical field with the bulb as a quiet background mark. */
 html[data-brand-variant='2a'] .hero {
     height: calc(100svh - 44px);
     min-height: 700px;
@@ -12,22 +7,12 @@ html[data-brand-variant='2a'] .hero {
 }
 
 html[data-brand-variant='2a'] .hero-still {
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    display: block;
-    background: url('../images/revolutionary-war-hero.jpg') center 52% / cover no-repeat;
-    filter: saturate(.78) contrast(1.04) brightness(.78);
+    display: none;
 }
 
-html[data-brand-variant='2a'] .hero::after {
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(4,3,2,.46) 0%, rgba(4,3,2,.06) 36%, rgba(4,3,2,.26) 66%, rgba(4,3,2,.88) 100%),
-        linear-gradient(90deg, rgba(4,3,2,.42) 0%, transparent 58%);
-    content: '';
+html[data-brand-variant='2a'] .hero-bg-lines,
+html[data-brand-variant='2a'] .ambient-glow {
+    display: block;
 }
 
 html[data-brand-variant='2a'] .hero-content {
@@ -36,40 +21,46 @@ html[data-brand-variant='2a'] .hero-content {
     width: 100%;
     height: 100%;
     max-width: none;
-    padding: 0 clamp(2rem, 6vw, 7rem) clamp(3.5rem, 7vh, 6rem);
-    align-items: flex-start;
-    justify-content: flex-end;
-    text-align: left;
+    padding: 7rem 4vw 4rem;
+    justify-content: center;
+    text-align: center;
 }
 
 html[data-brand-variant='2a'] .hero-bulb-mark {
     position: absolute;
-    top: clamp(7rem, 15vh, 10rem);
-    left: clamp(2rem, 6vw, 7rem);
+    z-index: 0;
+    top: 50%;
+    left: 50%;
     display: block;
-    width: clamp(58px, 6vw, 92px);
+    width: clamp(240px, 30vw, 460px);
     height: auto;
-    opacity: .68;
+    opacity: .18;
     mix-blend-mode: screen;
+    filter: drop-shadow(0 0 48px rgba(229,156,91,.34));
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+html[data-brand-variant='2a'] .hero .hero-logo-heading,
+html[data-brand-variant='2a'] .hero p.tagline {
+    position: relative;
+    z-index: 2;
 }
 
 html[data-brand-variant='2a'] .hero .hero-logo-heading {
-    width: min(1180px, 88vw);
-    margin: 0 0 1.6rem;
-    justify-content: flex-start;
+    width: min(1320px, 92vw);
+    margin: 0 0 1.5rem;
     gap: .22em;
-    font-size: clamp(2.9rem, 6.8vw, 7.4rem);
+    font-size: clamp(3rem, 7.2vw, 7.7rem);
     letter-spacing: -.045em;
-    text-align: left;
-    filter: drop-shadow(0 2px 22px rgba(0,0,0,.48));
+    filter: drop-shadow(0 3px 26px rgba(0,0,0,.58));
 }
 
 html[data-brand-variant='2a'] .hero p.tagline {
-    max-width: 54ch;
+    max-width: 48ch;
     color: rgba(255,250,244,.78);
-    font-size: clamp(.9rem, 1.1vw, 1.08rem);
+    font-size: clamp(.88rem, 1vw, 1.04rem);
     line-height: 1.6;
-    text-shadow: 0 2px 18px rgba(0,0,0,.7);
 }
 
 @media (max-width: 768px) {
@@ -78,28 +69,33 @@ html[data-brand-variant='2a'] .hero p.tagline {
         height: calc(100svh - 42px);
     }
 
-    html[data-brand-variant='2a'] .hero-still { background-position: 58% center; }
-
-    html[data-brand-variant='2a'] .hero-content { padding: 0 1.25rem 3.25rem; }
+    html[data-brand-variant='2a'] .hero-content {
+        padding: 7rem 1.25rem 3.5rem;
+    }
 
     html[data-brand-variant='2a'] .hero-bulb-mark {
-        top: 5.8rem;
-        left: 1.25rem;
-        width: 56px;
+        width: min(62vw, 280px);
+        opacity: .2;
     }
 
     html[data-brand-variant='2a'] .hero .hero-logo-heading {
         width: 100%;
         margin-bottom: 1.15rem;
-        flex-wrap: wrap;
-        gap: .05em .2em;
+        flex-direction: column;
+        align-items: center;
+        gap: .35rem;
         font-size: clamp(2.35rem, 11.5vw, 3.4rem);
         line-height: .94;
         white-space: normal;
     }
 
+    html[data-brand-variant='2a'] .hero-brand-secondary {
+        font-size: .52em;
+        letter-spacing: .42em;
+    }
+
     html[data-brand-variant='2a'] .hero p.tagline {
-        max-width: 33ch;
+        max-width: 31ch;
         font-size: .78rem;
     }
 }
