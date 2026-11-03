@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1143" fill="none">
+  <defs>
+    <filter id="paper" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".015 .08" numOctaves="4" seed="17" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="gray"/>
+      <feComponentTransfer in="gray" result="soft">
+        <feFuncA type="table" tableValues="0 .14"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="soft" mode="screen"/>
+    </filter>
+    <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale=".72" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <radialGradient id="wear" cx="50%" cy="44%" r="72%">
+      <stop offset="0" stop-color="#0b0a09"/>
+      <stop offset=".58" stop-color="#050403"/>
+      <stop offset="1" stop-color="#020201"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="2048" height="1143" fill="url(#wear)"/>
+  <rect width="2048" height="1143" fill="#0b0908" opacity=".08" filter="url(#paper)"/>
+  <g opacity=".08" stroke="#c9cbca" stroke-width="1">
+    <path d="M324 0v1143M1017 0v1143M1363 0v1143M1790 0v1143"/>
+    <path d="M0 486h2048M0 793h2048"/>
+  </g>
+
+  <g stroke="#d3d4d2" stroke-linecap="round" stroke-linejoin="round" filter="url(#chalk)">
+    <!-- plate construction around bulb -->
+    <g opacity=".36" stroke-width="1.35">
+      <path stroke-dasharray="6 10" d="M395 116H606M395 116v134M820 116H606M820 116v132M607 80v905"/>
+      <path d="M382 320h455M382 328h455M382 693h454" opacity=".4"/>
+      <path d="M395 82v34M820 82v34M382 320h-20M382 693h-20M836 320h20M836 693h20"/>
+    </g>
+
+    <!-- antique Edison bulb, traced to the reference proportions -->
+    <g opacity=".63">
+      <path stroke-width="2.15" d="M607 119c-112 0-207 80-207 199 0 86 39 145 88 204 46 55 54 81 54 139v15c0 28 17 46 33 54h64c16-8 33-26 33-54v-15c0-58 8-84 54-139 49-59 88-118 88-204 0-119-95-199-207-199Z"/>
+      <path stroke-width="1.65" d="M548 659h118M547 674h120M550 689h114M557 704h100M565 719h84"/>
+      <path stroke-width="1.55" d="M556 729v32h102v-32M556 739h102M554 752h106"/>
+      <path stroke-width="1.8" d="M554 759c11 8 96 8 107 0l-3 17H556l-2-17Z"/>
+      <path stroke-width="1.6" d="M556 777h102M554 788l106-3M554 798l106-3M557 808l99-3M562 818l89-3M568 828l77-3M578 838h58"/>
+      <path stroke-width="1.7" d="M579 838c8 16 48 16 56 0M588 850c8 10 30 10 38 0"/>
+      <!-- filament and supports -->
+      <path stroke-width="1.7" d="M572 689c2-79 4-161 2-250-2-61-5-104-15-143M642 689c-2-79-4-161-2-250 2-61 5-104 15-143"/>
+      <path stroke-width="1.45" d="M559 296c20-23 76-23 96 0M559 296l7-12 8 12 8-12 8 12 8-12 8 12 8-12 8 12 8-12 8 12 8-12 8 12"/>
+      <path opacity=".44" d="M505 263c-27 55-24 136 17 192M709 263c27 55 24 136-17 192"/>
+    </g>
+
+    <!-- bulb dimensions and callouts -->
+    <g opacity=".43" stroke-width="1.2">
+      <path d="M395 106h425M395 97v18M820 97v18M375 119v733M366 119h18M366 852h18M375 320h25M375 676h168"/>
+      <path d="m369 137 6-18 6 18m-12 697 6 18 6-18"/>
+      <path d="M814 320h54M814 676h54M814 782h54"/>
+      <path d="M830 320v462M821 320h18M821 782h18"/>
+    </g>
+
+    <!-- right-side circuit exactly follows the reference's open layout -->
+    <g opacity=".56" stroke-width="1.7">
+      <path d="M1042 190v451M1042 641h374V381"/>
+      <rect x="1027" y="248" width="28" height="64" rx="1"/>
+      <path d="M1042 354h115M1157 354l15-10 13 20 14-20 14 20 14-20 15 10h30"/>
+      <path d="M1272 354h58M1330 354c44-2 77-16 100-39M1042 452c112-11 219-15 315-15 34 0 62-8 86-23"/>
+      <path d="M1416 190v112M1393 302c0-13 11-23 23-23s23 10 23 23M1393 302h46"/>
+      <path d="M1395 329c6 15 36 15 42 0M1393 329h46M1416 329v52"/>
+      <circle cx="1042" cy="354" r="3.6"/>
+      <circle cx="1042" cy="452" r="3.6"/>
+      <circle cx="1272" cy="354" r="3.6"/>
+      <circle cx="1330" cy="354" r="3.6"/>
+      <circle cx="1416" cy="381" r="3.6"/>
+      <path opacity=".5" d="M1017 190h25M1017 641h25M1416 190h24M1416 641h24"/>
+    </g>
+
+    <!-- Retain only the original figure labels. -->
+    <g fill="#d3d4d2" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-style="italic">
+      <text x="518" y="949" font-size="54" opacity=".46">Fig. 1.</text>
+      <text x="986" y="126" font-size="55" opacity=".46">Fig. 1.</text>
+      <text x="1322" y="126" font-size="55" opacity=".46">Fig. 2.</text>
+    </g>
+  </g>
+</svg>

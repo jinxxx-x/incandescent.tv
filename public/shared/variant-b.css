@@ -1,4 +1,4 @@
-/* Direction 2A: dark optical field with the bulb as a quiet background mark. */
+/* Direction 2A: Edison patent vectors replace the base optical crosshairs. */
 html[data-brand-variant='2a'] .hero {
     height: calc(100svh - 44px);
     min-height: 700px;
@@ -7,12 +7,32 @@ html[data-brand-variant='2a'] .hero {
 }
 
 html[data-brand-variant='2a'] .hero-still {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    display: block;
+    background-image: url('../images/edison-patent-faithful.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 92%;
+    opacity: .56;
+    filter: brightness(.82);
+}
+
+html[data-brand-variant='2a'] .hero::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: rgba(0, 0, 0, .14);
+    content: '';
+}
+
+html[data-brand-variant='2a'] .hero-bg-lines {
     display: none;
 }
 
-html[data-brand-variant='2a'] .hero-bg-lines,
 html[data-brand-variant='2a'] .ambient-glow {
-    display: block;
+    display: none;
 }
 
 html[data-brand-variant='2a'] .hero-content {
@@ -21,24 +41,13 @@ html[data-brand-variant='2a'] .hero-content {
     width: 100%;
     height: 100%;
     max-width: none;
-    padding: 7rem 4vw 4rem;
-    justify-content: center;
+    padding: 7rem 4vw 8vh;
+    justify-content: flex-end;
     text-align: center;
 }
 
 html[data-brand-variant='2a'] .hero-bulb-mark {
-    position: absolute;
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: clamp(240px, 30vw, 460px);
-    height: auto;
-    opacity: .18;
-    mix-blend-mode: screen;
-    filter: drop-shadow(0 0 48px rgba(229,156,91,.34));
-    transform: translate(-50%, -50%);
-    pointer-events: none;
+    display: none;
 }
 
 html[data-brand-variant='2a'] .hero .hero-logo-heading,
@@ -48,10 +57,10 @@ html[data-brand-variant='2a'] .hero p.tagline {
 }
 
 html[data-brand-variant='2a'] .hero .hero-logo-heading {
-    width: min(1320px, 92vw);
+    width: min(960px, 88vw);
     margin: 0 0 1.5rem;
     gap: .22em;
-    font-size: clamp(3rem, 7.2vw, 7.7rem);
+    font-size: clamp(2.5rem, 4.6vw, 3.5rem);
     letter-spacing: -.045em;
     filter: drop-shadow(0 3px 26px rgba(0,0,0,.58));
 }
@@ -59,7 +68,7 @@ html[data-brand-variant='2a'] .hero .hero-logo-heading {
 html[data-brand-variant='2a'] .hero p.tagline {
     max-width: 48ch;
     color: rgba(255,250,244,.78);
-    font-size: clamp(.88rem, 1vw, 1.04rem);
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -70,12 +79,12 @@ html[data-brand-variant='2a'] .hero p.tagline {
     }
 
     html[data-brand-variant='2a'] .hero-content {
-        padding: 7rem 1.25rem 3.5rem;
+        padding: 7rem 1.25rem 8vh;
     }
 
-    html[data-brand-variant='2a'] .hero-bulb-mark {
-        width: min(62vw, 280px);
-        opacity: .2;
+    html[data-brand-variant='2a'] .hero-still {
+        background-position: 38% center;
+        background-size: auto 86%;
     }
 
     html[data-brand-variant='2a'] .hero .hero-logo-heading {
@@ -84,7 +93,7 @@ html[data-brand-variant='2a'] .hero p.tagline {
         flex-direction: column;
         align-items: center;
         gap: .35rem;
-        font-size: clamp(2.35rem, 11.5vw, 3.4rem);
+        font-size: 2.5rem;
         line-height: .94;
         white-space: normal;
     }
@@ -96,6 +105,6 @@ html[data-brand-variant='2a'] .hero p.tagline {
 
     html[data-brand-variant='2a'] .hero p.tagline {
         max-width: 31ch;
-        font-size: .78rem;
+        font-size: .8125rem;
     }
 }
