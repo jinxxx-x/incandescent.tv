@@ -1,11 +1,4 @@
-/* Direction 2A: image-first, lower-third masthead. The site below the hero stays 1A. */
-html[data-brand-variant='2a'] {
-    --text-main: #fffaf4;
-    --accent-gold: #e59c5b;
-}
-
-html[data-brand-variant='2a'] .frame,
-html[data-brand-variant='2a'] .perimeter-text,
+/* Direction 2A: image-first, lower-third masthead. Every rule is hero-scoped. */
 html[data-brand-variant='2a'] .hero-bg-lines,
 html[data-brand-variant='2a'] .ambient-glow {
     display: none;
