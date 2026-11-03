@@ -50,7 +50,7 @@
 
 .brand-review-bar nav a {
     display: grid;
-    width: 29px;
+    width: 34px;
     height: 29px;
     padding: 0;
     place-items: center;
@@ -60,11 +60,9 @@
 .brand-review-bar nav a:hover,
 .brand-review-bar nav a:focus-visible { background: #eee8e1; }
 
-html:not([data-brand-variant]) body:not(.brand-deck) [data-variant-link='a'],
-html[data-brand-variant='a'] [data-variant-link='a'],
-html[data-brand-variant='b'] [data-variant-link='b'],
-html[data-brand-variant='c'] [data-variant-link='c'],
-html[data-review-variant='d'] [data-variant-link='d'] {
+html:not([data-brand-variant]) body:not(.brand-deck) [data-variant-link='1a'],
+html[data-brand-variant='2a'] [data-variant-link='2a'],
+html[data-brand-variant='3a'] [data-variant-link='3a'] {
     background: #151210;
     color: #fffdf9;
 }

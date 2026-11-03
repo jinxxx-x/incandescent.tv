@@ -31,16 +31,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="shared/styles.css">
-    <link rel="stylesheet" href="shared/variant-b.css">
-    <link rel="stylesheet" href="shared/variant-c.css">
-    <link rel="stylesheet" href="shared/variant-d.css">
-    <link rel="stylesheet" href="shared/variant-nav.css">
-    <link rel="stylesheet" href="shared/review-bar.css">
+    <link rel="stylesheet" href="shared/styles.css?v=6">
+    <link rel="stylesheet" href="shared/variant-b.css?v=6">
+    <link rel="stylesheet" href="shared/variant-c.css?v=6">
+    <link rel="stylesheet" href="shared/variant-nav.css?v=6">
+    <link rel="stylesheet" href="shared/review-bar.css?v=6">
     <script>
         (() => {
             const variant = new URLSearchParams(window.location.search).get('brand')?.toLowerCase();
-            if (/^[abcd]$/.test(variant || '')) {
+            if (/^(2a|3a)$/.test(variant || '')) {
                 document.documentElement.dataset.brandVariant = variant;
                 document.documentElement.dataset.reviewVariant = variant;
             }
@@ -118,12 +117,11 @@
         <div class="brand-review-actions">
             <a class="brand-review-home" href="./brand/">Brand deck</a>
         </div>
-        <span class="brand-review-label">Full website concepts</span>
-        <nav aria-label="Choose a full website variant">
-            <a href="./" data-variant-link="a" aria-label="Variant A, current site">A</a>
-            <a href="?brand=B" data-variant-link="b" aria-label="Variant B">B</a>
-            <a href="?brand=C" data-variant-link="c" aria-label="Variant C">C</a>
-            <a href="?brand=D" data-variant-link="d" aria-label="Variant D">D</a>
+        <span class="brand-review-label">Header directions</span>
+        <nav aria-label="Choose a header direction">
+            <a href="./" data-variant-link="1a" aria-label="Direction 1A, current site">1A</a>
+            <a href="?brand=2A" data-variant-link="2a" aria-label="Direction 2A">2A</a>
+            <a href="?brand=3A" data-variant-link="3a" aria-label="Direction 3A">3A</a>
         </nav>
     </div>
 
@@ -155,6 +153,7 @@
 
     <!-- Hero -->
     <header class="hero">
+        <div class="hero-still" aria-hidden="true"></div>
         <div class="hero-bg-lines" aria-hidden="true">
             <div class="line-v center"></div>
             <div class="line-h center"></div>
@@ -164,6 +163,7 @@
         <div class="ambient-glow" aria-hidden="true"></div>
 
         <div class="hero-content">
+            <img class="hero-bulb-mark" src="images/edison-bulb-mark.png" alt="">
             <h1 class="hero-logo-heading" aria-label="Incandescent Studios">
                 <span class="hero-brand-primary">Incandescent</span>
                 <span class="hero-brand-secondary">Studios</span>

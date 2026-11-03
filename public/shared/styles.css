@@ -233,6 +233,11 @@ nav.nav-links-only {
     overflow: hidden;
 }
 
+.hero-still,
+.hero-bulb-mark {
+    display: none;
+}
+
 .hero-bg-lines {
     position: absolute;
     inset: 0;

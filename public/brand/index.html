@@ -269,27 +269,6 @@
     .signature-app .app-copy span { color: #8b8178; font-size: 9px; letter-spacing: .17em; text-transform: uppercase; }
     .signature-app .app-copy h4 { max-width: 6ch; margin-top: 24px; font-family: var(--serif); font-size: 58px; font-style: italic; font-weight: 600; letter-spacing: -.045em; line-height: .82; }
 
-    /* D: cinematic slate */
-    .route-d { --accent: #cf9f25; }
-    .route-d .logo-contexts { background: #090908; }
-    .slate-mark { display: grid; width: 100%; justify-items: start; }
-    .slate-mark .name {
-      font-family: var(--serif);
-      font-size: 100px;
-      font-weight: 600;
-      letter-spacing: -.055em;
-      line-height: .74;
-      text-transform: uppercase;
-    }
-    .slate-mark .studio { margin-top: 30px; color: #9a958d; font-size: 10px; font-weight: 500; letter-spacing: .62em; text-transform: uppercase; }
-    .logo-panel.light .slate-mark .name { font-size: 47px; }
-    .logo-panel.light .slate-mark .studio { color: #777168; font-size: 8px; letter-spacing: .42em; }
-    .slate-app img { filter: grayscale(1) contrast(1.06) brightness(.68); }
-    .slate-app::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,8,7,.7), transparent 72%); content: ""; }
-    .slate-app .app-copy { position: absolute; z-index: 1; top: 42px; left: 38px; color: #f4f0e9; }
-    .slate-app .app-copy span { color: var(--accent); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
-    .slate-app .app-copy h4 { max-width: 7ch; margin-top: 92px; font-family: var(--serif); font-size: 61px; font-weight: 600; letter-spacing: -.04em; line-height: .83; }
-
     /* One consistent image test across every direction. */
     .application.comparison-app { background: #171411; }
     .application.comparison-app img {
@@ -324,9 +303,84 @@
     .comparison-app .signature-mark { color: #f7f2eb; }
     .comparison-app .signature-mark .name { font-size: 74px; }
     .comparison-app .signature-mark .studio { margin-top: 17px; color: #d8d0c8; }
-    .comparison-app .slate-mark { color: #f7f2eb; }
-    .comparison-app .slate-mark .name { font-size: 60px; }
-    .comparison-app .slate-mark .studio { margin-top: 18px; color: #cf9f25; }
+
+    /* 2A and 3A compare one image with two deliberate header systems. */
+    .route-2a,
+    .route-3a { --accent: #e59c5b; }
+    .header-study {
+      position: relative;
+      min-height: clamp(480px, 58vw, 760px);
+      overflow: hidden;
+      background: #080604;
+      color: #fffaf4;
+    }
+    .header-study::after {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+    .header-study-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 52%;
+      filter: saturate(.76) contrast(1.04) brightness(.76);
+    }
+    .study-content {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      display: flex;
+      padding: clamp(30px, 5vw, 70px);
+      flex-direction: column;
+    }
+    .study-bulb {
+      width: clamp(58px, 7vw, 96px);
+      height: auto;
+      opacity: .72;
+      mix-blend-mode: screen;
+    }
+    .study-wordmark {
+      display: flex;
+      gap: .22em;
+      font-family: var(--brand);
+      font-size: clamp(31px, 5.5vw, 76px);
+      font-weight: 300;
+      letter-spacing: -.045em;
+      line-height: .9;
+      text-transform: uppercase;
+      filter: drop-shadow(0 2px 18px rgba(0,0,0,.55));
+    }
+    .study-wordmark span {
+      color: transparent;
+      background: linear-gradient(90deg, #e59c5b, #f1b46f 48%, #fffaf4 96%);
+      background-clip: text;
+    }
+    .study-content p {
+      max-width: 48ch;
+      margin-top: 18px;
+      color: rgba(255,250,244,.76);
+      font-size: 13px;
+      line-height: 1.6;
+      text-shadow: 0 2px 16px rgba(0,0,0,.7);
+    }
+    .study-two::after {
+      background: linear-gradient(180deg, rgba(4,3,2,.4), transparent 38%, rgba(4,3,2,.88));
+    }
+    .study-two .study-content { align-items: flex-start; justify-content: flex-end; }
+    .study-two .study-bulb { position: absolute; top: clamp(30px, 5vw, 70px); left: clamp(30px, 5vw, 70px); }
+    .study-three::after {
+      background: radial-gradient(circle at 50% 46%, rgba(4,3,2,.04) 0 16%, rgba(4,3,2,.62) 75%, rgba(4,3,2,.76));
+    }
+    .study-three .study-content { align-items: center; justify-content: center; text-align: center; }
+    .study-three .study-bulb { margin-bottom: 18px; }
+    .study-three .study-content p { max-width: 42ch; }
+    .study-notes { display: grid; grid-template-columns: 1fr 1fr; background: #fffdfa; }
+    .study-card { min-height: 330px; grid-column: 2; border-left: 1px solid var(--line); }
 
     footer {
       display: flex;
@@ -381,14 +435,24 @@
       .logo-panel.light .maximal-mark .name span { font-size: 42px; }
       .signature-mark .name { font-size: clamp(54px, 17vw, 72px); }
       .logo-panel.light .signature-mark .name { font-size: 43px; }
-      .slate-mark .name { font-size: clamp(45px, 14vw, 62px); }
-      .logo-panel.light .slate-mark .name { font-size: 39px; }
       .application-wordmark { padding: 28px 24px; }
       .comparison-app .current-mark { font-size: 20px; }
       .comparison-app .maximal-mark { width: 100%; }
       .comparison-app .maximal-mark .name span { font-size: 43px; }
       .comparison-app .signature-mark .name { font-size: 52px; }
-      .comparison-app .slate-mark .name { font-size: 42px; }
+      .header-study { min-height: 500px; }
+      .study-content { padding: 28px 22px; }
+      .study-wordmark {
+        max-width: 100%;
+        flex-wrap: wrap;
+        font-size: clamp(30px, 10vw, 46px);
+        line-height: .95;
+      }
+      .study-content p { max-width: 30ch; font-size: 12px; }
+      .study-two .study-bulb { top: 28px; left: 22px; }
+      .study-three .study-content { justify-content: flex-end; padding-bottom: 42px; }
+      .study-notes { grid-template-columns: 1fr; }
+      .study-card { grid-column: 1; min-height: 0; border-left: 0; }
       footer {
         padding: 26px 20px;
         flex-direction: column;
@@ -396,19 +460,18 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="../shared/review-bar.css">
+  <link rel="stylesheet" href="../shared/review-bar.css?v=6">
 </head>
 <body class="brand-deck has-brand-review-bar">
   <div class="brand-review-bar" aria-label="Brand variant navigation">
     <div class="brand-review-actions">
       <a class="brand-review-home" href="./" aria-current="page">Brand deck</a>
     </div>
-    <span class="brand-review-label">Full website concepts</span>
-    <nav aria-label="Choose a full website variant">
-      <a href="../" data-variant-link="a" aria-label="Variant A, current site">A</a>
-      <a href="../?brand=B" data-variant-link="b" aria-label="Variant B">B</a>
-      <a href="../?brand=C" data-variant-link="c" aria-label="Variant C">C</a>
-      <a href="../?brand=D" data-variant-link="d" aria-label="Variant D">D</a>
+    <span class="brand-review-label">Header directions</span>
+    <nav aria-label="Choose a header direction">
+      <a href="../" data-variant-link="1a" aria-label="Direction 1A, current site">1A</a>
+      <a href="../?brand=2A" data-variant-link="2a" aria-label="Direction 2A">2A</a>
+      <a href="../?brand=3A" data-variant-link="3a" aria-label="Direction 3A">3A</a>
     </nav>
   </div>
 
@@ -426,13 +489,13 @@
       </div>
     </section>
 
-    <section class="route route-a" id="route-a">
+    <section class="route route-a" id="route-1a">
       <div class="page">
         <header class="route-header">
-          <div class="route-id eyebrow">A · Current</div>
+          <div class="route-id eyebrow">1A · Current</div>
           <div class="route-intro">
             <h2>The current direction.</h2>
-            <p>The supplied wordmark shown as a complete identity. This is the most familiar route: clean, legible, and easy to carry across production materials with minimal change.</p>
+            <p>The current abstract hero remains intact. This is the control: familiar, atmospheric, and independent from any single title image.</p>
           </div>
           <a class="view-site" href="../">View full website</a>
         </header>
@@ -458,7 +521,7 @@
               <h3>Current system</h3>
               <div class="system-notes">
                 <div><strong>Wordmark</strong><p>A straightforward modern sans serif with a warm fade across the name.</p></div>
-                <div><strong>Character</strong><p>Familiar, accessible, and closest to what already exists.</p></div>
+                <div><strong>Header</strong><p>An abstract optical field keeps the company name at the center and lets the rest of the site carry the work.</p></div>
               </div>
             </div>
             <div>
@@ -475,148 +538,70 @@
       </div>
     </section>
 
-    <section class="route route-b" id="route-b">
+    <section class="route route-2a" id="route-2a">
       <div class="page">
         <header class="route-header">
-          <div class="route-id eyebrow">B · Maximal Broadcast</div>
+          <div class="route-id eyebrow">2A · Image led</div>
           <div class="route-intro">
-            <h2>Big, graphic, and cinematic.</h2>
-            <p>An oversized stacked wordmark gives the studio a tougher production-world presence. Hard crops, dense typography, and a signal red accent make the identity direct and unmistakable.</p>
+            <h2>The work enters first.</h2>
+            <p>The full Revolutionary War still becomes the opening frame. The current wordmark sits as a lower third, with the redrawn Edison bulb used as a quiet production mark.</p>
           </div>
-          <a class="view-site" href="../?brand=B">View full website</a>
+          <a class="view-site" href="../?brand=2A">View full website</a>
         </header>
 
-        <div class="logo-contexts">
-          <div class="logo-panel">
-            <span class="context-label">Primary · Dark</span>
-            <div class="maximal-mark"><span class="name"><span>Incan</span><span>descent</span></span><span class="studio">Studios</span></div>
-          </div>
-          <div class="logo-panel light">
-            <span class="context-label">Reverse · Light</span>
-            <div class="maximal-mark"><span class="name"><span>Incan</span><span>descent</span></span><span class="studio">Studios</span></div>
+        <div class="header-study study-two">
+          <img class="header-study-image" src="../images/revolutionary-war-hero.jpg" alt="Revolutionary War production still with the 2A header treatment">
+          <div class="study-content">
+            <img class="study-bulb" src="../images/edison-bulb-mark.png" alt="">
+            <div class="study-wordmark"><span>Incandescent</span> Studios</div>
+            <p>We craft cinematic narratives that leave a lasting mark. Founded by veteran producers, driven by a vision for what's next.</p>
           </div>
         </div>
 
-        <div class="support">
-          <div class="application maximal-app comparison-app">
-            <img src="../images/george.jpg" alt="George production still with the Maximal Broadcast identity">
-            <div class="application-wordmark"><div class="maximal-mark"><span class="name"><span>Incan</span><span>descent</span></span><span class="studio">Studios</span></div></div>
-          </div>
-          <aside class="system-card">
+        <div class="study-notes">
+          <aside class="system-card study-card">
             <div>
-              <h3>Maximal system</h3>
+              <h3>2A header</h3>
               <div class="system-notes">
-                <div><strong>Wordmark</strong><p>Heavy Archivo at oversized scale with compressed spacing and deliberate crops.</p></div>
-                <div><strong>Character</strong><p>Bold, confident, contemporary, and built for broadcast.</p></div>
+                <div><strong>Image</strong><p>The still runs full bleed and remains the dominant object.</p></div>
+                <div><strong>Position</strong><p>The identity is left aligned and anchored low, reading like a confident film title.</p></div>
+                <div><strong>Bulb</strong><p>The patent drawing is redrawn into a compact mark rather than used as literal background art.</p></div>
               </div>
-            </div>
-            <div>
-              <div class="palette" aria-label="Maximal Broadcast color palette">
-                <span class="color" style="background:#0d0d0c"></span>
-                <span class="color" style="background:#f0ede4"></span>
-                <span class="color" style="background:#908b7b"></span>
-                <span class="color" style="background:#ef5f43"></span>
-              </div>
-              <div class="palette-caption">Black · Bone · Olive · Signal</div>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="route route-c" id="route-c">
+    <section class="route route-3a" id="route-3a">
       <div class="page">
         <header class="route-header">
-          <div class="route-id eyebrow">C · Editorial Signature</div>
+          <div class="route-id eyebrow">3A · Centered emblem</div>
           <div class="route-intro">
-            <h2>Quiet auteur prestige.</h2>
-            <p>A high-character signature wordmark brings a more personal point of view. Restrained typography, generous space, and carefully framed stills make the studio feel established without feeling institutional.</p>
+            <h2>A formal studio opening.</h2>
+            <p>The same full still is held behind a centered identity lockup. The bulb becomes an emblem above the name, giving the opening a more composed, studio-title-card feeling.</p>
           </div>
-          <a class="view-site" href="../?brand=C">View full website</a>
+          <a class="view-site" href="../?brand=3A">View full website</a>
         </header>
 
-        <div class="logo-contexts">
-          <div class="logo-panel">
-            <span class="context-label">Primary · Dark</span>
-            <div class="signature-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
-          </div>
-          <div class="logo-panel light">
-            <span class="context-label">Reverse · Light</span>
-            <div class="signature-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
+        <div class="header-study study-three">
+          <img class="header-study-image" src="../images/revolutionary-war-hero.jpg" alt="Revolutionary War production still with the 3A header treatment">
+          <div class="study-content">
+            <img class="study-bulb" src="../images/edison-bulb-mark.png" alt="">
+            <div class="study-wordmark"><span>Incandescent</span> Studios</div>
+            <p>We craft cinematic narratives that leave a lasting mark. Founded by veteran producers, driven by a vision for what's next.</p>
           </div>
         </div>
 
-        <div class="support">
-          <div class="application signature-app comparison-app">
-            <img src="../images/george.jpg" alt="George production still with the Editorial Signature identity">
-            <div class="application-wordmark"><div class="signature-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div></div>
-          </div>
-          <aside class="system-card">
+        <div class="study-notes">
+          <aside class="system-card study-card">
             <div>
-              <h3>Signature system</h3>
+              <h3>3A header</h3>
               <div class="system-notes">
-                <div><strong>Wordmark</strong><p>An expressive italic serif paired with a quiet, widely tracked sans serif.</p></div>
-                <div><strong>Character</strong><p>Editorial, cinematic, personal, and deliberately understated.</p></div>
-                <div><strong>Interaction</strong><p>A horizontal, scroll-snapping film rail lets viewers move through the slate one carefully framed story at a time.</p></div>
+                <div><strong>Image</strong><p>The still remains full bleed, with a more even vignette supporting the centered lockup.</p></div>
+                <div><strong>Position</strong><p>The identity is centered and symmetrical, reading as a studio card before the page begins.</p></div>
+                <div><strong>Bulb</strong><p>The mark takes on a clearer emblem role and gives the header a distinct top-to-bottom hierarchy.</p></div>
               </div>
-            </div>
-            <div>
-              <div class="palette" aria-label="Editorial Signature color palette">
-                <span class="color" style="background:#0a0a09"></span>
-                <span class="color" style="background:#f3f1ed"></span>
-                <span class="color" style="background:#96938e"></span>
-                <span class="color" style="background:#d7894c"></span>
-              </div>
-              <div class="palette-caption">Black · Ivory · Stone · Ember</div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="route route-d" id="route-d">
-      <div class="page">
-        <header class="route-header">
-          <div class="route-id eyebrow">D · Cinematic Slate</div>
-          <div class="route-intro">
-            <h2>The name becomes architecture.</h2>
-            <p>A monumental serif wordmark structures the frame and holds its own beside large cinematic imagery. Supporting layouts behave like a production slate, with a clear hierarchy and a controlled sense of scale.</p>
-          </div>
-          <a class="view-site" href="../?brand=D">View full website</a>
-        </header>
-
-        <div class="logo-contexts">
-          <div class="logo-panel">
-            <span class="context-label">Primary · Dark</span>
-            <div class="slate-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
-          </div>
-          <div class="logo-panel light">
-            <span class="context-label">Reverse · Light</span>
-            <div class="slate-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div>
-          </div>
-        </div>
-
-        <div class="support">
-          <div class="application slate-app comparison-app">
-            <img src="../images/george.jpg" alt="George production still with the Cinematic Slate identity">
-            <div class="application-wordmark"><div class="slate-mark"><span class="name">Incandescent</span><span class="studio">Studios</span></div></div>
-          </div>
-          <aside class="system-card">
-            <div>
-              <h3>Slate system</h3>
-              <div class="system-notes">
-                <div><strong>Wordmark</strong><p>A broad uppercase serif designed to carry weight above large-scale imagery.</p></div>
-                <div><strong>Character</strong><p>Prestigious, direct, cinematic, and grounded in the work.</p></div>
-              </div>
-            </div>
-            <div>
-              <div class="palette" aria-label="Cinematic Slate color palette">
-                <span class="color" style="background:#090908"></span>
-                <span class="color" style="background:#f1efea"></span>
-                <span class="color" style="background:#8f8a82"></span>
-                <span class="color" style="background:#cf9f25"></span>
-              </div>
-              <div class="palette-caption">Black · Ivory · Stone · Gold</div>
             </div>
           </aside>
         </div>
