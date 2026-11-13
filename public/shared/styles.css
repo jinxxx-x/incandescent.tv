@@ -820,7 +820,7 @@ nav.nav-links-only {
 
 footer {
     border-top: 1px solid var(--line-gold);
-    padding: 2rem 4rem;
+    padding: 4rem 4rem 4.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1023,7 +1023,7 @@ footer {
 
     footer {
         text-align: center;
-        padding: 2rem;
+        padding: 3rem 2rem 3.5rem;
     }
 
     .pt-top-left, .pt-bottom-right {
