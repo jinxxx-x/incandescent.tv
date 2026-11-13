@@ -703,7 +703,7 @@ nav.nav-links-only {
 /* ─── Contact Section ─── */
 
 .contact-section {
-    padding: 10rem 4rem 13rem;
+    padding: 8rem 4rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
@@ -728,7 +728,7 @@ nav.nav-links-only {
 .contact-section h2 {
     font-size: var(--type-display);
     line-height: 1.1;
-    margin-bottom: 2.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .contact-section p {
@@ -747,7 +747,7 @@ nav.nav-links-only {
     text-decoration: none;
     position: relative;
     padding-bottom: 0.25rem;
-    border-bottom: 1px solid var(--line-gold);
+    border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease;
 }
 
@@ -756,14 +756,11 @@ nav.nav-links-only {
 }
 
 .contact-rep {
-    position: absolute;
-    left: 50%;
-    bottom: 2.5rem;
-    transform: translateX(-50%);
+    margin-top: 8rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.875rem;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .contact-rep-label {
@@ -776,21 +773,20 @@ nav.nav-links-only {
 
 .caa-logo {
     display: block;
-    width: 72px;
+    width: 46px;
     height: auto;
     color: #bc1f2f;
 }
 
 @media (max-width: 768px) {
-    .contact-rep { bottom: 2rem; }
-    .caa-logo { width: 60px; }
+    .contact-rep { margin-top: 6rem; }
 }
 
 /* ─── Footer ─── */
 
 footer {
-    border-top: 1px solid var(--line-gold);
-    padding: 4rem 4rem 4.5rem;
+    border-top: 1px solid var(--line-faint);
+    padding: 3rem 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -877,12 +873,11 @@ footer {
     }
 
     .contact-section {
-        padding: 7rem 2rem 11rem;
+        padding: 6rem 2rem 2.5rem;
     }
 
     .contact-section h2 {
         font-size: var(--type-section);
-        margin-bottom: 2rem;
     }
 
     .pt-vertical {
@@ -1009,7 +1004,7 @@ footer {
 
     footer {
         text-align: center;
-        padding: 3rem 2rem 3.5rem;
+        padding: 2.5rem 2rem;
     }
 
     .pt-top-left, .pt-bottom-right {
