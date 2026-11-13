@@ -798,12 +798,6 @@ nav.nav-links-only {
     border-color: var(--accent-gold);
 }
 
-.contact-rep {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-}
-
 .caa-logo {
     display: block;
     width: 72px;
@@ -812,7 +806,6 @@ nav.nav-links-only {
 }
 
 @media (max-width: 768px) {
-    .contact-rep { margin-top: 3.5rem; }
     .caa-logo { width: 60px; }
 }
 
@@ -822,6 +815,8 @@ footer {
     border-top: 1px solid var(--line-gold);
     padding: 4rem 4rem 4.5rem;
     display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
     justify-content: center;
     align-items: center;
 }
