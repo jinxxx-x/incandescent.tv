@@ -84,6 +84,7 @@ body.has-brand-review-bar > .pt-top-left { top: 56px; }
     .brand-review-bar nav { flex: 0 0 auto; margin-left: auto; gap: 1px; }
     .brand-review-bar nav a { width: 27px; height: 27px; }
     .brand-review-label { display: none; }
+    .brand-review-bar [data-variant-link='3a'] { display: none; }
     .brand-review-actions { gap: 11px; }
     body.has-brand-review-bar { padding-top: 42px; }
     body.has-brand-review-bar > nav.nav-links-only { top: 42px; }
