@@ -973,8 +973,13 @@ footer {
     }
 
     .site-logo {
-        font-size: 0.6875rem;
-        letter-spacing: 0.12em;
+        font-size: 0.875rem;
+        letter-spacing: 0.13em;
+    }
+
+    .nav-toggle {
+        width: 22px;
+        height: 14px;
     }
 
     .hero-content {
