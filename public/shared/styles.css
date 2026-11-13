@@ -11,6 +11,7 @@
     --line-gold: rgba(229, 156, 91, 0.15);
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-ui: 'Newsreader', Georgia, serif;
+    --font-logo: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
     --type-micro: 0.75rem;
     --type-label: 0.75rem;
     --type-body: 1rem;
@@ -309,7 +310,7 @@ nav.nav-links-only {
     display: inline-flex;
     align-items: baseline;
     gap: 0.4em;
-    font-family: var(--font-ui);
+    font-family: var(--font-logo);
     font-size: var(--type-body);
     line-height: 1;
     letter-spacing: 0.16em;
