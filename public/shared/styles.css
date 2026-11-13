@@ -841,7 +841,7 @@ html:not([data-brand-variant]) .hero p.tagline {
 /* ─── Contact Section ─── */
 
 .contact-section {
-    padding: 6rem 4rem;
+    padding: 10rem 4rem 11rem;
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
@@ -865,7 +865,8 @@ html:not([data-brand-variant]) .hero p.tagline {
 
 .contact-section h2 {
     font-size: var(--type-display);
-    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 2.75rem;
 }
 
 .contact-section p {
@@ -995,8 +996,13 @@ footer {
         gap: 3rem;
     }
 
+    .contact-section {
+        padding: 7rem 2rem 8rem;
+    }
+
     .contact-section h2 {
         font-size: var(--type-section);
+        margin-bottom: 2rem;
     }
 
     .frame-left, .frame-right, .pt-vertical {
