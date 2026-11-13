@@ -799,14 +799,18 @@ nav.nav-links-only {
 }
 
 .caa-logo {
+    position: absolute;
+    left: 50%;
+    bottom: 2.5rem;
+    transform: translateX(-50%);
     display: block;
     width: 72px;
     height: auto;
-    color: var(--text-dim);
+    color: #bc1f2f;
 }
 
 @media (max-width: 768px) {
-    .caa-logo { width: 60px; }
+    .caa-logo { width: 60px; bottom: 2rem; }
 }
 
 /* ─── Footer ─── */
@@ -815,8 +819,6 @@ footer {
     border-top: 1px solid var(--line-gold);
     padding: 4rem 4rem 4.5rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
     justify-content: center;
     align-items: center;
 }
