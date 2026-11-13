@@ -28,11 +28,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Instrument+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400..600;1,400&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="preload" as="image" href="video/hero-poster.jpg">
-    <link rel="stylesheet" href="shared/styles.css?v=30">
+    <link rel="preload" as="image" href="video/hero-poster.jpg" media="(min-width: 769px), (orientation: landscape)">
+    <link rel="preload" as="image" href="video/hero-poster-portrait.jpg" media="(max-width: 768px) and (orientation: portrait)">
+    <link rel="stylesheet" href="shared/styles.css?v=31">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -101,12 +102,6 @@
 </head>
 <body>
 
-    <!-- Frame Borders -->
-    <div class="frame frame-top" aria-hidden="true"></div>
-    <div class="frame frame-bottom" aria-hidden="true"></div>
-    <div class="frame frame-left" aria-hidden="true"></div>
-    <div class="frame frame-right" aria-hidden="true"></div>
-
     <div class="perimeter-text pt-vertical" aria-hidden="true">Incandescent Studios</div>
 
     <!-- Cursor Glow -->
@@ -135,9 +130,15 @@
     <header class="hero" id="top">
         <div class="hero-video-wrap" aria-hidden="true" style="background-image: url('data:image/jpeg;base64,/9j//gAQTGF2YzYwLjMxLjEwMgD/2wBDAAgQEBMQExYWFhYWFhoYGhsbGxoaGhobGxsdHR0iIiIdHR0bGx0dICAiIiUmJSMjIiMmJigoKDAwLi44ODpFRVP/xABbAAEBAQEAAAAAAAAAAAAAAAAFBgQAAQEBAQAAAAAAAAAAAAAAAAABAAIQAAIBAwUBAQAAAAAAAAAAAAABAzECQSESEYEE8DIRAQAAAAAAAAAAAAAAAAAAAAD/wAARCAASACADASIAAhEAAxEA/9oADAMBAAIRAxEAPwCThX5KCFrjVkjFJohHekAUd9yaepH+zH2DdvSyE+q/ngiNjN6wHxm9YBl19eg2SgjfXoOkoRf/2Q==')">
             <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg" disablepictureinpicture>
+                <source src="video/hero-portrait.mp4" type="video/mp4" media="(max-width: 768px) and (orientation: portrait)">
                 <source src="video/hero-720.mp4" type="video/mp4" media="(max-width: 900px)">
                 <source src="video/hero-1080.mp4" type="video/mp4">
             </video>
+            <script>
+                if (matchMedia('(max-width: 768px) and (orientation: portrait)').matches) {
+                    document.querySelector('.hero-video').poster = 'video/hero-poster-portrait.jpg';
+                }
+            </script>
         </div>
         <div class="hero-content">
             <h1 class="hero-logo-heading" aria-label="Incandescent Studios">
@@ -165,8 +166,7 @@
         <div class="grid-container">
 
             <!-- Sitting Bull, featured -->
-            <article class="project-card card-feature">
-                <div class="card-system-code">ID: INC-001</div>
+            <a class="project-card card-feature" href="https://www.history.com/shows/sitting-bull" target="_blank" rel="noopener" aria-label="Sitting Bull: watch on History (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/sitting-bull.jpg" alt="Sitting Bull TV Series">
                     <div class="card-content">
@@ -178,11 +178,10 @@
                         <div class="card-role">Co-Executive Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- Blood on the Bridge -->
-            <article class="project-card">
-                <div class="card-system-code">ID: INC-002</div>
+            <a class="project-card" href="https://nation.foxnews.com/blood-on-the-bridge-battle-of-lexington-concord-nation" target="_blank" rel="noopener" aria-label="Blood on the Bridge: watch on Fox Nation (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/blood-on-the-bridge.jpg" alt="Blood on the Bridge: Battle of Lexington &amp; Concord">
                     <div class="card-content">
@@ -194,11 +193,10 @@
                         <div class="card-role">Executive Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- Wyatt Earp -->
-            <article class="project-card">
-                <div class="card-system-code">ID: INC-003</div>
+            <a class="project-card" href="https://www.netflix.com/title/81572104" target="_blank" rel="noopener" aria-label="Wyatt Earp and the Cowboy War: watch on Netflix (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/wyatt-earp.jpg" alt="Wyatt Earp and the Cowboy War">
                     <div class="card-content">
@@ -210,11 +208,10 @@
                         <div class="card-role">Co-Executive Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- George -->
-            <article class="project-card">
-                <div class="card-system-code">ID: INC-004</div>
+            <a class="project-card" href="https://nation.foxnews.com/george-rise-of-a-revolutionary-nation" target="_blank" rel="noopener" aria-label="George: Rise of a Revolutionary: watch on Fox Nation (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/george.jpg" alt="George: Rise of a Revolutionary">
                     <div class="card-content">
@@ -226,11 +223,10 @@
                         <div class="card-role">Executive Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- Titans: Rise of Hollywood -->
-            <article class="project-card">
-                <div class="card-system-code">ID: INC-005</div>
+            <a class="project-card" href="https://www.netflix.com/title/82089628" target="_blank" rel="noopener" aria-label="Titans: The Rise of Hollywood: watch on Netflix (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/titans-hollywood.jpg" alt="Titans: The Rise of Hollywood">
                     <div class="card-content">
@@ -242,11 +238,10 @@
                         <div class="card-role">Co-Executive Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- American Dynasty -->
-            <article class="project-card">
-                <div class="card-system-code">ID: INC-006</div>
+            <a class="project-card" href="https://nation.foxnews.com/american-dynasty-nation/season-1" target="_blank" rel="noopener" aria-label="American Dynasty: watch on Fox Nation (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/american-dynasty.jpg" alt="American Dynasty">
                     <div class="card-content">
@@ -258,11 +253,10 @@
                         <div class="card-role">Co-Executive Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- The Titans That Built America -->
-            <article class="project-card">
-                <div class="card-system-code">ID: INC-007</div>
+            <a class="project-card" href="https://www.history.com/shows/the-titans-that-built-america" target="_blank" rel="noopener" aria-label="The Titans That Built America: watch on History (opens in a new tab)">
                 <div class="card-image-wrapper">
                     <img src="images/titans-built-america.jpg" alt="The Titans That Built America">
                     <div class="card-content">
@@ -274,16 +268,11 @@
                         <div class="card-role">Supervising Producer</div>
                     </div>
                 </div>
-            </article>
+            </a>
 
 
         </div>
     </section>
-
-    <!-- Divider -->
-    <div class="divider" aria-hidden="true">
-        <span>&#9670;</span>
-    </div>
 
     <!-- Team -->
     <section class="team-section fade-in" id="team">
@@ -310,7 +299,10 @@
     <section class="contact-section fade-in" id="contact">
         <h2>Get In Touch</h2>
         <a href="mailto:hello@incandescent.tv" class="contact-email">hello@incandescent.tv</a>
-        <svg class="caa-logo" viewBox="0 0 360 149.78" role="img" aria-label="CAA" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" transform="translate(-70 -159.64)" d="M145.17,159.64c-1.81,0-3.64.05-5.45.18a74.92,74.92,0,1,0,69.18,113.61h63.51l13.28,32.45h27.86l13.28-32.45H390l13.5,32.45H430l-59.86-144H346L299.65,275.32,253.24,161.85H229.12l-38.17,91.06c-12.55,29.93-46.7,39.51-71.25,25.34a50.45,50.45,0,0,1,50.41-87.41,51,51,0,0,1,4.55,3l10.53-22.51c-.92-.59-1.89-1.12-2.84-1.67A74.19,74.19,0,0,0,145.17,159.64Zm95.92,37.22,21.29,52.08H219.44Zm117.07,0,21.65,52.08H336.87Z"/></svg>
+        <div class="contact-rep">
+            <span class="contact-rep-label">Represented by</span>
+            <svg class="caa-logo" viewBox="0 0 360 149.78" role="img" aria-label="CAA" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" transform="translate(-70 -159.64)" d="M145.17,159.64c-1.81,0-3.64.05-5.45.18a74.92,74.92,0,1,0,69.18,113.61h63.51l13.28,32.45h27.86l13.28-32.45H390l13.5,32.45H430l-59.86-144H346L299.65,275.32,253.24,161.85H229.12l-38.17,91.06c-12.55,29.93-46.7,39.51-71.25,25.34a50.45,50.45,0,0,1,50.41-87.41,51,51,0,0,1,4.55,3l10.53-22.51c-.92-.59-1.89-1.12-2.84-1.67A74.19,74.19,0,0,0,145.17,159.64Zm95.92,37.22,21.29,52.08H219.44Zm117.07,0,21.65,52.08H336.87Z"/></svg>
+        </div>
     </section>
 
     <!-- Footer -->
