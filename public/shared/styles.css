@@ -383,12 +383,15 @@ nav.nav-links-only {
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    color: var(--text-main);
+    color: transparent;
+    background: linear-gradient(90deg, #e59c5b 0%, #efb775 36%, #f5f0eb 68%, #f5f0eb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 0 14px rgba(229, 156, 91, 0.16));
 }
 
 .site-logo-primary {
     font-weight: 600;
-    color: var(--accent-gold);
 }
 
 .site-logo-secondary {
