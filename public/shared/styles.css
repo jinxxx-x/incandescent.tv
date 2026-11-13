@@ -237,73 +237,6 @@ nav.nav-links-only {
     overflow: hidden;
 }
 
-.hero-still,
-.hero-bulb-mark {
-    display: none;
-}
-
-.hero-bg-lines {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.line-v, .line-h {
-    position: absolute;
-    background: var(--line-faint);
-}
-
-.line-v.center { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
-.line-h.center { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
-
-.optical-rings {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    border: 1px solid var(--line-faint);
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.optical-rings::before {
-    content: '';
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    border: 1px solid var(--line-gold);
-    opacity: 0.3;
-}
-
-.optical-rings::after {
-    content: '';
-    position: absolute;
-    width: 120%;
-    height: 1px;
-    background: var(--line-faint);
-    transform: rotate(45deg);
-}
-
-.ambient-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(229, 156, 91,0.12) 0%, rgba(156,62,16,0.05) 35%, transparent 65%);
-    border-radius: 50%;
-    z-index: 1;
-    animation: glow-pulse 6s infinite alternate;
-    pointer-events: none;
-}
-
 .hero-content {
     position: relative;
     z-index: 10;
@@ -400,21 +333,13 @@ nav.nav-links-only {
 
 /* ─── Video Hero (default direction, 1A) ─── */
 
-.hero-video-wrap {
-    display: none;
-}
-
-html:not([data-brand-variant]) nav.nav-links-only {
+nav.nav-links-only {
     justify-content: space-between;
     mix-blend-mode: normal;
 }
 
-html[data-brand-variant] .site-logo {
-    display: none;
-}
-
-html:not([data-brand-variant]) .hero {
-    height: calc(100svh - 44px);
+.hero {
+    height: 100svh;
     min-height: 560px;
     justify-content: center;
     align-items: center;
@@ -422,7 +347,7 @@ html:not([data-brand-variant]) .hero {
     isolation: isolate;
 }
 
-html:not([data-brand-variant]) .hero-video-wrap {
+.hero-video-wrap {
     display: block;
     position: absolute;
     inset: 0;
@@ -440,7 +365,7 @@ html:not([data-brand-variant]) .hero-video-wrap {
 }
 
 /* Light scrims only where text sits: nav at top, tagline at bottom. */
-html:not([data-brand-variant]) .hero::after {
+.hero::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -451,12 +376,7 @@ html:not([data-brand-variant]) .hero::after {
         linear-gradient(0deg, var(--bg-base) 0%, rgba(5,3,2,0.55) 14%, rgba(5,3,2,0) 40%);
 }
 
-html:not([data-brand-variant]) .hero-bg-lines,
-html:not([data-brand-variant]) .ambient-glow {
-    display: none;
-}
-
-html:not([data-brand-variant]) .hero-content {
+.hero-content {
     z-index: 2;
     max-width: none;
     padding: 0 4rem;
@@ -464,7 +384,7 @@ html:not([data-brand-variant]) .hero-content {
     text-align: center;
 }
 
-html:not([data-brand-variant]) .hero .hero-logo-heading {
+.hero .hero-logo-heading {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -474,7 +394,7 @@ html:not([data-brand-variant]) .hero .hero-logo-heading {
     white-space: nowrap;
 }
 
-html:not([data-brand-variant]) .hero p.tagline {
+.hero p.tagline {
     max-width: 34ch;
     font-family: var(--font-display);
     font-size: 1.25rem;
@@ -487,7 +407,7 @@ html:not([data-brand-variant]) .hero p.tagline {
 
 @media (prefers-reduced-motion: reduce) {
     .hero-video { display: none; }
-    html:not([data-brand-variant]) .hero-video-wrap {
+    .hero-video-wrap {
         background-image: url('../video/hero-poster.jpg') !important;
     }
 }
@@ -1057,11 +977,11 @@ footer {
         letter-spacing: 0.12em;
     }
 
-    html:not([data-brand-variant]) .hero-content {
+    .hero-content {
         padding: 0 1.25rem;
     }
 
-    html:not([data-brand-variant]) .hero p.tagline {
+    .hero p.tagline {
         font-size: 1.0625rem;
     }
 
@@ -1095,10 +1015,6 @@ footer {
         padding: 1.5rem;
     }
 
-    .optical-rings {
-        width: 300px;
-        height: 300px;
-    }
 
     footer {
         text-align: center;

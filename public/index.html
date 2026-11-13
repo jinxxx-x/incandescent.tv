@@ -32,20 +32,7 @@
 
     <!-- Styles -->
     <link rel="preload" as="image" href="video/hero-poster.jpg">
-    <link rel="stylesheet" href="shared/styles.css?v=18">
-    <link rel="stylesheet" href="shared/variant-b.css?v=14">
-    <link rel="stylesheet" href="shared/variant-c.css?v=15">
-    <link rel="stylesheet" href="shared/variant-nav.css?v=6">
-    <link rel="stylesheet" href="shared/review-bar.css?v=8">
-    <script>
-        (() => {
-            const variant = new URLSearchParams(window.location.search).get('brand')?.toLowerCase();
-            if (/^(2a|3a)$/.test(variant || '')) {
-                document.documentElement.dataset.brandVariant = variant;
-                document.documentElement.dataset.reviewVariant = variant;
-            }
-        })();
-    </script>
+    <link rel="stylesheet" href="shared/styles.css?v=19">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -112,19 +99,7 @@
     ]
     </script>
 </head>
-<body class="has-brand-review-bar">
-
-    <div class="brand-review-bar" aria-label="Brand variant navigation">
-        <div class="brand-review-actions">
-            <a class="brand-review-home" href="./brand/">Brand deck</a>
-        </div>
-        <span class="brand-review-label">Header directions</span>
-        <nav aria-label="Choose a header direction">
-            <a href="./" data-variant-link="1a" aria-label="Direction 1A, current site">1A</a>
-            <a href="?brand=2A" data-variant-link="2a" aria-label="Direction 2A">2A</a>
-            <a href="?brand=3A" data-variant-link="3a" aria-label="Direction 3A">3A</a>
-        </nav>
-    </div>
+<body>
 
     <!-- Frame Borders -->
     <div class="frame frame-top" aria-hidden="true"></div>
@@ -164,17 +139,7 @@
                 <source src="video/hero-1080.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="hero-still" aria-hidden="true"></div>
-        <div class="hero-bg-lines" aria-hidden="true">
-            <div class="line-v center"></div>
-            <div class="line-h center"></div>
-            <div class="optical-rings"></div>
-        </div>
-
-        <div class="ambient-glow" aria-hidden="true"></div>
-
         <div class="hero-content">
-            <img class="hero-bulb-mark" src="images/edison-bulb-mark.png" alt="">
             <h1 class="hero-logo-heading" aria-label="Incandescent Studios">
                 <span class="hero-brand-primary">Incandescent</span>
                 <span class="hero-brand-secondary">Studios</span>
