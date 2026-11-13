@@ -431,11 +431,6 @@ nav.nav-links-only {
     max-width: 42ch;
 }
 
-.intro-right p span {
-    color: var(--accent-gold);
-    font-style: italic;
-}
-
 .about-copy {
     grid-column: 1 / -1;
     width: 100%;
@@ -479,6 +474,10 @@ nav.nav-links-only {
     font-size: var(--type-section);
     line-height: 1.16;
     letter-spacing: -0.018em;
+}
+
+.about-copy .about-name {
+    color: var(--accent-gold);
 }
 
 .about-copy > p:last-child {
